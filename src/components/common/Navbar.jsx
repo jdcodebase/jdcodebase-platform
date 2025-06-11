@@ -1,4 +1,7 @@
 "use client";
+
+import Link from "next/link";
+import { useEffect, useState } from "react";
 import {
   Button,
   Dropdown,
@@ -6,12 +9,17 @@ import {
   DropdownMenu,
   DropdownTrigger,
 } from "@nextui-org/react";
-import Link from "next/link";
-import { useEffect, useState } from "react";
 import { CiSearch } from "react-icons/ci";
 import { IoIosArrowDown, IoMdClose } from "react-icons/io";
 import { GoMoon, GoSun } from "react-icons/go";
 import { FaBars } from "react-icons/fa6";
+
+const navLinks = [
+  { name: "DSA", href: "/dsa" },
+  { name: "JavaScript", href: "/js" },
+  { name: "C++", href: "/cpp" },
+  { name: "Projects", href: "/projects" },
+];
 
 export default function Navbar() {
   const [isDark, setIsDark] = useState(false);
@@ -19,40 +27,26 @@ export default function Navbar() {
   const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
-    const storedTheme = localStorage.getItem("theme");
-    if (storedTheme === "dark") {
-      setIsDark(true);
-      document.documentElement.classList.add("dark");
-    }
-  }, []);
-
-  useEffect(() => {
     document.body.classList.toggle("overflow-hidden", isSideBarOpen);
   }, [isSideBarOpen]);
 
-  const toggleTheme = () => {
-    const newTheme = !isDark;
-    setIsDark(newTheme);
-    document.documentElement.classList.toggle("dark", newTheme);
-    localStorage.setItem("theme", newTheme ? "dark" : "light");
-  };
+  const toggleTheme = () => setIsDark((prev) => !prev);
 
   const handleSearch = (e) => {
     e.preventDefault();
-    alert(`Searching for: ${searchQuery}`);
-    // You can later implement actual routing/search logic here
+    if (searchQuery.trim()) alert(`Searching for: ${searchQuery}`);
+    setSearchQuery("");
   };
 
   return (
-    <nav className="py-4 px-4 shadow-md  bg-neutral-900 text-white flex justify-between items-center">
-      {/* Left - Brand */}
+    <nav className="py-4 px-4 shadow-md bg-neutral-900 text-white flex justify-between items-center">
       <Link href="/" className="text-xl font-serif italic hover:not-italic">
         JDCodebase
       </Link>
 
       {/* Desktop Menu */}
       <div className="hidden md:flex items-center space-x-5">
-        {/* Dropdown */}
+        {/* Courses Dropdown */}
         <Dropdown>
           <DropdownTrigger>
             <Button
@@ -63,25 +57,17 @@ export default function Navbar() {
             </Button>
           </DropdownTrigger>
           <DropdownMenu className="bg-neutral-900 text-white p-2 rounded-md">
-            <DropdownItem>
-              <Link href="/dsa" className="hover:underline">
-                DSA
-              </Link>
-            </DropdownItem>
-            <DropdownItem>
-              <Link href="/js" className="hover:underline">
-                JavaScript
-              </Link>
-            </DropdownItem>
-            <DropdownItem>
-              <Link href="/cpp" className="hover:underline">
-                C++
-              </Link>
-            </DropdownItem>
+            {navLinks.map((link) => (
+              <DropdownItem key={link.name}>
+                <Link href={link.href} className="hover:underline">
+                  {link.name}
+                </Link>
+              </DropdownItem>
+            ))}
           </DropdownMenu>
         </Dropdown>
 
-        {/* Search */}
+        {/* Search Bar */}
         <form
           onSubmit={handleSearch}
           className="flex items-center border rounded py-1 border-white"
@@ -108,7 +94,7 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile - Hamburger */}
+      {/* Mobile Menu Button */}
       <div className="md:hidden">
         <button
           onClick={() => setIsSideBarOpen(true)}
@@ -118,47 +104,39 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Sidebar Overlay */}
+      {/* Mobile Sidebar */}
       {isSideBarOpen && (
         <div className="fixed inset-0 z-50 flex">
-          {/* Sidebar Panel */}
-          <div className="w-52 bg-neutral-900 text-white py-5 flex flex-col justify-between">
+          {/* Sidebar */}
+          <aside className="w-52 bg-neutral-900 text-white py-5 flex flex-col justify-between">
+            {/* Close button */}
             <div>
               <button
-                className="mb-6 text-left px-3"
                 onClick={() => setIsSideBarOpen(false)}
+                className="mb-6 text-left px-3"
                 aria-label="Close Sidebar"
               >
                 <IoMdClose size={30} />
               </button>
 
-              <nav className="flex flex-col ">
-                <Link
-                  href="/dsa"
-                  onClick={() => setIsSideBarOpen(false)}
-                  className="hover:underline border-t py-4 px-5"
-                >
-                  DSA
-                </Link>
-                <Link
-                  href="/js"
-                  onClick={() => setIsSideBarOpen(false)}
-                  className="hover:underline border-t py-4 px-5"
-                >
-                  JavaScript
-                </Link>
-                <Link
-                  href="/cpp"
-                  onClick={() => setIsSideBarOpen(false)}
-                  className="hover:underline border-t py-4 px-5 border-b"
-                >
-                  C++
-                </Link>
+              {/* Nav Links */}
+              <nav className="flex flex-col">
+                {navLinks.map((link) => (
+                  <Link
+                    key={link.name}
+                    href={link.href}
+                    onClick={() => setIsSideBarOpen(false)}
+                    className="hover:underline border-t py-4 px-5"
+                  >
+                    {link.name}
+                  </Link>
+                ))}
               </nav>
             </div>
 
-            <div>
-              <button onClick={toggleTheme} className="px-3">
+            {/* Theme toggle */}
+            <div className="px-3">
+              <button onClick={toggleTheme} aria-label="Toggle Theme">
                 {isDark ? (
                   <GoSun size={25} className="text-yellow-400" />
                 ) : (
@@ -166,10 +144,10 @@ export default function Navbar() {
                 )}
               </button>
             </div>
-          </div>
+          </aside>
 
           {/* Backdrop */}
-          <div className="flex-1" onClick={() => setIsSideBarOpen(false)}></div>
+          <div className="flex-1" onClick={() => setIsSideBarOpen(false)} />
         </div>
       )}
     </nav>

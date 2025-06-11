@@ -70,7 +70,7 @@ export default function Navbar() {
         {/* Search Bar */}
         <form
           onSubmit={handleSearch}
-          className="flex items-center border rounded py-1 border-white"
+          className="flex items-center border rounded py-1 border-white px-1"
         >
           <input
             type="text"

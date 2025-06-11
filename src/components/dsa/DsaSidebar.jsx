@@ -1,0 +1,44 @@
+"use client";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import clsx from "clsx";
+
+const topics = [
+  { name: "Foundations", slug: "foundations" },
+  { name: "Arrays", slug: "arrays" },
+  { name: "Two Pointers", slug: "two-pointers" },
+  { name: "Sliding Window", slug: "sliding-window" },
+  { name: "Binary Search", slug: "binary-search" },
+  { name: "Sorting", slug: "sorting" },
+  { name: "Stack & Queue", slug: "stack-queue" },
+  { name: "Recursion & Backtracking", slug: "recursion-backtracking" },
+  { name: "Greedy", slug: "greedy" },
+  { name: "Dynamic Programming", slug: "dynamic-programming" },
+];
+
+export default function DsaSidebar() {
+  const pathname = usePathname();
+
+  return (
+    <aside className="hidden md:block w-64 bg-neutral-900 p-4 text-white border-r border-gray-700">
+      <h2 className="text-lg font-bold mb-4">📂 DSA Topics</h2>
+      <ul className="space-y-2">
+        {topics.map((topic) => (
+          <li key={topic.slug}>
+            <Link
+              href={`/dsa/${topic.slug}`}
+              className={clsx(
+                "block px-3 py-2 rounded-md text-sm font-medium",
+                pathname.includes(topic.slug)
+                  ? "bg-blue-600 text-white"
+                  : "text-gray-300 hover:bg-gray-700 hover:text-white"
+              )}
+            >
+              {topic.name}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </aside>
+  );
+}

@@ -2,19 +2,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
-
-const topics = [
-  { name: "Foundations", slug: "foundations" },
-  { name: "Arrays", slug: "arrays" },
-  { name: "Two Pointers", slug: "two-pointers" },
-  { name: "Sliding Window", slug: "sliding-window" },
-  { name: "Binary Search", slug: "binary-search" },
-  { name: "Sorting", slug: "sorting" },
-  { name: "Stack & Queue", slug: "stack-queue" },
-  { name: "Recursion & Backtracking", slug: "recursion-backtracking" },
-  { name: "Greedy", slug: "greedy" },
-  { name: "Dynamic Programming", slug: "dynamic-programming" },
-];
+import { topics } from "@/data/dsaTopicData";
 
 export default function DsaSidebar() {
   const pathname = usePathname();

@@ -1,0 +1,21 @@
+{
+  "title": "Two Sum",
+  "slug": "two-sum",
+  "leetcodeId": "#1",
+  "category": "Array",
+  "problemStatement": "Given an array of integers nums and an integer target...",
+  "examples": [
+    {
+      "input": "nums = [2, 7, 11, 15], target = 9",
+      "output": "[0, 1]",
+      "explanation": "Because nums[0] + nums[1] == 9."
+    }
+  ],
+  "approach": "Use brute force: loop through array, subtract each from target...",
+  "code": "var twoSum = function(nums, target) {\n  for (let i = 0; i < nums.length; i++) {\n    let diff = target - nums[i];\n    for (let j = i + 1; j < nums.length; j++) {\n      if (diff === nums[j]) {\n        return [i, j];\n      }\n    }\n  }\n};",
+  "timeComplexity": "O(n²)",
+  "spaceComplexity": "O(1)",
+  "pptLink": "/assets/ppt/two-sum.pptx",
+  "leetcodeLink": "https://leetcode.com/problems/two-sum/",
+  "videoLink": "xBH-SzuhJ1c"
+}

@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function DsaMainContent() {
   return (
-    <div className="flex-1 p-6 text-white bg-neutral-950 min-h-screen">
+    <div className="flex-1 p-6 text-white bg-neutral-950 min-h-screen rounded-lg shadow-neutral-300 shadow-md ">
       <h1 className="text-3xl font-bold mb-4">Data Structures & Algorithms</h1>
 
       <p className="text-gray-300 mb-6">

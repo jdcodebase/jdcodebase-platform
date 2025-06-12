@@ -1,0 +1,20 @@
+{
+  "title": "Shuffle the Array",
+  "slug": "shuffle-the-array",
+  "leetcodeId": "#1470",
+  "category": "Array",
+  "problemStatement": "You're given an array nums consisting of 2n elements in the form:\n[x1, x2, ..., xn, y1, y2, ..., yn]\n\nReturn the array in the form:\n[x1, y1, x2, y2, ..., xn, yn]\n\nIn simpler terms, you're interleaving the first half and the second half of the array.",
+  "examples": [
+    {
+      "input": "[1,1,2,2]",
+      "output": "[1,2,1,2]",
+      "explanation": "First half is [1,1], second half is [2,2]. Interleave them: [1,2,1,2]."
+    }
+  ],
+  "approach": "1. Simple Looping Strategy\n2. Create an empty array `ans = []`\n3. Loop from `i = 0` to `i < n`\n4. In each iteration, push `nums[i]` and `nums[i + n]` into `ans`\n5. Return the `ans` array\n\nWe're accessing elements from the first and second halves in a single loop.",
+  "code": "var shuffle = function(nums, n) {\n  let ans = [];\n  for (let i = 0; i < n; i++) {\n    ans.push(nums[i]);\n    ans.push(nums[i + n]);\n  }\n  return ans;\n};",
+  "timeComplexity": "O(n)",
+  "spaceComplexity": "O(n)",
+  "leetcodeLink": "https://leetcode.com/problems/shuffle-the-array/",
+  "videoLink": "VOwTgYQAhEU"
+}

@@ -1,0 +1,20 @@
+{
+  "title": "Concatenation of Array",
+  "slug": "concatenation-of-array",
+  "leetcodeId": "#1929",
+  "category": "Array",
+  "problemStatement": "You're given an integer array nums of length n. Your task is to create a new array ans of length 2n, such that:\n\nans[i] = nums[i]\n\nans[i + n] = nums[i] for all 0 <= i < n.\n\nIn simpler terms, return the concatenation of the array with itself.",
+  "examples": [
+    {
+      "input": "nums = [1, 2, 1]",
+      "output": "[1, 2, 1, 1, 2, 1]",
+      "explanation": "Concatenate the input array with itself: [1, 2, 1] + [1, 2, 1] = [1, 2, 1, 1, 2, 1]."
+    }
+  ],
+  "approach": "✅ Approach 1: Using a For Loop\n1. Initialize an empty array `ans`.\n2. Loop through `nums`, and for each element, add it at index `i` and `i + n`.\n3. Return `ans`.\n\n✅ Approach 2: Using Spread Operator\n1. Return `[...nums, ...nums]` which duplicates and concatenates the array.\n\nBoth solutions run in O(n) time and are very beginner-friendly.",
+  "code": "var getConcatenation = function(nums) {\n    let ans = [];\n    let n = nums.length;\n\n    for (let i = 0; i < n; i++) {\n        ans[i] = nums[i];\n        ans[i + n] = nums[i];\n    }\n\n    return ans;\n};\n\n// One-liner approach:\nvar getConcatenation = function(nums) {\n     return [...nums, ...nums];\n};",
+  "timeComplexity": "O(n)",
+  "spaceComplexity": "O(n)",
+  "leetcodeLink": "https://leetcode.com/problems/concatenation-of-array/",
+  "videoLink": "qCxGScwnbqQ"
+}

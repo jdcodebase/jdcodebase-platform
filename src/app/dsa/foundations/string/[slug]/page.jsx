@@ -6,7 +6,7 @@ import React from "react";
 export async function getProblemData(slug) {
   const filePath = path.join(
     process.cwd(),
-    "src/data/foundations/array",
+    "src/data/foundations/string",
     `${slug}.json`
   );
 
@@ -147,15 +147,18 @@ export default async function ProblemPage({ params }) {
               </li>
               {problem.pptLink && (
                 <li>
-                  <a
-                    href={problem.pptLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-blue-400 hover:underline"
-                    download
-                  >
-                    📥 Download PPT
-                  </a>
+                  <section className="mb-8">
+                    <h2 className="text-2xl font-semibold mb-2">📽️ View PPT</h2>
+                    <div className="w-full overflow-x-auto rounded-md">
+                      <iframe
+                        src={problem.pptLink}
+                        width="100%"
+                        height="400"
+                        allowFullScreen
+                        className="rounded-md w-full"
+                      ></iframe>
+                    </div>
+                  </section>
                 </li>
               )}
             </ul>

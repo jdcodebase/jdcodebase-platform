@@ -1,0 +1,27 @@
+{
+  "title": "Count the Number of Consistent Strings",
+  "slug": "count-consistent-strings",
+  "leetcodeId": "#1684",
+  "category": "String",
+  "problemStatement": "You are given a string 'allowed' consisting of distinct characters and an array of strings 'words'. A string is considered consistent if all characters in the string appear in the allowed string. Return the number of consistent strings in the words array.",
+  "examples": [
+    {
+      "input": "allowed = \"ab\", words = [\"a\", \"b\", \"ab\", \"abc\"]",
+      "output": "3",
+      "explanation": [
+        "Allowed characters are: 'a', 'b'",
+        "Word 1: 'a' → all characters allowed → ✅",
+        "Word 2: 'b' → all characters allowed → ✅",
+        "Word 3: 'ab' → all characters allowed → ✅",
+        "Word 4: 'abc' → contains 'c' which is not allowed → ❌",
+        "Total consistent strings = 3"
+      ]
+    }
+  ],
+  "approach": "1. We first convert the 'allowed' string into a Set for O(1) lookups.\n2. Then, for each word in the 'words' array, we check whether every character in that word exists in the Set using the .every() method.\n3. If all characters are allowed, we increment the count.",
+  "code": "var countConsistentStrings = function(allowed, words) {\n  const allowedSet = new Set(allowed);\n  let count = 0;\n\n  for (const word of words) {\n    let isConsistent = [...word].every(char => allowedSet.has(char));\n    if (isConsistent) {\n      count++;\n    }\n  }\n\n  return count;\n};",
+  "timeComplexity": "O(n * m), where n is the number of words and m is the average length of a word.",
+  "spaceComplexity": "O(k), where k is the number of unique characters in 'allowed'.",
+  "leetcodeLink": "https://leetcode.com/problems/count-the-number-of-consistent-strings/",
+  "videoLink": "kTyBlD5ir4o"
+}

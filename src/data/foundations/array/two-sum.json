@@ -15,7 +15,6 @@
   "code": "var twoSum = function(nums, target) {\n  for (let i = 0; i < nums.length; i++) {\n    let diff = target - nums[i];\n    for (let j = i + 1; j < nums.length; j++) {\n      if (diff === nums[j]) {\n        return [i, j];\n      }\n    }\n  }\n};",
   "timeComplexity": "O(n²)",
   "spaceComplexity": "O(1)",
-  "pptLink": "/assets/ppt/two-sum.pptx",
   "leetcodeLink": "https://leetcode.com/problems/two-sum/",
   "videoLink": "xBH-SzuhJ1c"
 }

@@ -1,0 +1,20 @@
+{
+  "title": "Two Sum",
+  "slug": "two-sum",
+  "leetcodeId": "#1",
+  "category": ["Array", "Hash Map", "Foundation"],
+  "problemStatement": "Given an array of integers nums and an integer target...",
+  "examples": [
+    {
+      "input": "nums = [2, 7, 11, 15], target = 9",
+      "output": "[0, 1]",
+      "explanation": "Because nums[0] + nums[1] == 9."
+    }
+  ],
+  "approach": "Approach 1: Brute Force\nLoop through each element in the array. For every element, subtract it from the target and search the remainder in the rest of the array using another loop. This results in O(n^2) time.\n\nApproach 2: Optimal using Hash Map\nUse a hash map to store each element and its index. For each number, check if the complement (target - current number) exists in the map. If it does, return both indices. This gives O(n) time with O(n) space.",
+  "code": "// Approach 1: Brute Force\nvar twoSum = function(nums, target) {\n  for (let i = 0; i < nums.length; i++) {\n    let diff = target - nums[i];\n    for (let j = i + 1; j < nums.length; j++) {\n      if (nums[j] === diff) {\n        return [i, j];\n      }\n    }\n  }\n};\n\n\n// Approach 2: Optimal using Hash Map\nvar twoSum = function(nums, target) {\n  const map = new Map();\n\n  for (let i = 0; i < nums.length; i++) {\n    const complement = target - nums[i];\n    if (map.has(complement)) {\n      return [map.get(complement), i];\n    }\n    map.set(nums[i], i);\n  }\n};",
+  "timeComplexity": "O(n²)",
+  "spaceComplexity": "O(1)",
+  "leetcodeLink": "https://leetcode.com/problems/two-sum/",
+  "videoLink": "xBH-SzuhJ1c"
+}

@@ -1,0 +1,30 @@
+{
+  "title": "Goal Parser Interpretation",
+  "slug": "goal-parser-interpretation",
+  "leetcodeId": "#1678",
+  "category": ["String", "Foundation"],
+  "problemStatement": "You are given a string `command`. The command string follows this format:\n\n- 'G' stands for the character G\n- '()' stands for the character o\n- '(al)' stands for the string 'al'\n\nYour task is to return the Goal Parser's interpretation of the command string.",
+  "examples": [
+    {
+      "input": "\"G()(al)\"",
+      "output": "\"Goal\"",
+      "explanation": "'G' remains 'G', '()' becomes 'o', and '(al)' becomes 'al'."
+    },
+    {
+      "input": "\"G()()()()(al)\"",
+      "output": "\"Gooooal\"",
+      "explanation": "Multiple '()' become multiple 'o', followed by '(al)' → 'al'."
+    },
+    {
+      "input": "\"(al)G(al)()()G\"",
+      "output": "\"alGalooG\"",
+      "explanation": "Each '(al)' → 'al', '()' → 'o', and 'G' remains 'G'."
+    }
+  ],
+  "approach": "We can solve this problem in two ways:\n\nApproach 1 – Brute Force (Using Loop):**\nIterate through each character in the string. If the character is 'G', append 'G'. If you find '()', append 'o' and skip the next character. If you find '(al)', append 'al' and skip the next 3 characters.\n\nApproach 2 – Optimized (Using replaceAll):**\nUse JavaScript’s `replaceAll()` method to first replace all '()' with 'o' and then replace all '(al)' with 'al'. This makes the code much cleaner and shorter.",
+  "code": "// 🔹 Approach 1: Brute Force (Using Loop)\nvar interpret = function(command) {\n  let str = \"\";\n  for (let i = 0; i < command.length; i++) {\n    if (command[i] === \"G\") {\n      str += \"G\";\n    } else if (command[i] === \"(\" && command[i + 1] === \")\") {\n      str += \"o\";\n      i++;\n    } else {\n      str += \"al\";\n      i += 3;\n    }\n  }\n  return str;\n};\n\n// 🔹 Approach 2: Optimized (Using replaceAll)\nvar interpret = function(command) {\n  let str = command.replaceAll(\"()\", \"o\");\n  return str.replaceAll(\"(al)\", \"al\");\n};",
+  "timeComplexity": "O(n), where n is the length of the input string.",
+  "spaceComplexity": "O(n), for the newly created interpreted string.",
+  "leetcodeLink": "https://leetcode.com/problems/goal-parser-interpretation/",
+  "videoLink": "dy5JV3Qf7Eo"
+}

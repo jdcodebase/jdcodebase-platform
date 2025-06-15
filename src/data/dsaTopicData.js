@@ -1,59 +1,68 @@
-export const topics = [
-  {
-    name: "Foundations",
-    description:
-      "Start here with time complexity, space complexity, and basics.",
-    slug: "foundations",
-  },
-  {
-    name: "Arrays",
-    description:
-      "Understand fixed & dynamic data structures and basic array manipulation.",
-    slug: "arrays",
-  },
-  {
-    name: "Two Pointers",
-    description:
-      "Techniques to solve problems with two iterators or boundaries.",
-    slug: "two-pointers",
-  },
-  {
-    name: "Sliding Window",
-    description: "Efficiently handle subarrays or substrings in linear time.",
-    slug: "sliding-window",
-  },
-  {
-    name: "Binary Search",
-    description:
-      "Search efficiently in sorted arrays using divide and conquer.",
-    slug: "binary-search",
-  },
-  {
-    name: "Sorting",
-    description:
-      "Master sorting algorithms like QuickSort, MergeSort, and more.",
-    slug: "sorting",
-  },
-  {
-    name: "Stack & Queue",
-    description: "Learn LIFO and FIFO structures essential for many problems.",
-    slug: "stack-queue",
-  },
-  {
-    name: "Recursion & Backtracking",
-    description:
-      "Solve problems with recursion trees and explore solution spaces.",
-    slug: "recursion-backtracking",
-  },
-  {
-    name: "Greedy",
-    description: "Build solutions piece-by-piece with local optimal choices.",
-    slug: "greedy",
-  },
-  {
-    name: "Dynamic Programming",
-    description:
-      "Optimize recursive problems by caching overlapping subproblems.",
-    slug: "dynamic-programming",
-  },
-];
+import { problems } from "./dsa/problem";
+
+export const topics = Array.from(
+  new Set(problems.flatMap((problem) => problem.topics))
+).map((topic) => {
+  let description = "";
+
+  switch (topic) {
+    case "Foundation":
+      description =
+        "Start here with time complexity, space complexity, and basic coding concepts.";
+      break;
+    case "Array":
+      description =
+        "Understand linear data structures and master array manipulation techniques.";
+      break;
+    case "String":
+      description =
+        "Work with characters, substrings, and string algorithms efficiently.";
+      break;
+    case "Two Pointer":
+      description =
+        "Optimize problems using two simultaneous iterators or boundaries.";
+      break;
+    case "Sliding Window":
+      description =
+        "Solve subarray and substring problems in linear time with a moving window.";
+      break;
+    case "Binary Search":
+      description =
+        "Efficiently search in sorted arrays using divide-and-conquer strategy.";
+      break;
+    case "Sorting":
+      description =
+        "Master algorithms like MergeSort, QuickSort, and learn how to sort efficiently.";
+      break;
+    case "Stack":
+    case "Queue":
+    case "Stack & Queue":
+      description =
+        "Learn stack (LIFO) and queue (FIFO) structures essential for many algorithmic problems.";
+      break;
+    case "Greedy":
+      description =
+        "Build efficient solutions by making locally optimal choices at each step.";
+      break;
+    case "Dynamic Programming":
+      description =
+        "Break down complex problems and store solutions to overlapping subproblems.";
+      break;
+    case "Hash Map":
+      description =
+        "Use key-value mappings for fast lookups, counting, and frequency-based problems.";
+      break;
+    case "Hash Set":
+      description =
+        "Use sets to track unique values and enable fast membership checks.";
+      break;
+    default:
+      description = `Problems related to ${topic}.`;
+  }
+
+  return {
+    name: topic,
+    description,
+    slug: topic.toLowerCase().replace(/\s+/g, "-"),
+  };
+});

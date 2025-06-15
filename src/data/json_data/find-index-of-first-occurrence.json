@@ -1,0 +1,31 @@
+{
+  "title": "Find the Index of the First Occurrence in a String",
+  "slug": "find-index-of-first-occurrence",
+  "leetcodeId": "#28",
+  "category": ["String", "Two Pointer", "Brute Force"],
+  "problemStatement": "Implement strStr(). Given two strings needle and haystack, return the index of the first occurrence of needle in haystack, or -1 if needle is not part of haystack. If needle is an empty string, return 0.",
+  "examples": [
+    {
+      "input": "haystack = \"sadbutsad\", needle = \"sad\"",
+      "output": "0",
+      "explanation": "'sad' starts at index 0."
+    },
+    {
+      "input": "haystack = \"leetcode\", needle = \"leeto\"",
+      "output": "-1",
+      "explanation": "'leeto' is not present in 'leetcode'."
+    },
+    {
+      "input": "haystack = \"abc\", needle = \"\"",
+      "output": "0",
+      "explanation": "If needle is empty, return 0."
+    }
+  ],
+  "approach": "We solve this using a **Brute Force Substring Matching** approach:\n\n1. **Edge Case Check**: If `needle` is an empty string, return 0.\n2. **Loop Through Haystack**: Iterate from index 0 to `haystack.length - needle.length`.\n3. **Match Substring**: For each index, compare characters from `needle` with corresponding characters in `haystack`.\n4. **Return Index**: If all characters match, return the current index.\n5. **No Match**: If no match is found after the loop, return -1.\n\nThis approach runs in O(n*m) time where n is the length of `haystack` and m is the length of `needle`.",
+  "code": "var strStr = function(haystack, needle) {\n  if (needle.length === 0) {\n    return 0;\n  }\n\n  if (haystack.length < needle.length) {\n    return -1;\n  }\n\n  for (let i = 0; i <= haystack.length - needle.length; i++) {\n    let match = true;\n    for (let j = 0; j < needle.length; j++) {\n      if (haystack[i + j] !== needle[j]) {\n        match = false;\n        break;\n      }\n    }\n    if (match) {\n      return i;\n    }\n  }\n\n  return -1;\n};",
+  "timeComplexity": "O(n * m)",
+  "spaceComplexity": "O(1)",
+  "leetcodeLink": "https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/",
+  "pptLink": "https://1drv.ms/p/c/d9a1d5f2dacf7aea/IQQIq0-2lvAaSaWMow609L7YAb8Jb7bkOm-SN-4WAac0gfs?em=2&amp;wdAr=1.7777777777777777",
+  "videoLink": "D6SMKUk1FoE"
+}

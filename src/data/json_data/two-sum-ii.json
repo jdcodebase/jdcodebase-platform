@@ -1,0 +1,21 @@
+{
+  "title": "Two Sum II - Input Array Is Sorted",
+  "slug": "two-sum-ii",
+  "leetcodeId": "#167",
+  "category": ["Array", "Two Pointer"],
+  "problemStatement": "You're given a 1-indexed array of integers called numbers, sorted in non-decreasing order. Your task is to find two numbers such that they add up to a given target. Return their indices (1-based) as an array [index1, index2], where 1 <= index1 < index2 <= numbers.length.\n\n⚠️ Each input has exactly one solution, and you cannot use the same element twice.\n\n🧠 Also, your solution must use only constant extra space.",
+  "examples": [
+    {
+      "input": "numbers = [2, 8, 11, 13, 15, 16, 25], target = 28",
+      "output": "[2, 6]",
+      "explanation": "Because 8 + 20 = 28"
+    }
+  ],
+  "approach": "We use the Two Pointer approach since the array is sorted:\n\n1. Initialize two pointers: one at the beginning (`start = 0`) and one at the end (`end = numbers.length - 1`).\n2. Compute the sum of the numbers at these pointers.\n3. If the sum equals the target, return [start + 1, end + 1].\n4. If the sum is less than the target, move the start pointer forward.\n5. If the sum is greater than the target, move the end pointer backward.\n\nThis works in O(n) time and O(1) space.",
+  "code": "var twoSum = function(numbers, target) {\n  let start = 0;\n  let end = numbers.length - 1;\n\n  while (start < end) {\n    let sum = numbers[start] + numbers[end];\n\n    if (sum === target) {\n      return [start + 1, end + 1];\n    }\n\n    if (sum < target) {\n      start++;\n    } else {\n      end--;\n    }\n  }\n};",
+  "timeComplexity": "O(n), where n is the number of elements in the array.",
+  "spaceComplexity": "O(1), since no extra space is used.",
+  "leetcodeLink": "https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/",
+  "pptLink": "https://1drv.ms/p/c/d9a1d5f2dacf7aea/IQSyKWiCFiQdRa1GP0WE7HztAXvAce1PoIyqMh7hRJg--MM?em=2&amp;wdAr=1.3333333333333333",
+  "videoLink": "eVMzqVbn1ig"
+}

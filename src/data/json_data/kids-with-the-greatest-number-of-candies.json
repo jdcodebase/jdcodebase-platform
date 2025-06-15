@@ -1,0 +1,27 @@
+{
+  "title": "Kids With the Greatest Number of Candies",
+  "slug": "kids-with-the-greatest-number-of-candies",
+  "leetcodeId": "#1431",
+  "category": ["Array", "Foundation"],
+  "problemStatement": "There are n kids with candies. You're given an integer array `candies`, where `candies[i]` represents the number of candies the i-th kid has, and an integer `extraCandies`, which denotes the number of extra candies you have.\n\nReturn a boolean array result of length n, where `result[i]` is true if, after giving all the extra candies to the i-th kid, they will have the greatest number of candies among all kids (or at least equal to the max).",
+  "examples": [
+    {
+      "input": "candies = [2,3,5,1,3], extraCandies = 3",
+      "output": "[true,true,true,false,true]",
+      "explanation": [
+        "The max candy count is 5. After giving 3 extra candies:",
+        "Kid 0: 2 + 3 = 5 → true",
+        "Kid 1: 3 + 3 = 6 → true",
+        "Kid 2: 5 + 3 = 8 → true",
+        "Kid 3: 1 + 3 = 4 → false",
+        "Kid 4: 3 + 3 = 6 → true"
+      ]
+    }
+  ],
+  "approach": "Approach: Loop + Math.max\n1. Use `Math.max(...candies)` to find the current max candy count.\n2. Loop through each kid and check if `candies[i] + extraCandies >= max`.\n3. Replace each element in the candies array with true or false based on this condition.\n4. Return the updated array.\n\nThis method is concise and leverages built-in JavaScript features.",
+  "code": "var kidsWithCandies = function(candies, extraCandies) {\n    let maxCandies = Math.max(...candies);\n    for (let i = 0; i < candies.length; i++) {\n        candies[i] = candies[i] + extraCandies >= maxCandies;\n    }\n    return candies;\n};",
+  "timeComplexity": "O(n)",
+  "spaceComplexity": "O(1) (excluding output array)",
+  "leetcodeLink": "https://leetcode.com/problems/kids-with-the-greatest-number-of-candies/",
+  "videoLink": "OS8SFy7T8lU"
+}

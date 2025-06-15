@@ -1,0 +1,31 @@
+{
+  "title": "To Lower Case",
+  "slug": "to-lower-case",
+  "leetcodeId": "#709",
+  "category": ["String", "Foundation"],
+  "problemStatement": "You're given a string `s`. You need to return the same string, but with every uppercase letter converted to lowercase. All other characters remain unchanged.",
+  "examples": [
+    {
+      "input": "\"Hello\"",
+      "output": "\"hello\"",
+      "explanation": "Only 'H' is uppercase and gets converted."
+    },
+    {
+      "input": "\"here\"",
+      "output": "\"here\"",
+      "explanation": "All characters are already lowercase."
+    },
+    {
+      "input": "\"LOVELY\"",
+      "output": "\"lovely\"",
+      "explanation": "All uppercase letters are converted to lowercase."
+    }
+  ],
+  "approach": "We manually convert each character to lowercase using ASCII values. \n\n1. Uppercase characters (A–Z) have ASCII values from 65 to 90. Lowercase characters (a–z) are from 97 to 122. The difference is 32.\n\n2. We loop through each character in the string:\n3. If it's an uppercase letter, we add 32 to its ASCII value to get the lowercase version.\n4. If it's not uppercase, we keep it as it is.\n\nThis teaches how character codes work in string manipulation.",
+  "code": "// 🔹 Manual ASCII-based approach\nvar toLowerCase = function (s) {\n  let str = \"\";\n\n  for (let i = 0; i < s.length; i++) {\n    let charCode = s[i].charCodeAt(0);\n    if (charCode >= 65 && charCode <= 90) {\n      str += String.fromCharCode(charCode + 32);\n    } else {\n      str += s[i];\n    }\n  }\n\n  return str;\n};\n\n// 🔹 One-liner (Built-in method)\n// return s.toLowerCase();",
+  "timeComplexity": "O(n), where n is the length of the string.",
+  "spaceComplexity": "O(n), for the result string.",
+  "leetcodeLink": "https://leetcode.com/problems/to-lower-case/",
+  "pptLink": "https://1drv.ms/p/c/d9a1d5f2dacf7aea/IQSvr4Wk_KyHT45gJ-43iNhAAQZG3_K4HEY4ARAN4ZJN_Eo",
+  "videoLink": "lbnY8qnATbk"
+}

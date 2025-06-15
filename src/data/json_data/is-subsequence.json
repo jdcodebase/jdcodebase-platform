@@ -1,0 +1,31 @@
+{
+  "title": "Is Subsequence",
+  "slug": "is-subsequence",
+  "leetcodeId": "#392",
+  "category": ["String", "Two Pointer"],
+  "problemStatement": "Given two strings s and t, return true if s is a subsequence of t, or false otherwise.\n\nA subsequence of a string is a new string formed by deleting some (or no) characters from the original string, without disturbing the relative order of the remaining characters.",
+  "examples": [
+    {
+      "input": "s = \"abc\", t = \"ahbgdc\"",
+      "output": "true",
+      "explanation": "\"a\", \"b\", and \"c\" appear in order in t."
+    },
+    {
+      "input": "s = \"axc\", t = \"ahbgdc\"",
+      "output": "false",
+      "explanation": "\"x\" is not present in t, so s is not a subsequence."
+    },
+    {
+      "input": "s = \"ace\", t = \"abcde\"",
+      "output": "true",
+      "explanation": "All characters of s appear in order in t."
+    }
+  ],
+  "approach": "We use the **Two Pointer Technique** to efficiently traverse both strings:\n\n1. Initialize two pointers: `sIndex` for string **s** and `tIndex` for string **t**.\n2. Loop through string **t**:\n   - If `s[sIndex] === t[tIndex]`, move both pointers forward (we found a match).\n   - Otherwise, move only `tIndex`.\n3. If we reach the end of string **s**, that means all characters of **s** were found in order inside **t**. So, **s** is a subsequence of **t**.\n\nThis approach works in **O(n)** time with **O(1)** space.",
+  "code": "var isSubsequence = function(s, t) {\n  let sIndex = 0;\n  let tIndex = 0;\n\n  while (tIndex < t.length) {\n    if (s[sIndex] === t[tIndex]) {\n      sIndex++;\n    }\n    tIndex++;\n  }\n\n  return sIndex === s.length;\n};\n\nconsole.log(isSubsequence(\"abc\", \"ahbgdc\")); // true\nconsole.log(isSubsequence(\"axc\", \"ahbgdc\")); // false",
+  "timeComplexity": "O(n), where n is the length of string t",
+  "spaceComplexity": "O(1), using just two pointers",
+  "leetcodeLink": "https://leetcode.com/problems/is-subsequence/",
+  "pptLink": "https://1drv.ms/p/c/d9a1d5f2dacf7aea/IQShKXPWeL_ySpKy86aaBxV-AQGibDqJdBthTiAy5XkfPRk?em=2&amp;wdAr=1.7777777777777777",
+  "videoLink": "SMopvt9jUIU"
+}

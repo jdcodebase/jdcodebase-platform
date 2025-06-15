@@ -1,5 +1,5 @@
-import NavBar from "@/components/common/Navbar";
 import "./globals.css";
+import NavBar from "@/components/common/Navbar";
 import Footer from "@/components/common/Footer";
 
 export const metadata = {
@@ -11,9 +11,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="bg-gradient-to-br from-neutral-900 via-neutral-800 to-neutral-700">
+      <head />
+      <body className="bg-gradient-to-br from-neutral-900 via-neutral-800 to-neutral-700 text-white min-h-screen flex flex-col">
         <NavBar />
-        <main className="">{children}</main>
+        <main className="flex-1" role="main">
+          {children}
+        </main>
         <Footer />
       </body>
     </html>

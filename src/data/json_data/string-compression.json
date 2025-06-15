@@ -1,0 +1,31 @@
+{
+  "title": "String Compression",
+  "slug": "string-compression",
+  "leetcodeId": "#443",
+  "category": ["String", "Two Pointer"],
+  "problemStatement": "You're given an array of characters chars. Your task is to compress the array in-place using the following rules:\n\n- For each group of consecutive repeating characters:\n  - If the count is 1, just write the character.\n  - If the count is more than 1, write the character followed by the count (split digits like '12' into '1', '2').\n\nThe result must be written in-place and the function should return the new length of the array.\n\n🚨 Space complexity must be O(1), i.e., constant extra space.",
+  "examples": [
+    {
+      "input": "chars = ['a','a','b','b','c','c','c']",
+      "output": "6",
+      "explanation": "The array is compressed to ['a','2','b','2','c','3']"
+    },
+    {
+      "input": "chars = ['a']",
+      "output": "1",
+      "explanation": "No compression needed, output remains ['a']"
+    },
+    {
+      "input": "chars = ['a','b','b','b','b','b','b','b','b','b','b','b','b']",
+      "output": "4",
+      "explanation": "The array is compressed to ['a','b','1','2']"
+    }
+  ],
+  "approach": "We solve this using the Two Pointer technique:\n\n1. **Read Pointer:** Scans through the array to find groups of repeating characters.\n2. **Write Pointer:** Writes the compressed version back into the array.\n\nFor each group of repeating characters:\n- We write the character to the `write` pointer.\n- If the character repeats more than once, convert the count to a string and write each digit separately.\n\nThis is done **in-place** without using extra space. We return the new length of the compressed array (i.e., the final position of the `write` pointer).",
+  "code": "var compress = function (chars) {\n  let read = 0;\n  let write = 0;\n\n  while (read < chars.length) {\n    let count = 0;\n    let char = chars[read];\n\n    while (read < chars.length && chars[read] === char) {\n      read++;\n      count++;\n    }\n\n    chars[write++] = char;\n\n    if (count > 1) {\n      for (let c of count.toString()) {\n        chars[write++] = c;\n      }\n    }\n  }\n\n  return write;\n};\n\nconsole.log(compress(['a','a','b','b','c','c','c'])); // 6",
+  "timeComplexity": "O(n) – each character is read and written once",
+  "spaceComplexity": "O(1) – in-place modification using constant space",
+  "leetcodeLink": "https://leetcode.com/problems/string-compression/",
+  "pptLink": "https://1drv.ms/p/c/d9a1d5f2dacf7aea/IQTunHPpAmKGQZxeWQcNBTTcAQuvSb3x1FZiH8HBtlVyI5I?em=2&amp;wdAr=1.7777777777777777",
+  "videoLink": "Aoru9tho5mo"
+}

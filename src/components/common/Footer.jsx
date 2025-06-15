@@ -10,7 +10,7 @@ export default function Footer() {
           <p>Your one-stop coding platform — learn, code, grow.</p>
         </div>
 
-        <div>
+        <nav aria-label="Footer Quick Links">
           <h3 className="text-lg font-semibold text-white mb-3">Quick Links</h3>
           <ul className="space-y-2">
             <li>
@@ -29,17 +29,18 @@ export default function Footer() {
               </Link>
             </li>
           </ul>
-        </div>
+        </nav>
 
-        <div>
+        <address className="not-italic">
           <h3 className="text-lg font-semibold text-white mb-3">
             Connect with Me
           </h3>
-          <div className="flex space-x-4">
+          <div className="flex space-x-4" aria-label="Social Media Links">
             <a
               href="https://youtube.com/@jdcodebase-en?si=KU_TsQUT_LfU9oke"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="JDCodebase on YouTube"
             >
               <FaYoutube size={24} className="hover:text-red-500" />
             </a>
@@ -47,6 +48,7 @@ export default function Footer() {
               href="https://github.com/jd-code-base"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="JDCodebase on GitHub"
             >
               <FaGithub size={24} className="hover:text-white" />
             </a>
@@ -54,11 +56,12 @@ export default function Footer() {
               href="https://www.linkedin.com/in/jatin-dhamija-971309252/"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="JDCodebase on LinkedIn"
             >
               <FaLinkedin size={24} className="hover:text-blue-400" />
             </a>
           </div>
-        </div>
+        </address>
       </div>
 
       <div className="mt-10 text-center text-sm text-gray-500 border-t border-neutral-700 pt-5">

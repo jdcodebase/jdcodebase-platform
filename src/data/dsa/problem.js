@@ -217,6 +217,15 @@ export const problems = [
   },
   {
     id: 25,
+    title: "Reverse String II",
+    leetcode: "#557",
+    slug: "reverse-string-ii",
+    topic: "String",
+    topics: ["String", "Two Pointer"],
+    url: "/dsa/string/problem/reverse-string-ii",
+  },
+  {
+    id: 26,
     title: "Reverse Words in a String III",
     leetcode: "#557",
     slug: "reverse-words-in-a-string-iii",

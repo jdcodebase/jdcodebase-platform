@@ -1,0 +1,26 @@
+{
+  "title": "Reverse String II",
+  "slug": "reverse-string-ii",
+  "leetcodeId": "#541",
+  "category": ["String", "Two Pointer"],
+  "problemStatement": "You're given a string `s` and an integer `k`. The task is to reverse the first `k` characters for every `2k` characters, starting from the beginning of the string.\n\nRules:\n1. If there are fewer than `k` characters left, reverse all of them.\n2. If there are at least `k` but fewer than `2k` characters, then reverse only the first `k`, and leave the rest as-is.",
+  "examples": [
+    {
+      "input": "s = \"abcdefg\", k = 2",
+      "output": "\"bacdfeg\"",
+      "explanation": "First block: \"ab\" → \"ba\", Second block: \"ef\" → \"fe\". Final string: \"bacdfeg\"."
+    },
+    {
+      "input": "s = \"abcd\", k = 2",
+      "output": "\"bacd\"",
+      "explanation": "Reverse first k = 2 → \"ab\" → \"ba\", rest stays same → \"bacd\"."
+    }
+  ],
+  "approach": "1. Convert the string into a character array for easy in-place operations.\n2. Loop through the string in increments of `2k`.\n3. For each chunk, reverse the first `k` characters using two pointers.\n4. Use `Math.min(i + k - 1, s.length - 1)` to handle boundary conditions safely.\n5. Finally, join the array and return the result.",
+  "code": "var reverseStr = function(s, k) {\n    let arr = s.split('');\n    for (let i = 0; i < s.length; i += 2 * k) {\n        let left = i;\n        let right = Math.min(i + k - 1, s.length - 1);\n        while (left < right) {\n            [arr[left], arr[right]] = [arr[right], arr[left]];\n            left++;\n            right--;\n        }\n    }\n    return arr.join('');\n};",
+  "timeComplexity": "O(n) – We iterate over the string once in chunks.",
+  "spaceComplexity": "O(n) – Due to character array manipulation.",
+  "leetcodeLink": "https://leetcode.com/problems/reverse-string-ii/",
+  "pptLink": "https://1drv.ms/p/c/d9a1d5f2dacf7aea/IQSbaolh2QPjTKKKjMRrIyJvAZX0RCkLR0JGcc4_Sl2H20Y?em=2&amp;wdAr=1.7777777777777777",
+  "videoLink": "cYY9bWqgmxg"
+}

@@ -9,9 +9,13 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@codemirror/lang-javascript": "^6.2.4",
     "@nextui-org/react": "^2.6.11",
     "@tailwindcss/typography": "^0.5.16",
+    "@uiw/codemirror-theme-dracula": "^4.23.13",
+    "@uiw/react-codemirror": "^4.23.13",
     "clsx": "^2.1.1",
+    "codemirror": "^6.0.1",
     "gray-matter": "^4.0.3",
     "lucide-react": "^0.513.0",
     "next": "15.3.3",

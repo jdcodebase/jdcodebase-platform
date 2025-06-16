@@ -18,6 +18,7 @@ const navLinks = [
   { name: "JavaScript", href: "/languages/js" },
   { name: "C++", href: "/languages/cpp" },
   { name: "Projects", href: "/projects" },
+  { name: "Playground", href: "/playground" },
 ];
 
 export default function Navbar() {
@@ -99,6 +100,8 @@ export default function Navbar() {
             ))}
           </DropdownMenu>
         </Dropdown>
+
+        <Link href="/playground">Playground</Link>
 
         <form
           onSubmit={handleSearch}

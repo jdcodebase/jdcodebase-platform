@@ -218,7 +218,7 @@ export const problems = [
   {
     id: 25,
     title: "Reverse String II",
-    leetcode: "#557",
+    leetcode: "#541",
     slug: "reverse-string-ii",
     topic: "String",
     topics: ["String", "Two Pointer"],
@@ -232,5 +232,14 @@ export const problems = [
     topic: "String",
     topics: ["String", "Two Pointer"],
     url: "/dsa/string/problem/reverse-words-in-a-string-iii",
+  },
+  {
+    id: 27,
+    title: "Count Binary Substrings",
+    leetcode: "#696",
+    slug: "count-binary-substrings",
+    topic: "String",
+    topics: ["String", "Two Pointer"],
+    url: "/dsa/string/problem/count-binary-substrings",
   },
 ];

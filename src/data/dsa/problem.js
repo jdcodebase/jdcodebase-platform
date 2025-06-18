@@ -242,4 +242,13 @@ export const problems = [
     topics: ["String", "Two Pointer"],
     url: "/dsa/string/problem/count-binary-substrings",
   },
+  {
+    id: 28,
+    title: "Shortest Distance to a Character",
+    leetcode: "#821",
+    slug: "shortest-distance-to-a-character",
+    topic: "String",
+    topics: ["Array", "Two Pointer", "String"],
+    url: "/dsa/string/problem/shortest-distance-to-a-character",
+  },
 ];

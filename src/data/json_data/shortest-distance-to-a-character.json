@@ -1,0 +1,24 @@
+{
+  "title": "Shortest Distance to a Character",
+  "slug": "shortest-distance-to-a-character",
+  "leetcodeId": "#821",
+  "category": ["Array", "Two Pointer", "String"],
+  "problemStatement": "You're given a string `s` and a character `c` that is guaranteed to occur at least once in `s`.\n\nYour task is to return an array of integers — where each element represents the shortest distance from the corresponding character in the string to the nearest occurrence of `c`.\n\nDistance is the absolute difference between indices.",
+  "examples": [
+    {
+      "input": "s = \"loveleetcode\", c = \"e\"",
+      "output": "[3,2,1,0,1,0,0,1,2,2,1,0]"
+    },
+    {
+      "input": "s = \"aaab\", c = \"b\"",
+      "output": "[3,2,1,0]"
+    }
+  ],
+  "approach": "### Key Idea\n1. First, collect all the indices where the character `c` appears and store them in an array `cIndexes`.\n2. Then traverse the string `s`, and for each character, compute the closest distance to any of the indices in `cIndexes`.\n3. Use a pointer `index` to keep track of the closest positions in `cIndexes`.\n4. If current index is before or at `cIndexes[index]`, use that.\n5. If it's after, check which of `cIndexes[index]` or `cIndexes[index + 1]` is closer and update accordingly.\n\nThis avoids brute force and leverages an efficient two-pointer technique.",
+  "code": "let cIndexes = [];\n\nfor (let i = 0; i < s.length; i++) {\n  if (s[i] === c) {\n    cIndexes.push(i);\n  }\n}\n\nlet distance = [];\nlet index = 0;\n\nfor (let i = 0; i < s.length; i++) {\n  if (i <= cIndexes[index]) {\n    let dist = Math.abs(i - cIndexes[index]);\n    distance.push(dist);\n  } else {\n    if (index + 1 < cIndexes.length) {\n      let dist1 = Math.abs(i - cIndexes[index]);\n      let dist2 = Math.abs(i - cIndexes[index + 1]);\n      if (dist2 < dist1) {\n        index++;\n        distance.push(dist2);\n      } else {\n        distance.push(dist1);\n      }\n    } else {\n      let dist = Math.abs(i - cIndexes[index]);\n      distance.push(dist);\n    }\n  }\n}\n\nreturn distance;",
+  "timeComplexity": "O(n) — One pass to gather indices, one pass to calculate distances.",
+  "spaceComplexity": "O(n) — To store both `cIndexes` and the `distance` result array.",
+  "leetcodeLink": "https://leetcode.com/problems/shortest-distance-to-a-character/",
+  "videoLink": "n6U8sUmBMho",
+  "pptLink": "https://1drv.ms/p/c/d9a1d5f2dacf7aea/IQQDo50YDcoaRLavSNTWlJm5Ac-IamYkQUXPOqh-Rxe6klE?em=2&amp;wdAr=1.7777777777777777"
+}

@@ -5,7 +5,7 @@ export const jsTopics = [
       {
         name: "What is JavaScript",
         slug: "what-is-js",
-        path: "/languages/js/what-is-js",
+        path: "/languages/js",
       },
       {
         name: "History of JavaScript",

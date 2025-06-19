@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { FaYoutube, FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaYoutube, FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
 
 export default function Footer() {
   return (
@@ -59,6 +59,14 @@ export default function Footer() {
               aria-label="JDCodebase on LinkedIn"
             >
               <FaLinkedin size={24} className="hover:text-blue-400" />
+            </a>
+            <a
+              href="https://www.instagram.com/jdcodebase/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="JDCodebase on Instagram"
+            >
+              <FaInstagram size={24} className="hover:text-blue-400" />
             </a>
           </div>
         </address>

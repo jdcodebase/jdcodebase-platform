@@ -36,7 +36,7 @@ export default function HomePage() {
           href="https://www.youtube.com/@JDCodebase-EN"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-block mt-6 bg-blue-600 px-6 py-3 rounded-md text-white hover:bg-blue-500 transition"
+          className="inline-block mt-6 bg-blue-600 px-6 py-3 rounded-md text-white hover:bg-blue-500 transition mb-5 "
           aria-label="Subscribe to JDCodebase on YouTube"
         >
           Subscribe on YouTube

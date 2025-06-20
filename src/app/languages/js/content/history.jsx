@@ -4,7 +4,7 @@ export default function HistoryOfJavaScript() {
   return (
     <div className="text-white px-4 md:px-8 py-6 bg-neutral-950 min-h-screen flex flex-col justify-between">
       <div>
-        <h1 className="text-4xl font-bold mb-6 text-yellow-400">
+        <h1 className="text-4xl font-bold mb-6 text-white">
           History of JavaScript
         </h1>
 
@@ -15,8 +15,8 @@ export default function HistoryOfJavaScript() {
           <em>JavaScript</em>.
         </p>
 
-        <h2 className="text-2xl font-semibold text-green-400 mt-6 mb-2">
-          📛 Why the Name “JavaScript”?
+        <h2 className="text-2xl font-semibold text-white mt-6 mb-2">
+          Why the Name “JavaScript”?
         </h2>
         <p className="text-gray-300 mb-4">
           Despite the name, JavaScript has{" "}
@@ -30,8 +30,8 @@ export default function HistoryOfJavaScript() {
           Java are as different as car and carpet.
         </p>
 
-        <h2 className="text-2xl font-semibold text-green-400 mt-6 mb-2">
-          🗓️ Key Milestones
+        <h2 className="text-2xl font-semibold text-white mt-6 mb-2">
+          Key Milestones
         </h2>
         <ul className="list-disc list-inside text-gray-300 space-y-2">
           <li>
@@ -55,8 +55,8 @@ export default function HistoryOfJavaScript() {
           </li>
         </ul>
 
-        <h2 className="text-2xl font-semibold text-green-400 mt-6 mb-2">
-          💡 Why It Matters
+        <h2 className="text-2xl font-semibold text-white mt-6 mb-2">
+          Why It Matters
         </h2>
         <p className="text-gray-300 mb-4">
           Knowing the history and naming confusion helps understand JavaScript’s

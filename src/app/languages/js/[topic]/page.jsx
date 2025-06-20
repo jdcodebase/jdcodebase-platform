@@ -4,6 +4,8 @@ import dynamic from "next/dynamic";
 const topicComponents = {
   "what-is-js": dynamic(() => import("../content/what-is-js")),
   history: dynamic(() => import("../content/history")),
+  versions: dynamic(() => import("../content/versions")),
+  "how-to-run": dynamic(() => import("../content/how-to-run")),
 };
 
 export default function TopicPage({ params }) {

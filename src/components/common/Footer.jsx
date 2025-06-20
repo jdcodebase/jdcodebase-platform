@@ -3,7 +3,7 @@ import { FaYoutube, FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
 
 export default function Footer() {
   return (
-    <footer className="bg-neutral-900 text-gray-300 px-6 py-10 mt-12">
+    <footer className="bg-neutral-900 text-gray-300 px-6 py-10">
       <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-8">
         <div>
           <h2 className="text-xl font-bold text-white mb-2">JDCodebase</h2>

@@ -251,4 +251,13 @@ export const problems = [
     topics: ["Array", "Two Pointer", "String"],
     url: "/dsa/string/problem/shortest-distance-to-a-character",
   },
+  {
+    id: 29,
+    title: "Sort Array by Parity",
+    leetcode: "#905",
+    slug: "sort-array-by-parity",
+    topic: "Array",
+    topics: ["Array", "Two Pointer", "Sorting"],
+    url: "/dsa/string/problem/sort-array-by-parity",
+  },
 ];

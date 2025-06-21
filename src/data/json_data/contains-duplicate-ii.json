@@ -1,0 +1,27 @@
+{
+  "title": "Contains Duplicate II",
+  "slug": "contains-duplicate-ii",
+  "leetcodeId": "#219",
+  "category": ["Array", "Hash Set", "Sliding Window"],
+  "problemStatement": "Given an integer array `nums` and an integer `k`, return `true` if there are two distinct indices `i` and `j` in the array such that `nums[i] == nums[j]` and `abs(i - j) <= k`.",
+  "examples": [
+    {
+      "input": "nums = [1, 2, 3, 1], k = 3",
+      "output": "true"
+    },
+    {
+      "input": "nums = [1, 0, 1, 1], k = 1",
+      "output": "true"
+    },
+    {
+      "input": "nums = [1, 2, 3, 1, 2, 3], k = 2",
+      "output": "false"
+    }
+  ],
+  "approach": "Approach 1. Brute Force Approach:\n1. Iterate through each element in the array using index `i`.\n2. For each `i`, check the next `k` elements to see if any are equal to `nums[i]`.\n3. If found, return true.\n\nApproach 2. Optimized Sliding Window Approach:\n1. Use a Set to maintain the last `k` elements we've seen.\n2.Loop through the array:\n3. If the current element is already in the Set, return true.\n4. Otherwise, add it to the Set.\n5. If the Set size exceeds `k`, remove the element that falls out of the window range.\n6. if no duplicates found within range `k`, return false.",
+  "code": "/* Brute Force Approach */\nvar containsNearbyDuplicate = function(nums, k) {\n  for (let i = 0; i < nums.length; i++) {\n    for (let j = i + 1; j <= i + k && j < nums.length; j++) {\n      if (nums[i] === nums[j]) return true;\n    }\n  }\n  return false;\n};\n\n/* Optimized Sliding Window Approach */\nvar containsNearbyDuplicate = function(nums, k) {\n  const set = new Set();\n  for (let i = 0; i < nums.length; i++) {\n    if (set.has(nums[i])) return true;\n    set.add(nums[i]);\n    if (set.size > k) {\n      set.delete(nums[i - k]);\n    }\n  }\n  return false;\n};",
+  "timeComplexity": "O(n)",
+  "spaceComplexity": "O(min(n, k))",
+  "leetcodeLink": "https://leetcode.com/problems/contains-duplicate-ii/",
+  "videoLink": "YOUR_VIDEO_ID_HERE"
+}

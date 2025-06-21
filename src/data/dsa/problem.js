@@ -269,4 +269,13 @@ export const problems = [
     topics: ["Two Pointer", "String"],
     url: "/dsa/string/problem/reverse-only-letters",
   },
+  {
+    id: 31,
+    title: "Contains Duplicate II",
+    leetcode: "#219",
+    slug: "contains-duplicate-ii",
+    topic: "Array",
+    topics: ["Array", "Hash Set", "Sliding Window"],
+    url: "/dsa/string/problem/contains-duplicate-ii",
+  },
 ];

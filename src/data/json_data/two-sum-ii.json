@@ -2,7 +2,7 @@
   "title": "Two Sum II - Input Array Is Sorted",
   "slug": "two-sum-ii",
   "leetcodeId": "#167",
-  "category": ["Array", "Two Pointer"],
+  "category": ["Array", "Two Pointer", "Binary Search"],
   "problemStatement": "You're given a 1-indexed array of integers called numbers, sorted in non-decreasing order. Your task is to find two numbers such that they add up to a given target. Return their indices (1-based) as an array [index1, index2], where 1 <= index1 < index2 <= numbers.length.\n\n⚠️ Each input has exactly one solution, and you cannot use the same element twice.\n\n🧠 Also, your solution must use only constant extra space.",
   "examples": [
     {

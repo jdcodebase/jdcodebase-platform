@@ -2,7 +2,7 @@
   "title": "Count Binary Substrings",
   "slug": "count-binary-substrings",
   "leetcodeId": "#696",
-  "category": "String",
+  "category": ["String", "Two Pointer"],
   "problemStatement": "You’re given a binary string. Your task is to count the number of substrings that:\n- Have equal number of 0s and 1s, and\n- All the 0s and all the 1s must be grouped together.\n\nNote: Repeated substrings are counted each time they occur.",
   "examples": [
     {

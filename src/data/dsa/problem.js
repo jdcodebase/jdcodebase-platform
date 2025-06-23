@@ -278,4 +278,20 @@ export const problems = [
     topics: ["Array", "Hash Set", "Sliding Window"],
     url: "/dsa/string/problem/contains-duplicate-ii",
   },
+  {
+    id: 32,
+    title: "Longest Harmonious Subsequence",
+    leetcode: "#594",
+    slug: "longest-harmonious-subsequence",
+    topic: "Array",
+    topics: [
+      "Array",
+      "Hash Map",
+      "Sorting",
+      "Sliding Window",
+      "Frequency Count",
+      "Two Pointer",
+    ],
+    url: "/dsa/string/problem/longest-harmonious-subsequence",
+  },
 ];

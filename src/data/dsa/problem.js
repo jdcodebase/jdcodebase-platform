@@ -294,4 +294,13 @@ export const problems = [
     ],
     url: "/dsa/string/problem/longest-harmonious-subsequence",
   },
+  {
+    id: 33,
+    title: "Maximum Average Subarray I",
+    leetcode: "#643",
+    slug: "maximum-average-subarray",
+    topic: "Array",
+    topics: ["Array", "Sliding Window"],
+    url: "/dsa/string/problem/maximum-average-subarray",
+  },
 ];

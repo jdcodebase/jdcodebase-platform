@@ -1,0 +1,26 @@
+{
+  "title": "Maximum Average Subarray I",
+  "slug": "maximum-average-subarray",
+  "leetcodeId": "#643",
+  "category": ["Array", "Sliding Window"],
+  "problemStatement": "You are given an integer array `nums` containing `n` elements, and an integer `k`. Your task is to find a contiguous subarray of length exactly `k` that has the maximum average. Return this average value. Your answer is considered correct if it is within 10^-5 of the actual answer.",
+  "examples": [
+    {
+      "input": "nums = [1, 12, -5, -6, 50, 3], k = 4",
+      "output": "12.75000",
+      "explanation": "Subarray [12, -5, -6, 50] gives the maximum average 12.75."
+    },
+    {
+      "input": "nums = [5], k = 1",
+      "output": "5.00000",
+      "explanation": "Only one number, so average is the number itself."
+    }
+  ],
+  "approach": "Approach:\nSliding Window Technique\n\n1. First, compute the sum of the first `k` elements and store it as `subArray`.\n2. Calculate the average `subArray / k` and store it as initial `avg`.\n3. Slide the window by adding the next element and removing the one that just went out of the window.\n4. At each step, update the maximum average if the new one is higher.\n5. Finally, return the maximum average rounded to five decimal places using `.toFixed(5)`.",
+  "code": "// 🔹 JavaScript Solution using Sliding Window\nvar findMaxAverage = function(nums, k) {\n  let subArray = 0;\n  for (let i = 0; i < k; i++) {\n    subArray += nums[i];\n  }\n  let avg = subArray / k;\n\n  for (let i = k; i < nums.length; i++) {\n    subArray = subArray + nums[i] - nums[i - k];\n    avg = Math.max(avg, subArray / k);\n  }\n\n  return avg.toFixed(5);\n};\n\nconsole.log(findMaxAverage([1, 12, -5, -6, 50, 3], 4)); // Output: 12.75000\nconsole.log(findMaxAverage([5], 1)); // Output: 5.00000",
+  "timeComplexity": "O(n) — We traverse the array once after the initial k-element sum.",
+  "spaceComplexity": "O(1) — We use constant extra space.",
+  "leetcodeLink": "https://leetcode.com/problems/maximum-average-subarray-i/",
+  "pptLink": "https://1drv.ms/p/c/d9a1d5f2dacf7aea/IQSdsB2jkmV5SISFLa2WAPgoAeT-CM_wybmAdHGtJ2B4uD0?em=2&amp;wdAr=1.7777777777777777",
+  "videoLink": "83ca4jViqtQ"
+}

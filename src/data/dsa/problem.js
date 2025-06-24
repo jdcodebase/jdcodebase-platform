@@ -298,7 +298,7 @@ export const problems = [
     id: 33,
     title: "Maximum Average Subarray I",
     leetcode: "#643",
-    slug: "maximum-average-subarray",
+    slug: "maximum-average-subarray-i",
     topic: "Array",
     topics: ["Array", "Sliding Window"],
     url: "/dsa/string/problem/maximum-average-subarray",

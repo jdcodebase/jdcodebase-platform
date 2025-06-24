@@ -1,6 +1,6 @@
 {
   "title": "Maximum Average Subarray I",
-  "slug": "maximum-average-subarray",
+  "slug": "maximum-average-subarray-i",
   "leetcodeId": "#643",
   "category": ["Array", "Sliding Window"],
   "problemStatement": "You are given an integer array `nums` containing `n` elements, and an integer `k`. Your task is to find a contiguous subarray of length exactly `k` that has the maximum average. Return this average value. Your answer is considered correct if it is within 10^-5 of the actual answer.",

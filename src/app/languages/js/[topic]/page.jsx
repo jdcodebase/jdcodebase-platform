@@ -6,6 +6,7 @@ const topicComponents = {
   history: dynamic(() => import("../content/history")),
   versions: dynamic(() => import("../content/versions")),
   "how-to-run": dynamic(() => import("../content/how-to-run")),
+  variables: dynamic(() => import("../content/variables")),
 };
 
 export default function TopicPage({ params }) {

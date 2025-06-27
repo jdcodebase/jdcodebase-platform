@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://jdcodebase.vercel.app
+
+# Sitemaps
+Sitemap: https://jdcodebase.vercel.app/sitemap.xml

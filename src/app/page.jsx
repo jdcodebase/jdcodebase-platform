@@ -1,3 +1,32 @@
+export const metadata = {
+  title: "JDCodebase – Learn DSA, Projects & Blogs for Developers",
+  description:
+    "Master DSA, real-world projects, and developer blogs with JDCodebase. Built for self-taught devs serious about coding.",
+  openGraph: {
+    title: "JDCodebase – Learn DSA, Projects & Blogs for Developers",
+    description:
+      "Explore developer-focused content in DSA, JavaScript, and hands-on projects. JDCodebase is your launchpad.",
+    url: "https://jdcodebase.vercel.app",
+    siteName: "JDCodebase",
+    images: [
+      {
+        url: "https://jdcodebase.vercel.app/og-banner.png",
+        width: 1200,
+        height: 630,
+        alt: "JDCodebase Preview Banner",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "JDCodebase – Learn DSA, Projects & Blogs for Developers",
+    description:
+      "Explore developer-focused content in DSA, JavaScript, and hands-on projects. JDCodebase is your launchpad.",
+    images: ["https://jdcodebase.vercel.app/og-banner.png"],
+  },
+};
+
 import PlaylistSection from "@/components/home/PlaylistSection";
 import HeroSection from "@/components/home/HeroSection";
 import FeaturesSection from "@/components/home/FeaturesSection";

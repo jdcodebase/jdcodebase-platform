@@ -6,11 +6,11 @@ export default function DSAPage() {
   return (
     <>
       <SEO
-        title="Data Structures & Algorithms | JDCodebase"
-        description="Explore DSA problems and solutions categorized by topics. Master data structures and algorithms with JDCodebase."
+        title="Master Data Structures & Algorithms | DSA Practice Problems - JDCodebase"
+        description="Practice Data Structures and Algorithms with categorized DSA problems, optimized solutions, and detailed explanations. Perfect for beginners and coding interviews."
         url="https://jdcodebase.vercel.app/dsa"
         image="https://jdcodebase.vercel.app/og-banner.png"
-        keywords="DSA, data structures, algorithms, coding problems, LeetCode, interview prep, JDCodebase"
+        keywords="DSA problems, data structures, algorithms, LeetCode solutions, coding interview, DSA practice, JavaScript DSA, JDCodebase"
       />
 
       <div className="flex min-h-screen flex-col md:flex-row bg-neutral-950 text-white">

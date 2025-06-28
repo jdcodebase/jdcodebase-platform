@@ -1,4 +1,5 @@
 "use client";
+
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import clsx from "clsx";
@@ -9,13 +10,16 @@ export default function ProblemsSidebar() {
   const router = useRouter();
 
   const segments = pathname.split("/");
-  const currentTopic = segments[2]; // e.g. "array", "string"
+  const currentTopic = segments[2];
+
+  const normalize = (str) =>
+    str
+      .toLowerCase()
+      .replace(/\s+/g, "-")
+      .replace(/[^\w-]/g, "");
 
   const filteredProblems = problems.filter((problem) =>
-    problem.topics.some(
-      (topic) =>
-        topic.toLowerCase().replace(/\s+/g, "-") === currentTopic.toLowerCase()
-    )
+    problem.topics.some((topic) => normalize(topic) === normalize(currentTopic))
   );
 
   const heading =
@@ -35,15 +39,16 @@ export default function ProblemsSidebar() {
       {filteredProblems.length > 0 ? (
         <ul className="space-y-2">
           {filteredProblems.map((problem) => {
-            const dynamicUrl = `/dsa/${currentTopic}/problem/${problem.slug}`;
+            const problemUrl = `/dsa/${currentTopic}/problem/${problem.slug}`;
+            const isActive = pathname.endsWith(`/problem/${problem.slug}`);
 
             return (
               <li key={problem.slug}>
                 <Link
-                  href={dynamicUrl}
+                  href={problemUrl}
                   className={clsx(
                     "block px-3 py-2 rounded-md text-sm font-medium",
-                    pathname.endsWith(`/problem/${problem.slug}`)
+                    isActive
                       ? "bg-blue-600 text-white"
                       : "text-gray-300 hover:bg-gray-700 hover:text-white"
                   )}

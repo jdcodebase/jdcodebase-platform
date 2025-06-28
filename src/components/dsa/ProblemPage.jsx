@@ -1,24 +1,6 @@
-import fs from "fs";
-import path from "path";
 import ProblemsSidebar from "@/components/dsa/ProblemsSidebar";
+import { getProblemData } from "@/lib/problemUtils";
 
-// ✅ Read JSON problem file
-export async function getProblemData(slug) {
-  const filePath = path.join(
-    process.cwd(),
-    "src/data/json_data",
-    `${slug}.json`
-  );
-
-  if (!fs.existsSync(filePath)) {
-    return null;
-  }
-
-  const fileContent = fs.readFileSync(filePath, "utf-8");
-  return JSON.parse(fileContent);
-}
-
-// ✅ Main Page Component
 export default async function ProblemPage({ slug }) {
   const problem = await getProblemData(slug);
 
@@ -33,6 +15,23 @@ export default async function ProblemPage({ slug }) {
     );
   }
 
+  const {
+    title,
+    leetcodeId,
+    problemStatement,
+    examples,
+    approach,
+    code,
+    timeComplexity,
+    spaceComplexity,
+    videoLink,
+    pptLink,
+    leetcodeLink,
+    category,
+  } = problem;
+
+  const categoryList = Array.isArray(category) ? category.join(", ") : category;
+
   return (
     <div className="md:flex min-h-screen">
       <ProblemsSidebar />
@@ -40,35 +39,31 @@ export default async function ProblemPage({ slug }) {
       <main className="flex-1 p-6">
         <section className="max-w-3xl mx-auto py-10 text-white">
           <h1 className="text-3xl md:text-4xl font-bold mb-4">
-            {problem.title}
-            <span className="text-sm text-gray-400 ml-2">
-              ({problem.leetcodeId})
-            </span>
+            {title}
+            {leetcodeId && (
+              <span className="text-sm text-gray-400 ml-2">({leetcodeId})</span>
+            )}
           </h1>
 
-          <p className="text-gray-400 mb-6">
-            <strong className="text-white">Category:</strong>{" "}
-            {Array.isArray(problem.category)
-              ? problem.category.join(", ")
-              : problem.category}
-          </p>
-
-          {/* 🧩 Problem Statement */}
-          {problem.problemStatement && (
-            <section className="mb-8">
-              <h2 className="text-2xl font-semibold mb-2">
-                🧩 Problem Statement
-              </h2>
-              <p className="text-gray-300">{problem.problemStatement}</p>
-            </section>
+          {categoryList && (
+            <p className="text-gray-400 mb-6">
+              <strong className="text-white">Category:</strong> {categoryList}
+            </p>
           )}
 
-          {/* 📚 Examples */}
-          {problem.examples?.length > 0 && (
-            <section className="mb-8">
-              <h2 className="text-2xl font-semibold mb-2">📚 Examples</h2>
-              {problem.examples.map((ex, i) => (
-                <div key={i} className="bg-gray-800 p-4 rounded-md mb-4 shadow">
+          {problemStatement && (
+            <Section title="🧩 Problem Statement">
+              <p className="text-gray-300">{problemStatement}</p>
+            </Section>
+          )}
+
+          {examples?.length > 0 && (
+            <Section title="📚 Examples">
+              {examples.map((ex, i) => (
+                <div
+                  key={i}
+                  className="bg-gray-800 p-4 rounded-md mb-4 shadow text-sm"
+                >
                   <p>
                     <strong>Input:</strong> <code>{ex.input}</code>
                   </p>
@@ -89,16 +84,14 @@ export default async function ProblemPage({ slug }) {
                   </div>
                 </div>
               ))}
-            </section>
+            </Section>
           )}
 
-          {/* 🧠 Approach */}
-          {problem.approach && (
-            <section className="mb-8">
-              <h2 className="text-2xl font-semibold mb-2">🧠 Approach</h2>
+          {approach && (
+            <Section title="🧠 Approach">
               <div className="text-gray-300 space-y-2">
-                {problem.approach.split("\n").map((line, index) => {
-                  if (/^Approach\s*\d+/i.test(line)) {
+                {approach.split("\n").map((line, index) => {
+                  if (/^Approach\s*\d*/i.test(line)) {
                     return (
                       <p key={index} className="font-semibold text-white mt-4">
                         {line}
@@ -122,64 +115,55 @@ export default async function ProblemPage({ slug }) {
                   );
                 })}
               </div>
-            </section>
+            </Section>
           )}
 
-          {/* 💻 Code */}
-          {problem.code && (
-            <section className="mb-8">
-              <h2 className="text-2xl font-semibold mb-2">💻 Code</h2>
+          {code && (
+            <Section title="💻 Code">
               <pre className="bg-gray-900 text-green-400 p-4 rounded-lg overflow-auto text-sm shadow">
-                <code className="whitespace-pre-wrap">{problem.code}</code>
+                <code className="whitespace-pre-wrap">{code}</code>
               </pre>
-            </section>
+            </Section>
           )}
 
-          {/* 📈 Complexity */}
-          <section className="mb-8">
-            <h2 className="text-2xl font-semibold mb-2">📈 Complexity</h2>
-            <p>
-              <strong>Time:</strong> {problem.timeComplexity}
-            </p>
-            <p>
-              <strong>Space:</strong> {problem.spaceComplexity}
-            </p>
-          </section>
+          {(timeComplexity || spaceComplexity) && (
+            <Section title="📈 Complexity">
+              <p>
+                <strong>Time:</strong> {timeComplexity || "N/A"}
+              </p>
+              <p>
+                <strong>Space:</strong> {spaceComplexity || "N/A"}
+              </p>
+            </Section>
+          )}
 
-          {/* 🎬 Video */}
-          {problem.videoLink && (
-            <section className="mb-8">
-              <h2 className="text-2xl font-semibold mb-2">
-                🎬 Watch Explanation
-              </h2>
+          {videoLink && (
+            <Section title="🎬 Watch Explanation">
               <div className="aspect-w-16 aspect-h-9 w-full">
                 <iframe
-                  src={`https://www.youtube.com/embed/${problem.videoLink}`}
-                  title="YouTube video"
+                  src={`https://www.youtube.com/embed/${videoLink}`}
+                  title="YouTube explanation"
+                  className="w-full h-64 md:h-96 rounded-lg"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
-                  className="w-full h-64 md:h-96 rounded-lg"
                 />
               </div>
-            </section>
+            </Section>
           )}
 
-          {problem.pptLink && (
-            <section className="mb-8">
-              <h2 className="text-2xl font-semibold mb-2">
-                📊 Presentation (PPT)
-              </h2>
+          {pptLink && (
+            <Section title="📊 Presentation (PPT)">
               <div className="aspect-w-16 aspect-h-9 w-full mb-4">
                 <iframe
-                  src={problem.pptLink}
-                  title="Problem Explanation PPT"
+                  src={pptLink}
+                  title="PPT explanation"
                   className="w-full h-64 md:h-96 rounded-lg border border-gray-700"
                   allowFullScreen
                   loading="lazy"
                 />
               </div>
               <a
-                href={problem.pptLink}
+                href={pptLink}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-blue-400 hover:underline"
@@ -187,17 +171,15 @@ export default async function ProblemPage({ slug }) {
               >
                 📥 Download PPT
               </a>
-            </section>
+            </Section>
           )}
 
-          {/* 📎 Resources */}
-          <section className="mb-8">
-            <h2 className="text-2xl font-semibold mb-2">📎 Resources</h2>
+          <Section title="📎 Resources">
             <ul className="list-disc ml-6 space-y-1">
-              {problem.leetcodeLink && (
+              {leetcodeLink && (
                 <li>
                   <a
-                    href={problem.leetcodeLink}
+                    href={leetcodeLink}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-blue-400 hover:underline"
@@ -207,9 +189,18 @@ export default async function ProblemPage({ slug }) {
                 </li>
               )}
             </ul>
-          </section>
+          </Section>
         </section>
       </main>
     </div>
+  );
+}
+
+function Section({ title, children }) {
+  return (
+    <section className="mb-8">
+      <h2 className="text-2xl font-semibold mb-2">{title}</h2>
+      {children}
+    </section>
   );
 }

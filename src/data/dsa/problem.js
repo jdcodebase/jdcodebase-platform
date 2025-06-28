@@ -1,4 +1,5 @@
 export const problems = [
+  // 🔹 Foundation
   {
     id: 1,
     title: "Two Sum",
@@ -98,6 +99,8 @@ export const problems = [
     topics: ["Array", "Two Pointer", "Sorting", "Foundation"],
     url: "/dsa/foundation/problem/squares-of-sorted-array",
   },
+
+  // 🔹 Two Pointer
   {
     id: 12,
     title: "Two Sum II - Input array is sorted",
@@ -258,7 +261,7 @@ export const problems = [
     slug: "sort-array-by-parity",
     topic: "Array",
     topics: ["Array", "Two Pointer", "Sorting"],
-    url: "/dsa/string/problem/sort-array-by-parity",
+    url: "/dsa/array/problem/sort-array-by-parity",
   },
   {
     id: 30,
@@ -269,6 +272,8 @@ export const problems = [
     topics: ["Two Pointer", "String"],
     url: "/dsa/string/problem/reverse-only-letters",
   },
+
+  // 🔹 Sliding Window
   {
     id: 31,
     title: "Contains Duplicate II",
@@ -276,7 +281,7 @@ export const problems = [
     slug: "contains-duplicate-ii",
     topic: "Array",
     topics: ["Array", "Hash Set", "Sliding Window"],
-    url: "/dsa/string/problem/contains-duplicate-ii",
+    url: "/dsa/array/problem/contains-duplicate-ii",
   },
   {
     id: 32,
@@ -292,7 +297,7 @@ export const problems = [
       "Frequency Count",
       "Two Pointer",
     ],
-    url: "/dsa/string/problem/longest-harmonious-subsequence",
+    url: "/dsa/array/problem/longest-harmonious-subsequence",
   },
   {
     id: 33,
@@ -301,6 +306,6 @@ export const problems = [
     slug: "maximum-average-subarray-i",
     topic: "Array",
     topics: ["Array", "Sliding Window"],
-    url: "/dsa/string/problem/maximum-average-subarray",
+    url: "/dsa/array/problem/maximum-average-subarray-i",
   },
 ];

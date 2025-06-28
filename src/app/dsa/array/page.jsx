@@ -9,11 +9,11 @@ export default function ArrayPage() {
   return (
     <>
       <SEO
-        title="Array DSA Problems | JDCodebase"
-        description="Practice array data structure problems with detailed solutions, code examples, and explanations. Perfect for beginners and interview prep."
+        title="Array Data Structure Problems in JavaScript | JDCodebase"
+        description="Master array data structure problems in JavaScript with step-by-step explanations, optimized solutions, and real interview-level DSA practice. Learn with JDCodebase."
         url="https://jdcodebase.vercel.app/dsa/array"
         image="https://jdcodebase.vercel.app/og-banner.png"
-        keywords="array problems, DSA with JavaScript, coding interview prep, data structures, array traversal, JDCodebase"
+        keywords="array problems in JavaScript, JavaScript DSA, array data structure, array coding questions, JavaScript interview questions, two pointer problems, sliding window DSA, JDCodebase"
       />
 
       <div className="md:flex min-h-screen">
@@ -25,12 +25,13 @@ export default function ArrayPage() {
 
             <p className="mb-4">
               Welcome to the <strong>Array</strong> section of JDCodebase!
+              Arrays are one of the most fundamental and frequently used data
+              structures in programming. Most DSA problems begin here.
             </p>
             <p className="mb-4">
-              Arrays are one of the most fundamental and frequently used data
-              structures in programming. Most DSA problems begin here. Learning
-              how to manipulate and traverse arrays is essential for becoming a
-              strong problem-solver.
+              Learning how to manipulate and traverse arrays is essential for
+              becoming a strong problem-solver. Master key concepts and
+              strengthen your foundation with these curated problems.
             </p>
 
             <h2 className="text-xl font-semibold mt-6 mb-2">
@@ -40,11 +41,11 @@ export default function ArrayPage() {
               <li>Basics: Traversal, insertion, deletion</li>
               <li>Prefix sums, difference arrays, and window-based patterns</li>
               <li>Sorting, searching, and optimizations with pointers</li>
-              <li>Recognizing patterns like frequency counts, merging, etc.</li>
+              <li>Pattern recognition like frequency counts, merging, etc.</li>
             </ul>
 
             <h2 className="text-xl font-semibold mt-6 mb-2">
-              🛠️ Common JavaScript Methods
+              🛠️ Useful JavaScript Methods
             </h2>
             <ul className="list-disc list-inside mb-6 space-y-1">
               <li>
@@ -54,13 +55,14 @@ export default function ArrayPage() {
                 <code>arr.pop()</code> — remove from end
               </li>
               <li>
-                <code>arr.shift()</code> / <code>arr.unshift(val)</code>
+                <code>arr.shift()</code>, <code>arr.unshift(val)</code> — front
+                operations
               </li>
               <li>
-                <code>arr.slice(start, end)</code> — extract subarray
+                <code>arr.slice(start, end)</code> — get subarray
               </li>
               <li>
-                <code>arr.splice(index, count)</code> — remove/insert items
+                <code>arr.splice(index, count)</code> — remove or insert
               </li>
               <li>
                 <code>arr.includes(val)</code>, <code>arr.indexOf(val)</code>

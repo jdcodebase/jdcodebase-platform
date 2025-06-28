@@ -1,4 +1,7 @@
-import { Code, BookOpen, HammerIcon } from "lucide-react";
+"use client";
+
+import Link from "next/link";
+import { Code, BookOpen, Hammer } from "lucide-react";
 
 export default function HeroSection() {
   return (
@@ -26,7 +29,7 @@ export default function HeroSection() {
         />
         <HeroButton
           href="/projects"
-          icon={<HammerIcon size={18} />}
+          icon={<Hammer size={18} />}
           text="Build Projects"
         />
       </div>
@@ -41,13 +44,13 @@ export default function HeroSection() {
 
 function HeroButton({ href, icon, text }) {
   return (
-    <a
+    <Link
       href={href}
-      className="bg-black hover:shadow-blue-500/20 hover:shadow-md text-white px-6 py-3 rounded-md shadow transition flex justify-center items-center gap-2 w-full sm:w-auto"
-      aria-label={text}
+      aria-label={`Go to ${text}`}
+      className="bg-black border border-gray-600 hover:shadow-blue-500/20 hover:shadow-md text-white px-6 py-3 rounded-md shadow transition flex justify-center items-center gap-2 w-full sm:w-auto focus:outline-none focus:ring-2 focus:ring-blue-500"
     >
       {icon}
-      {text}
-    </a>
+      <span>{text}</span>
+    </Link>
   );
 }

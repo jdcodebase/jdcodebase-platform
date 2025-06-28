@@ -2,6 +2,19 @@ export const metadata = {
   title: "JDCodebase – Learn DSA, Projects & Blogs for Developers",
   description:
     "Master DSA, real-world projects, and developer blogs with JDCodebase. Built for self-taught devs serious about coding.",
+  keywords: [
+    "DSA tutorials",
+    "JavaScript projects",
+    "developer blogs",
+    "self-taught dev roadmap",
+    "coding tutorials",
+    "JDCodebase",
+  ],
+  robots: {
+    index: true,
+    follow: true,
+    nocache: false,
+  },
   openGraph: {
     title: "JDCodebase – Learn DSA, Projects & Blogs for Developers",
     description:
@@ -35,7 +48,6 @@ export default function HomePage() {
   return (
     <main className="text-white px-5">
       <HeroSection />
-
       <PlaylistSection />
 
       <section className="my-20 text-center text-lg italic text-gray-200 max-w-3xl mx-auto">
@@ -44,20 +56,23 @@ export default function HomePage() {
       </section>
 
       <FeaturesSection />
-
-      <section className="mt-20 text-center max-w-3xl mx-auto">
-        <h2 className="text-2xl font-bold mb-3">🎬 Check Out JDCodebase</h2>
-        <p className="mb-4 text-gray-400">
-          Watch our latest content and start coding now.
+      <section
+        className="mt-20 text-center max-w-3xl mx-auto px-4"
+        aria-label="YouTube Section"
+      >
+        <h2 className="text-3xl font-bold mb-3">🎬 Check Out JDCodebase</h2>
+        <p className="text-gray-400 mb-6">
+          Watch our latest content and start coding your future.
         </p>
 
-        <div className="aspect-video w-full max-w-2xl mx-auto">
+        <div className="aspect-video w-full max-w-2xl mx-auto rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow">
           <iframe
             src="https://www.youtube.com/embed/videoseries?list=PLZlKM_ddNCGWWsyipsQ7OS_m5DnHaJ5yU"
-            title="JDCodebase YouTube Playlist"
+            title="JDCodebase DSA Playlist"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
-            className="w-full h-full rounded-lg hover:shadow-lg shadow-md shadow-white"
+            loading="lazy"
+            className="w-full h-full"
           />
         </div>
 
@@ -65,10 +80,10 @@ export default function HomePage() {
           href="https://www.youtube.com/@JDCodebase-EN"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-block mt-6 bg-blue-600 px-6 py-3 rounded-md text-white hover:bg-blue-500 transition mb-5 "
-          aria-label="Subscribe to JDCodebase on YouTube"
+          aria-label="Subscribe to JDCodebase YouTube Channel"
+          className="inline-block mt-6 mb-5 bg-blue-600 hover:bg-blue-500 text-white px-6 py-3 rounded-md transition-colors"
         >
-          Subscribe on YouTube
+          🔔 Subscribe on YouTube
         </a>
       </section>
     </main>

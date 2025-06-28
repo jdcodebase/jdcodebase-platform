@@ -1,28 +1,17 @@
-import Head from "next/head";
+import SEO from "@/components/common/SEO";
 import DsaMainContent from "@/components/dsa/DsaMainContent";
 import DsaSidebar from "@/components/dsa/DsaSidebar";
 
 export default function DSAPage() {
   return (
     <>
-      <Head>
-        <title>Data Structures & Algorithms | JDCodebase</title>
-        <meta
-          name="description"
-          content="Explore DSA problems and solutions categorized by topics. Master data structures and algorithms with JDCodebase."
-        />
-        <meta property="og:title" content="DSA | JDCodebase" />
-        <meta
-          property="og:description"
-          content="Daily DSA problems with solutions, code, and explanation. Build strong problem-solving skills with JDCodebase."
-        />
-        <meta property="og:type" content="website" />
-        {/* <meta property="og:url" content="https://yourdomain.com/dsa" />
-        <meta
-          property="og:image"
-          content="https://yourdomain.com/preview.jpg"
-        /> */}
-      </Head>
+      <SEO
+        title="Data Structures & Algorithms | JDCodebase"
+        description="Explore DSA problems and solutions categorized by topics. Master data structures and algorithms with JDCodebase."
+        url="https://jdcodebase.vercel.app/dsa"
+        image="https://jdcodebase.vercel.app/og-banner.png"
+        keywords="DSA, data structures, algorithms, coding problems, LeetCode, interview prep, JDCodebase"
+      />
 
       <div className="flex min-h-screen flex-col md:flex-row bg-neutral-950 text-white">
         <DsaSidebar />

@@ -1,12 +1,7 @@
-export const metadata = {
-  title: "DSA Foundations | JDCodebase",
-  description:
-    "Start your DSA journey with foundational problems. Practice easy problems that build core concepts like arrays, loops, and conditions.",
-};
-
 import Link from "next/link";
 import ProblemsSidebar from "@/components/dsa/ProblemsSidebar";
 import { problems } from "@/data/dsa/problem";
+import SEO from "@/components/common/SEO";
 
 export default function FoundationsPage() {
   const foundationProblems = problems.filter((p) =>
@@ -14,57 +9,83 @@ export default function FoundationsPage() {
   );
 
   return (
-    <div className="md:flex min-h-screen">
-      <ProblemsSidebar />
+    <>
+      <SEO
+        title="DSA Foundations | JDCodebase"
+        description="Start your DSA journey with foundational problems using JavaScript. Learn array and string basics, build logic, and prepare for advanced topics."
+        url="https://jdcodebase.vercel.app/dsa/foundation"
+        image="https://jdcodebase.vercel.app/og-banner.png"
+        keywords="DSA Foundation, JavaScript basics, beginner coding problems, array logic, string problems, JDCodebase, interview prep"
+      />
 
-      <main className="flex-1 px-6 py-4 md:p-6">
-        <section className="py-8 max-w-4xl mx-auto text-gray-100">
-          <h1 className="text-3xl font-bold mb-4">🧱 DSA Foundations</h1>
-          <hr className="py-3 text-gray-400" />
-          <p className="mb-4">
-            Welcome to the <strong>Foundations</strong> section of JDCodebase!
-          </p>
-          <p className="mb-4">
-            This section is perfect for beginners starting their journey in{" "}
-            <strong>Data Structures and Algorithms (DSA)</strong>. These
-            problems will help you:
-          </p>
-          <ul className="list-disc list-inside mb-6 space-y-1">
-            <li>Understand the problem-solving approach</li>
-            <li>Master brute-force thinking</li>
-            <li>Strengthen your basics before moving to intermediate topics</li>
-          </ul>
+      <div className="md:flex min-h-screen">
+        <ProblemsSidebar />
 
-          <h2 className="text-xl font-semibold mt-6 mb-2">🧠 Prerequisites</h2>
-          <ul className="list-disc list-inside mb-6 space-y-1">
-            <li>Basic JavaScript syntax</li>
-            <li>Loops, arrays, strings, and conditional logic</li>
-          </ul>
+        <main className="flex-1 px-6 py-4 md:p-6">
+          <section className="py-8 max-w-4xl mx-auto text-gray-100">
+            <h1 className="text-3xl font-bold mb-4">🧱 DSA Foundations</h1>
+            <hr className="py-3 text-gray-400" />
 
-          <h2 className="text-xl font-semibold mt-6 mb-2">💡 Topics Covered</h2>
-          <ul className="list-disc list-inside mb-6 space-y-1">
-            <li>Arrays</li>
-            <li>Strings</li>
-            <li>Simple logic-based problems</li>
-          </ul>
+            <p className="mb-4">
+              Welcome to the <strong>Foundations</strong> section of JDCodebase!
+              If you're just starting with Data Structures & Algorithms, this is
+              the best place to begin.
+            </p>
 
-          <h2 className="text-xl font-semibold mt-6 mb-2">
-            📝 Foundation Problems
-          </h2>
-          <ol className="list-decimal list-inside space-y-2">
-            {foundationProblems.map((problem) => (
-              <li key={problem.id}>
-                <Link
-                  href={problem.url}
-                  className="text-blue-400 hover:underline"
-                >
-                  {problem.title} ({problem.leetcode})
-                </Link>
+            <p className="mb-4">
+              These problems help you build confidence with core concepts and
+              hands-on practice. You'll master simple array operations, string
+              manipulations, and basic logic using JavaScript.
+            </p>
+
+            <h2 className="text-xl font-semibold mt-6 mb-2">
+              🧠 What You’ll Learn
+            </h2>
+            <ul className="list-disc list-inside mb-6 space-y-1">
+              <li>Brute-force thinking and solving strategies</li>
+              <li>Working with arrays, loops, and conditions</li>
+              <li>Problem-solving habits and reading patterns</li>
+            </ul>
+
+            <h2 className="text-xl font-semibold mt-6 mb-2">
+              🛠️ JavaScript Fundamentals You’ll Use
+            </h2>
+            <ul className="list-disc list-inside mb-6 space-y-1">
+              <li>
+                <code>for</code>, <code>while</code> loops
               </li>
-            ))}
-          </ol>
-        </section>
-      </main>
-    </div>
+              <li>
+                <code>if</code>, <code>else</code>, <code>switch</code>{" "}
+                conditions
+              </li>
+              <li>
+                <code>arr.length</code>, <code>arr[i]</code>, <code>push</code>,{" "}
+                <code>pop</code>, <code>split</code>
+              </li>
+              <li>
+                <code>string[index]</code>, <code>charCodeAt()</code>,{" "}
+                <code>toLowerCase()</code>
+              </li>
+            </ul>
+
+            <h2 className="text-xl font-semibold mt-6 mb-2">
+              📚 Problems List
+            </h2>
+            <ol className="list-decimal list-inside space-y-2">
+              {foundationProblems.map((problem) => (
+                <li key={problem.id}>
+                  <Link
+                    href={problem.url}
+                    className="text-blue-400 hover:underline"
+                  >
+                    {problem.title} ({problem.leetcode})
+                  </Link>
+                </li>
+              ))}
+            </ol>
+          </section>
+        </main>
+      </div>
+    </>
   );
 }

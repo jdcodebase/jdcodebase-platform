@@ -21,8 +21,29 @@
       "explanation": "After cleaning, the string is empty. An empty string is considered a valid palindrome."
     }
   ],
-  "approach": "We need to check if a string is a palindrome, ignoring non-alphanumeric characters and case.\n\nApproach 1 – Brute Force:**\n- Filter the string to keep only alphanumeric characters.\n- Convert the string to lowercase.\n- Use two pointers to compare characters from the start and end.\n\nApproach 2 – Optimized Two Pointer (In-place):**\n- Use two pointers from the start and end.\n- Skip non-alphanumeric characters.\n- Compare characters in lowercase on the fly.\n- This avoids building a new array and reduces space usage.",
-  "code": "// 🔹 Optimized In-Place Two Pointer Approach\nvar isPalindrome = function (s) {\n  let start = 0;\n  let end = s.length - 1;\n\n  while (start < end) {\n    while (start < end && !isAlphaNumeric(s[start])) start++;\n    while (start < end && !isAlphaNumeric(s[end])) end--;\n\n    if (s[start].toLowerCase() !== s[end].toLowerCase()) {\n      return false;\n    }\n\n    start++;\n    end--;\n  }\n\n  return true;\n};\n\nfunction isAlphaNumeric(c) {\n  let code = c.charCodeAt(0);\n  return (\n    (code >= 48 && code <= 57) || // 0-9\n    (code >= 65 && code <= 90) || // A-Z\n    (code >= 97 && code <= 122)   // a-z\n  );\n}",
+  "approach": [
+    {
+      "title": "Approach 1: Brute Force",
+      "steps": [
+        "Filter the string to keep only alphanumeric characters.",
+        "Convert the string to lowercase.",
+        "Use two pointers to compare characters from the start and end.",
+        "If all pairs match, return true. Else, return false."
+      ],
+      "code": "// 🔹 Brute Force\nvar isPalindrome = function(s) {\n  let cleaned = s.toLowerCase().replace(/[^a-z0-9]/g, '');\n  let start = 0;\n  let end = cleaned.length - 1;\n  while (start < end) {\n    if (cleaned[start] !== cleaned[end]) return false;\n    start++;\n    end--;\n  }\n  return true;\n};"
+    },
+    {
+      "title": "Approach 2: Optimized Two Pointer (In-place)",
+      "steps": [
+        "Use two pointers from the start and end.",
+        "Skip non-alphanumeric characters.",
+        "Compare characters in lowercase on the fly.",
+        "If mismatch found, return false.",
+        "If loop completes, return true."
+      ],
+      "code": "// 🔹 Optimized In-Place Two Pointer Approach\nvar isPalindrome = function (s) {\n  let start = 0;\n  let end = s.length - 1;\n\n  while (start < end) {\n    while (start < end && !isAlphaNumeric(s[start])) start++;\n    while (start < end && !isAlphaNumeric(s[end])) end--;\n\n    if (s[start].toLowerCase() !== s[end].toLowerCase()) {\n      return false;\n    }\n\n    start++;\n    end--;\n  }\n\n  return true;\n};\n\nfunction isAlphaNumeric(c) {\n  let code = c.charCodeAt(0);\n  return (\n    (code >= 48 && code <= 57) || // 0-9\n    (code >= 65 && code <= 90) || // A-Z\n    (code >= 97 && code <= 122)   // a-z\n  );\n}"
+    }
+  ],
   "timeComplexity": "O(n)",
   "spaceComplexity": "O(1)",
   "leetcodeLink": "https://leetcode.com/problems/valid-palindrome/",

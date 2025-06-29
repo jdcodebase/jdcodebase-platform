@@ -21,11 +21,24 @@
       "explanation": "Even with numbers and symbols, only the letters are reversed."
     }
   ],
-  "approach": "### Two Pointer Technique\n\n1. Initialize two pointers, `left` at 0 and `right` at the end of the string.\n2. While `left < right`:\n3. If `s[left]` is not a letter, increment `left`.\n4. If `s[right]` is not a letter, decrement `right`.\n5. If both are letters, swap them and move both pointers.\n6. Use a helper function `isLetter()` to check for alphabetic characters.\n7. Finally, join the array back into a string.",
-  "code": "var reverseOnlyLetters = function(s) {\n  const isLetter = (char) => {\n    const code = char.charCodeAt(0);\n    return (code >= 65 && code <= 90) || (code >= 97 && code <= 122);\n  };\n\n  let chars = s.split(\"\");\n  let left = 0, right = chars.length - 1;\n\n  while (left < right) {\n    if (!isLetter(chars[left])) {\n      left++;\n    } else if (!isLetter(chars[right])) {\n      right--;\n    } else {\n      [chars[left], chars[right]] = [chars[right], chars[left]];\n      left++;\n      right--;\n    }\n  }\n\n  return chars.join(\"\");\n};",
+  "approach": [
+    {
+      "title": "Two Pointer Technique",
+      "steps": [
+        "Initialize two pointers, `left` at 0 and `right` at the end of the string.",
+        "While `left < right`:",
+        "If `s[left]` is not a letter, increment `left`.",
+        "If `s[right]` is not a letter, decrement `right`.",
+        "If both are letters, swap them and move both pointers inward.",
+        "Use a helper function `isLetter()` to check for alphabetic characters.",
+        "Finally, join the character array back into a string and return."
+      ],
+      "code": "var reverseOnlyLetters = function(s) {\n  const isLetter = (char) => {\n    const code = char.charCodeAt(0);\n    return (code >= 65 && code <= 90) || (code >= 97 && code <= 122);\n  };\n\n  let chars = s.split(\"\");\n  let left = 0, right = chars.length - 1;\n\n  while (left < right) {\n    if (!isLetter(chars[left])) {\n      left++;\n    } else if (!isLetter(chars[right])) {\n      right--;\n    } else {\n      [chars[left], chars[right]] = [chars[right], chars[left]];\n      left++;\n      right--;\n    }\n  }\n\n  return chars.join(\"\");\n};"
+    }
+  ],
   "timeComplexity": "O(n) — Each character is visited at most once by either pointer.",
   "spaceComplexity": "O(n) — Because we split the string into a new array.",
   "leetcodeLink": "https://leetcode.com/problems/reverse-only-letters/",
   "videoLink": "e-3m0l3U31I",
-  "pptLink": "https://1drv.ms/p/c/d9a1d5f2dacf7aea/IQTYf_wpQCaPTbuI2D3vk6-8AT2LrKV7TEgLS3KpGz3mNPA?em=2&amp;wdAr=1.7777777777777777"
+  "pptLink": "https://1drv.ms/p/c/d9a1d5f2dacf7aea/IQTYf_wpQCaPTbuI2D3vk6-8AT2LrKV7TEgLS3KpGz3mNPA?em=2&wdAr=1.7777777777777777"
 }

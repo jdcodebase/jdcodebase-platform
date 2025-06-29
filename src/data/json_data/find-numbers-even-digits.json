@@ -16,8 +16,20 @@
       "explanation": "Only 1771 has an even number of digits."
     }
   ],
-  "approach": "1. Initialize a count variable to 0.\n2. Traverse the array using a for loop.\n3. Convert each number to a string using `.toString()`.\n4. Get the length of the string using `.length`.\n5. If the length is even (i.e., divisible by 2), increment the count.\n6. Return the count.",
-  "code": "var findNumbers = function (nums) {\n    let count = 0;\n\n    for (let i = 0; i < nums.length; i++) {\n        if (nums[i].toString().length % 2 === 0) {\n            count++;\n        }\n    }\n\n    return count;\n};\n\nconsole.log(findNumbers([12, 345, 2, 6, 7896])); // Output: 2\nconsole.log(findNumbers([555, 901, 482, 1771])); // Output: 1",
+  "approach": [
+    {
+      "title": "String Conversion and Digit Count",
+      "steps": [
+        "Initialize a variable `count` to 0.",
+        "Loop through each number in the array `nums`.",
+        "Convert the number to a string using `.toString()`.",
+        "Check the length of the string using `.length`.",
+        "If the length is divisible by 2 (even), increment `count`.",
+        "After the loop, return `count`."
+      ],
+      "code": "var findNumbers = function (nums) {\n    let count = 0;\n\n    for (let i = 0; i < nums.length; i++) {\n        if (nums[i].toString().length % 2 === 0) {\n            count++;\n        }\n    }\n\n    return count;\n};\n\nconsole.log(findNumbers([12, 345, 2, 6, 7896])); // Output: 2\nconsole.log(findNumbers([555, 901, 482, 1771])); // Output: 1"
+    }
+  ],
   "timeComplexity": "O(n)",
   "spaceComplexity": "O(1)",
   "leetcodeLink": "https://leetcode.com/problems/find-numbers-with-even-number-of-digits/",

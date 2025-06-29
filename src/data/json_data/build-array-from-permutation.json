@@ -16,8 +16,18 @@
       "explanation": "Same logic applies — lookup nums[nums[i]] for each i."
     }
   ],
-  "approach": "1. Initialize an empty array `ans`.\n2. Loop from 0 to nums.length - 1.\n3. Set ans[i] = nums[nums[i]].\n4. Return ans.\n\nThis is a direct implementation of the problem statement and keeps things simple.",
-  "code": "var buildArray = function(nums) {\n    let ans = [];\n    for (let i = 0; i < nums.length; i++) {\n        ans[i] = nums[nums[i]];\n    }\n    return ans;\n};",
+  "approach": [
+    {
+      "title": "Direct Index Mapping",
+      "steps": [
+        "Initialize an empty array `ans`.",
+        "Loop from `i = 0` to `nums.length - 1`.",
+        "At each step, assign `ans[i] = nums[nums[i]]`.",
+        "Return the `ans` array."
+      ],
+      "code": "var buildArray = function(nums) {\n    let ans = [];\n    for (let i = 0; i < nums.length; i++) {\n        ans[i] = nums[nums[i]];\n    }\n    return ans;\n};"
+    }
+  ],
   "timeComplexity": "O(n)",
   "spaceComplexity": "O(n)",
   "leetcodeLink": "https://leetcode.com/problems/build-array-from-permutation/",

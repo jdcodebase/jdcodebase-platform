@@ -21,11 +21,21 @@
       "explanation": "Single character words remain the same."
     }
   ],
-  "approach": "To reverse each word in a string while maintaining word order:\n\n1. **Split** the input string by spaces to get all the individual words.\n2. For each word, **reverse the characters** using a helper function that uses the two-pointer technique.\n3. In the helper function, convert the word to an array of characters, swap characters from both ends moving toward the center, then rejoin them.\n4. Finally, **join all reversed words** back into a single string with spaces.\n\nThis method ensures in-place reversal of each word without disturbing the original word order.",
-  "code": "var reverseWords = function(s) {\n  let chars = s.split(\" \");\n  for (let i = 0; i < chars.length; i++) {\n    chars[i] = reverseWord(chars[i]);\n  }\n  return chars.join(\" \");\n};\n\nfunction reverseWord(word) {\n  let start = 0, end = word.length - 1;\n  let chars = word.split(\"\");\n  while (start < end) {\n    [chars[start], chars[end]] = [chars[end], chars[start]];\n    start++;\n    end--;\n  }\n  return chars.join(\"\");\n}",
+  "approach": [
+    {
+      "title": "Split and Reverse Each Word",
+      "steps": [
+        "Split the input string by spaces to isolate words.",
+        "For each word, reverse its characters using a two-pointer approach.",
+        "Use a helper function that converts the word to an array, swaps characters from both ends, and joins it back.",
+        "Join the reversed words using spaces to reconstruct the sentence."
+      ],
+      "code": "var reverseWords = function(s) {\n  let chars = s.split(\" \");\n  for (let i = 0; i < chars.length; i++) {\n    chars[i] = reverseWord(chars[i]);\n  }\n  return chars.join(\" \");\n};\n\nfunction reverseWord(word) {\n  let start = 0, end = word.length - 1;\n  let chars = word.split(\"\");\n  while (start < end) {\n    [chars[start], chars[end]] = [chars[end], chars[start]];\n    start++;\n    end--;\n  }\n  return chars.join(\"\");\n}"
+    }
+  ],
   "timeComplexity": "O(n)",
   "spaceComplexity": "O(n)",
   "leetcodeLink": "https://leetcode.com/problems/reverse-words-in-a-string-iii/",
-  "pptLink": "https://1drv.ms/p/c/d9a1d5f2dacf7aea/IQSQCaVurjHnQIQOc16d1fdtAdo4BESjoUoZVPiD4hTVTwo?em=2&amp;wdAr=1.7777777777777777",
-  "videoLink": "o-ymMqY-0So"
+  "videoLink": "o-ymMqY-0So",
+  "pptLink": "https://1drv.ms/p/c/d9a1d5f2dacf7aea/IQSQCaVurjHnQIQOc16d1fdtAdo4BESjoUoZVPiD4hTVTwo?em=2&wdAr=1.7777777777777777"
 }

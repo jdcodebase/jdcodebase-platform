@@ -3,7 +3,7 @@
   "slug": "merge-strings-alternately",
   "leetcodeId": "#1768",
   "category": ["String", "Two Pointer"],
-  "problemStatement": "You are given two strings word1 and word2. Merge the strings by adding letters in alternating order, starting with word1. If one string is longer than the other, append the additional letters at the end of the merged string. Return the merged string.",
+  "problemStatement": "You are given two strings `word1` and `word2`. Merge the strings by adding letters in alternating order, starting with `word1`. If one string is longer than the other, append the additional letters at the end of the merged string. Return the merged string.",
   "examples": [
     {
       "input": "word1 = \"abc\", word2 = \"pqr\"",
@@ -21,11 +21,21 @@
       "explanation": "After alternating a-p, b-q, word1 has extra characters c and d which are appended."
     }
   ],
-  "approach": "We use the **Two Pointer Technique** to merge characters alternately from two strings:\n\n1. Initialize two pointers `w1Index` and `w2Index` to 0.\n2. While both pointers are within bounds of `word1` and `word2`, alternately append one character from each string to the result.\n3. After the main loop, if there are any remaining characters in `word1` or `word2`, append them to the result string.\n\nThis ensures the strings are merged alternately, with any extra characters from the longer word added at the end.",
-  "code": "var mergeAlternately = function (word1, word2) {\n  let w1Index = 0;\n  let w2Index = 0;\n  let s = \"\";\n\n  while (w1Index < word1.length && w2Index < word2.length) {\n    s += word1[w1Index++];\n    s += word2[w2Index++];\n  }\n\n  while (w1Index < word1.length) {\n    s += word1[w1Index++];\n  }\n\n  while (w2Index < word2.length) {\n    s += word2[w2Index++];\n  }\n\n  return s;\n};",
+  "approach": [
+    {
+      "title": "Two Pointer Technique",
+      "steps": [
+        "Initialize two pointers `w1Index` and `w2Index` to 0.",
+        "While both pointers are within bounds of `word1` and `word2`, alternately append one character from each string to the result.",
+        "After the main loop, if there are any remaining characters in `word1` or `word2`, append them to the result string.",
+        "Return the final merged result string."
+      ],
+      "code": "var mergeAlternately = function (word1, word2) {\n  let w1Index = 0;\n  let w2Index = 0;\n  let s = \"\";\n\n  while (w1Index < word1.length && w2Index < word2.length) {\n    s += word1[w1Index++];\n    s += word2[w2Index++];\n  }\n\n  while (w1Index < word1.length) {\n    s += word1[w1Index++];\n  }\n\n  while (w2Index < word2.length) {\n    s += word2[w2Index++];\n  }\n\n  return s;\n};"
+    }
+  ],
   "timeComplexity": "O(n)",
   "spaceComplexity": "O(1) (excluding output string)",
   "leetcodeLink": "https://leetcode.com/problems/merge-strings-alternately/",
-  "pptLink": "https://1drv.ms/p/c/d9a1d5f2dacf7aea/IQRsvLnoG-55RL30e334wh_TAU0StmS0dg4m2wbKQB06MBo?em=2&amp;wdAr=1.7777777777777777",
+  "pptLink": "https://1drv.ms/p/c/d9a1d5f2dacf7aea/IQRsvLnoG-55RL30e334wh_TAU0StmS0dg4m2wbKQB06MBo?em=2&wdAr=1.7777777777777777",
   "videoLink": "4SH2w1HxnRA"
 }

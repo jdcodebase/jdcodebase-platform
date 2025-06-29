@@ -16,11 +16,22 @@
       "explanation": "Modified array becomes [0,1,2,3,4,_,_,_,_,_]. First 5 elements are unique."
     }
   ],
-  "approach": "### Two Pointer Approach\nWe use two pointers `first` and `sec`.\n- `first` tracks the position of the last unique element.\n- `sec` scans the array for the next unique element.\n\nIf we find a new unique number at `sec`, we move `first` forward and swap it with `sec`. At the end, `first + 1` gives the total count of unique elements.",
-  "code": "var removeDuplicates = function (nums) {\n  let first = 0;\n  let sec = 1;\n\n  while (sec < nums.length) {\n    if (nums[first] === nums[sec]) {\n      sec++;\n    } else {\n      first++;\n      [nums[first], nums[sec]] = [nums[sec], nums[first]];\n      sec++;\n    }\n  }\n\n  console.log(nums.slice(0, first + 1)); // Shows the unique values\n  return first + 1;\n};\n\nconsole.log(removeDuplicates([0,0,1,1,1,2,2,3,3,4])); // Output: 5",
+  "approach": [
+    {
+      "title": "Two Pointer Approach",
+      "steps": [
+        "Initialize `first = 0` and `sec = 1`.",
+        "`first` tracks the position of the last unique element.",
+        "`sec` scans the array for the next unique element.",
+        "If a new unique value is found at `sec`, increment `first`, then swap `nums[first]` and `nums[sec]`.",
+        "At the end of the loop, return `first + 1` as the number of unique elements."
+      ],
+      "code": "var removeDuplicates = function (nums) {\n  let first = 0;\n  let sec = 1;\n\n  while (sec < nums.length) {\n    if (nums[first] === nums[sec]) {\n      sec++;\n    } else {\n      first++;\n      [nums[first], nums[sec]] = [nums[sec], nums[first]];\n      sec++;\n    }\n  }\n\n  console.log(nums.slice(0, first + 1)); // Shows the unique values\n  return first + 1;\n};\n\nconsole.log(removeDuplicates([0,0,1,1,1,2,2,3,3,4])); // Output: 5"
+    }
+  ],
   "timeComplexity": "O(n) – one pass through the array.",
   "spaceComplexity": "O(1) – in-place solution using no extra space.",
   "leetcodeLink": "https://leetcode.com/problems/remove-duplicates-from-sorted-array/",
-  "pptLink": "https://1drv.ms/p/c/d9a1d5f2dacf7aea/IQQ2zvicRZIvSLbyYhDAbgwaAVT5x3hYGLwok-_ClyuMCPw?em=2&amp;wdAr=1.7777777777777777",
+  "pptLink": "https://1drv.ms/p/c/d9a1d5f2dacf7aea/IQQ2zvicRZIvSLbyYhDAbgwaAVT5x3hYGLwok-_ClyuMCPw?em=2&wdAr=1.7777777777777777",
   "videoLink": "tAV7Iwd9-ys"
 }

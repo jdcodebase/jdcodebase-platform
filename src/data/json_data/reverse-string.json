@@ -14,11 +14,22 @@
       "output": "[\"h\",\"a\",\"n\",\"n\",\"a\",\"H\"]"
     }
   ],
-  "approach": "Approach – Two Pointer In-place:**\nWe solve this using the two-pointer approach. Initialize one pointer at the start (`left = 0`) and the other at the end (`right = s.length - 1`). Swap the characters at these positions and move the pointers toward each other until they meet. This approach reverses the array in-place without using extra space.\n\n**Note:** A brute force method using a new array is possible, but it violates the problem constraint of O(1) extra space.",
-  "code": "// 🔹 Two Pointer In-place Reversal\nvar reverseString = function(s) {\n  let left = 0, right = s.length - 1;\n\n  while (left < right) {\n    [s[left], s[right]] = [s[right], s[left]]; // Swap using destructuring\n    left++;\n    right--;\n  }\n};",
+  "approach": [
+    {
+      "title": "Two Pointer In-place Reversal",
+      "steps": [
+        "Initialize two pointers: `left = 0` and `right = s.length - 1`.",
+        "While `left < right`, swap `s[left]` and `s[right]`.",
+        "Increment `left` and decrement `right` after each swap.",
+        "This continues until the pointers meet in the middle.",
+        "Note: This approach modifies the array in-place and uses no extra memory."
+      ],
+      "code": "// 🔹 Two Pointer In-place Reversal\nvar reverseString = function(s) {\n  let left = 0, right = s.length - 1;\n\n  while (left < right) {\n    [s[left], s[right]] = [s[right], s[left]]; // Swap using destructuring\n    left++;\n    right--;\n  }\n};"
+    }
+  ],
   "timeComplexity": "O(n)",
   "spaceComplexity": "O(1)",
   "leetcodeLink": "https://leetcode.com/problems/reverse-string/",
-  "pptLink": "https://1drv.ms/p/c/d9a1d5f2dacf7aea/IQRadyARq_8tQ709crU_s6lhAT7zIdmc3G6DZMQo-gHIvS0?em=2&amp;wdAr=1.7777777777777777",
-  "videoLink": "sIMh93UP4aQ"
+  "videoLink": "sIMh93UP4aQ",
+  "pptLink": "https://1drv.ms/p/c/d9a1d5f2dacf7aea/IQRadyARq_8tQ709crU_s6lhAT7zIdmc3G6DZMQo-gHIvS0?em=2&wdAr=1.7777777777777777"
 }

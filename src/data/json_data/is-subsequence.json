@@ -21,11 +21,23 @@
       "explanation": "All characters of s appear in order in t."
     }
   ],
-  "approach": "We use the **Two Pointer Technique** to efficiently traverse both strings:\n\n1. Initialize two pointers: `sIndex` for string **s** and `tIndex` for string **t**.\n2. Loop through string **t**:\n   - If `s[sIndex] === t[tIndex]`, move both pointers forward (we found a match).\n   - Otherwise, move only `tIndex`.\n3. If we reach the end of string **s**, that means all characters of **s** were found in order inside **t**. So, **s** is a subsequence of **t**.\n\nThis approach works in **O(n)** time with **O(1)** space.",
-  "code": "var isSubsequence = function(s, t) {\n  let sIndex = 0;\n  let tIndex = 0;\n\n  while (tIndex < t.length) {\n    if (s[sIndex] === t[tIndex]) {\n      sIndex++;\n    }\n    tIndex++;\n  }\n\n  return sIndex === s.length;\n};\n\nconsole.log(isSubsequence(\"abc\", \"ahbgdc\")); // true\nconsole.log(isSubsequence(\"axc\", \"ahbgdc\")); // false",
+  "approach": [
+    {
+      "title": "Two Pointer Technique",
+      "steps": [
+        "Initialize two pointers: `sIndex = 0` for string `s` and `tIndex = 0` for string `t`.",
+        "Loop through string `t` using `tIndex`.",
+        "At each step, if `s[sIndex] === t[tIndex]`, increment `sIndex` (we matched one character).",
+        "Always increment `tIndex` regardless of match.",
+        "After the loop ends, check if `sIndex === s.length`. If true, all characters of `s` were found in order inside `t`, so return true.",
+        "Otherwise, return false."
+      ],
+      "code": "var isSubsequence = function(s, t) {\n  let sIndex = 0;\n  let tIndex = 0;\n\n  while (tIndex < t.length) {\n    if (s[sIndex] === t[tIndex]) {\n      sIndex++;\n    }\n    tIndex++;\n  }\n\n  return sIndex === s.length;\n};"
+    }
+  ],
   "timeComplexity": "O(n), where n is the length of string t",
   "spaceComplexity": "O(1), using just two pointers",
   "leetcodeLink": "https://leetcode.com/problems/is-subsequence/",
-  "pptLink": "https://1drv.ms/p/c/d9a1d5f2dacf7aea/IQShKXPWeL_ySpKy86aaBxV-AQGibDqJdBthTiAy5XkfPRk?em=2&amp;wdAr=1.7777777777777777",
+  "pptLink": "https://1drv.ms/p/c/d9a1d5f2dacf7aea/IQShKXPWeL_ySpKy86aaBxV-AQGibDqJdBthTiAy5XkfPRk?em=2&wdAr=1.7777777777777777",
   "videoLink": "SMopvt9jUIU"
 }

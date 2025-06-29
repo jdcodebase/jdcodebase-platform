@@ -11,8 +11,17 @@
       "explanation": "Square each element: [16, 1, 0, 9, 100] ➝ sort the array to get [0, 1, 9, 16, 100]."
     }
   ],
-  "approach": "1. Loop through the array and square each number.\n2. Use JavaScript's `.sort()` method with a custom comparator to sort numerically.\n\nImportant: `.sort()` sorts strings by default, so we use `(a, b) => a - b` for numeric sort.",
-  "code": "var sortedSquares = function(nums) {\n  for (let i = 0; i < nums.length; i++) {\n    nums[i] = nums[i] * nums[i];\n  }\n  return nums.sort((a, b) => a - b);\n};\n\nconsole.log(sortedSquares([-4, -1, 0, 3, 10])); // Output: [0, 1, 9, 16, 100]",
+  "approach": [
+    {
+      "title": "Brute Force with Sort",
+      "steps": [
+        "Loop through the array and square each element.",
+        "Sort the resulting array using `.sort((a, b) => a - b)` to ensure numerical order.",
+        "Return the sorted array."
+      ],
+      "code": "var sortedSquares = function(nums) {\n  for (let i = 0; i < nums.length; i++) {\n    nums[i] = nums[i] * nums[i];\n  }\n  return nums.sort((a, b) => a - b);\n};\n\nconsole.log(sortedSquares([-4, -1, 0, 3, 10])); // Output: [0, 1, 9, 16, 100]"
+    }
+  ],
   "timeComplexity": "O(n log n)",
   "spaceComplexity": "O(1) (in-place, ignoring output array if returned separately)",
   "leetcodeLink": "https://leetcode.com/problems/squares-of-a-sorted-array/",

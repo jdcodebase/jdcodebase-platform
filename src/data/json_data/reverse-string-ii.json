@@ -16,11 +16,22 @@
       "explanation": "Reverse first k = 2 → \"ab\" → \"ba\", rest stays same → \"bacd\"."
     }
   ],
-  "approach": "1. Convert the string into a character array for easy in-place operations.\n2. Loop through the string in increments of `2k`.\n3. For each chunk, reverse the first `k` characters using two pointers.\n4. Use `Math.min(i + k - 1, s.length - 1)` to handle boundary conditions safely.\n5. Finally, join the array and return the result.",
-  "code": "var reverseStr = function(s, k) {\n    let arr = s.split('');\n    for (let i = 0; i < s.length; i += 2 * k) {\n        let left = i;\n        let right = Math.min(i + k - 1, s.length - 1);\n        while (left < right) {\n            [arr[left], arr[right]] = [arr[right], arr[left]];\n            left++;\n            right--;\n        }\n    }\n    return arr.join('');\n};",
+  "approach": [
+    {
+      "title": "Two Pointer Chunk Reversal",
+      "steps": [
+        "Convert the string into a character array for easy in-place operations.",
+        "Loop through the string in increments of `2k`.",
+        "For each chunk, reverse the first `k` characters using two pointers.",
+        "Use `Math.min(i + k - 1, s.length - 1)` to ensure we don't go out of bounds.",
+        "After all chunks are processed, join the character array into a string and return."
+      ],
+      "code": "var reverseStr = function(s, k) {\n    let arr = s.split('');\n    for (let i = 0; i < s.length; i += 2 * k) {\n        let left = i;\n        let right = Math.min(i + k - 1, s.length - 1);\n        while (left < right) {\n            [arr[left], arr[right]] = [arr[right], arr[left]];\n            left++;\n            right--;\n        }\n    }\n    return arr.join('');\n};"
+    }
+  ],
   "timeComplexity": "O(n) – We iterate over the string once in chunks.",
   "spaceComplexity": "O(n) – Due to character array manipulation.",
   "leetcodeLink": "https://leetcode.com/problems/reverse-string-ii/",
-  "pptLink": "https://1drv.ms/p/c/d9a1d5f2dacf7aea/IQSbaolh2QPjTKKKjMRrIyJvAZX0RCkLR0JGcc4_Sl2H20Y?em=2&amp;wdAr=1.7777777777777777",
-  "videoLink": "cYY9bWqgmxg"
+  "videoLink": "cYY9bWqgmxg",
+  "pptLink": "https://1drv.ms/p/c/d9a1d5f2dacf7aea/IQSbaolh2QPjTKKKjMRrIyJvAZX0RCkLR0JGcc4_Sl2H20Y?em=2&wdAr=1.7777777777777777"
 }

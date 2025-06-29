@@ -16,11 +16,20 @@
       "explanation": "Each color is positioned correctly without using built-in sort."
     }
   ],
-  "approach": "Counting Sort\nCount the number of 0s, 1s, and 2s in the array. Then, overwrite the original array with those many 0s, 1s, and 2s in order.",
-  "code": "var sortColors = function(nums) {\n  let zero = 0, one = 0, two = 0;\n\n  for (let i = 0; i < nums.length; i++) {\n    if (nums[i] === 0) zero++;\n    else if (nums[i] === 1) one++;\n    else two++;\n  }\n\n  let i = 0;\n  while (zero--) nums[i++] = 0;\n  while (one--) nums[i++] = 1;\n  while (two--) nums[i++] = 2;\n\n  return nums;\n};\n\nconsole.log(sortColors([2, 0, 2, 1, 1, 0])); // [0, 0, 1, 1, 2, 2]",
+  "approach": [
+    {
+      "title": "Counting Sort",
+      "steps": [
+        "Initialize three counters: `zero`, `one`, and `two` to 0.",
+        "Iterate through the array once to count the occurrences of 0, 1, and 2.",
+        "Overwrite the original array using the counts in order: fill with 0s, then 1s, then 2s."
+      ],
+      "code": "var sortColors = function(nums) {\n  let zero = 0, one = 0, two = 0;\n\n  for (let i = 0; i < nums.length; i++) {\n    if (nums[i] === 0) zero++;\n    else if (nums[i] === 1) one++;\n    else two++;\n  }\n\n  let i = 0;\n  while (zero--) nums[i++] = 0;\n  while (one--) nums[i++] = 1;\n  while (two--) nums[i++] = 2;\n\n  return nums;\n};"
+    }
+  ],
   "timeComplexity": "O(n) – Each element is visited once during counting and once during writing.",
   "spaceComplexity": "O(1) – No extra space used except fixed counters.",
   "leetcodeLink": "https://leetcode.com/problems/sort-colors/",
-  "pptLink": "https://1drv.ms/p/c/d9a1d5f2dacf7aea/IQSkNHooFkk_ToCT9WbPo6cbAe8O425s-VHVEGaWhlwsYqo?em=2&amp;wdAr=1.7777777777777777",
+  "pptLink": "https://1drv.ms/p/c/d9a1d5f2dacf7aea/IQSkNHooFkk_ToCT9WbPo6cbAe8O425s-VHVEGaWhlwsYqo?em=2&wdAr=1.7777777777777777",
   "videoLink": "h1W3yaCAZk0"
 }

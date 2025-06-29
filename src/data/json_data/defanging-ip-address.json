@@ -16,8 +16,28 @@
       "explanation": "All '.' characters in the IP are replaced with '[.]'."
     }
   ],
-  "approach": "We can solve this problem in two ways.\n\nApproach 1 – Brute Force:**\nLoop through each character of the input string. If it's a '.', append '[.]' to the result string; otherwise, append the character itself.\n\nApproach 2 – Optimized using replaceAll():**\nUse JavaScript's built-in `replaceAll()` method to directly replace all occurrences of '.' with '[.]'. This is a clean, one-liner solution.",
-  "code": "// Approach 1: Brute Force\nvar defangIPaddr = function(address) {\n  let result = \"\";\n  for (let char of address) {\n    if (char === \".\") {\n      result += \"[.]\";\n    } else {\n      result += char;\n    }\n  }\n  return result;\n};\n\n// Approach 2: Using replaceAll()\nvar defangIPaddr = function(address) {\n  return address.replaceAll(\".\", \"[.]\");\n};",
+  "approach": [
+    {
+      "title": "Brute Force – Manual Character Iteration",
+      "steps": [
+        "Initialize an empty string `result`.",
+        "Loop through each character in the given IP address.",
+        "If the character is a '.', append '[.]' to the result.",
+        "Otherwise, append the character itself.",
+        "Return the final `result` string."
+      ],
+      "code": "var defangIPaddr = function(address) {\n  let result = \"\";\n  for (let char of address) {\n    if (char === \".\") {\n      result += \"[.]\";\n    } else {\n      result += char;\n    }\n  }\n  return result;\n};"
+    },
+    {
+      "title": "Optimized – Using replaceAll()",
+      "steps": [
+        "Use JavaScript’s built-in `replaceAll()` method.",
+        "Call `address.replaceAll('.', '[.]')` to directly replace all dots.",
+        "Return the result."
+      ],
+      "code": "var defangIPaddr = function(address) {\n  return address.replaceAll(\".\", \"[.]\");\n};"
+    }
+  ],
   "timeComplexity": "O(n), where n is the length of the input string.",
   "spaceComplexity": "O(n), for the new string being returned.",
   "leetcodeLink": "https://leetcode.com/problems/defanging-an-ip-address/",

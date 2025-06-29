@@ -53,7 +53,9 @@ export default async function ProblemPage({ slug }) {
 
           {problemStatement && (
             <Section title="🧩 Problem Statement">
-              <p className="text-gray-300">{problemStatement}</p>
+              <p className="text-gray-300 whitespace-pre-wrap">
+                {problemStatement}
+              </p>
             </Section>
           )}
 
@@ -70,59 +72,44 @@ export default async function ProblemPage({ slug }) {
                   <p>
                     <strong>Output:</strong> <code>{ex.output}</code>
                   </p>
-                  <div className="text-gray-400 mt-2">
-                    <strong>Explanation:</strong>{" "}
-                    {Array.isArray(ex.explanation) ? (
-                      <ul className="list-disc list-inside mt-1 space-y-1">
-                        {ex.explanation.map((line, idx) => (
-                          <li key={idx}>{line}</li>
-                        ))}
-                      </ul>
-                    ) : (
-                      <span>{ex.explanation}</span>
-                    )}
-                  </div>
+                  {ex.explanation && (
+                    <div className="text-gray-400 mt-2">
+                      <strong>Explanation:</strong>{" "}
+                      {Array.isArray(ex.explanation) ? (
+                        <ul className="list-disc list-inside mt-1 space-y-1">
+                          {ex.explanation.map((line, idx) => (
+                            <li key={idx}>{line}</li>
+                          ))}
+                        </ul>
+                      ) : (
+                        <span>{ex.explanation}</span>
+                      )}
+                    </div>
+                  )}
                 </div>
               ))}
             </Section>
           )}
 
-          {approach && (
+          {approach?.length > 0 && (
             <Section title="🧠 Approach">
-              <div className="text-gray-300 space-y-2">
-                {approach.split("\n").map((line, index) => {
-                  if (/^Approach\s*\d*/i.test(line)) {
-                    return (
-                      <p key={index} className="font-semibold text-white mt-4">
-                        {line}
-                      </p>
-                    );
-                  }
-                  if (/^\d+\./.test(line)) {
-                    return (
-                      <p
-                        key={index}
-                        className="ml-4 pl-4 border-l border-gray-600 text-sm"
-                      >
-                        • {line.replace(/^\d+\.\s*/, "")}
-                      </p>
-                    );
-                  }
-                  return (
-                    <p key={index} className="text-gray-400 text-sm">
-                      {line}
-                    </p>
-                  );
-                })}
-              </div>
-            </Section>
-          )}
-
-          {code && (
-            <Section title="💻 Code">
-              <pre className="bg-gray-900 text-green-400 p-4 rounded-lg overflow-auto text-sm shadow">
-                <code className="whitespace-pre-wrap">{code}</code>
-              </pre>
+              {approach.map((appr, i) => (
+                <div key={i} className="mb-6">
+                  <h3 className="text-xl font-semibold text-white mb-2">
+                    {appr.title}
+                  </h3>
+                  <ul className="list-disc list-inside text-gray-300 mb-3">
+                    {appr.steps.map((step, idx) => (
+                      <li key={idx}>{step}</li>
+                    ))}
+                  </ul>
+                  {appr.code && (
+                    <pre className="bg-gray-900 text-green-400 p-4 rounded-lg overflow-auto text-sm shadow">
+                      <code className="whitespace-pre-wrap">{appr.code}</code>
+                    </pre>
+                  )}
+                </div>
+              ))}
             </Section>
           )}
 
@@ -134,6 +121,14 @@ export default async function ProblemPage({ slug }) {
               <p>
                 <strong>Space:</strong> {spaceComplexity || "N/A"}
               </p>
+            </Section>
+          )}
+
+          {code && approach?.length === 0 && (
+            <Section title="💻 Code">
+              <pre className="bg-gray-900 text-green-400 p-4 rounded-lg overflow-auto text-sm shadow">
+                <code className="whitespace-pre-wrap">{code}</code>
+              </pre>
             </Section>
           )}
 

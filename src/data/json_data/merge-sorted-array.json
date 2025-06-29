@@ -21,11 +21,39 @@
       "explanation": "nums1 had no initial elements. It is filled with nums2."
     }
   ],
-  "approach": "We explored three approaches:\n\nApproach 1 – Brute Force:**\nCopy all elements of nums2 into nums1 starting after the first m valid elements. Then, sort the entire nums1 array.\n\nApproach 2 – Optimized with Temp Array:**\nCopy the first m elements of nums1 into a temporary array. Use two pointers to merge this temp array and nums2 back into nums1 in sorted order.\n\nApproach 3 – Optimal In-place (Two Pointers from End):**\nStart filling nums1 from the back. Use two pointers at the end of the valid parts of nums1 and nums2. Place the larger of the two elements at the current back position, and move pointers accordingly. This avoids any extra space.",
-  "code": "// Brute Force\nvar merge = function (nums1, m, nums2, n) {\n  for (let i = m, j = 0; i < m + n; i++, j++) {\n    nums1[i] = nums2[j];\n  }\n  nums1.sort((a, b) => a - b);\n};\n\n// Optimized with Temp Array\nvar merge = function (nums1, m, nums2, n) {\n  let arr = nums1.slice(0, m);\n  let i = 0, j = 0, k = 0;\n\n  while (i < m && j < n) {\n    if (arr[i] <= nums2[j]) {\n      nums1[k++] = arr[i++];\n    } else {\n      nums1[k++] = nums2[j++];\n    }\n  }\n\n  while (i < m) nums1[k++] = arr[i++];\n  while (j < n) nums1[k++] = nums2[j++];\n};\n\n// Optimal In-place (Two Pointers from End)\nvar merge = function(nums1, m, nums2, n) {\n  let i = m - 1;\n  let j = n - 1;\n  let k = m + n - 1;\n\n  while (j >= 0) {\n    if (i >= 0 && nums1[i] > nums2[j]) {\n      nums1[k--] = nums1[i--];\n    } else {\n      nums1[k--] = nums2[j--];\n    }\n  }\n};",
+  "approach": [
+    {
+      "title": "Approach 1: Brute Force",
+      "steps": [
+        "Copy all elements of `nums2` into `nums1` starting from index `m`.",
+        "Sort the entire `nums1` array to get the final result."
+      ],
+      "code": "// Brute Force\nvar merge = function (nums1, m, nums2, n) {\n  for (let i = m, j = 0; i < m + n; i++, j++) {\n    nums1[i] = nums2[j];\n  }\n  nums1.sort((a, b) => a - b);\n};"
+    },
+    {
+      "title": "Approach 2: Optimized with Temp Array",
+      "steps": [
+        "Copy the first `m` elements of `nums1` into a temporary array.",
+        "Use three pointers: `i` for temp, `j` for `nums2`, and `k` for position in `nums1`.",
+        "Compare and merge elements back into `nums1` in sorted order.",
+        "Fill any remaining elements from temp or `nums2`."
+      ],
+      "code": "// Optimized with Temp Array\nvar merge = function (nums1, m, nums2, n) {\n  let arr = nums1.slice(0, m);\n  let i = 0, j = 0, k = 0;\n\n  while (i < m && j < n) {\n    if (arr[i] <= nums2[j]) {\n      nums1[k++] = arr[i++];\n    } else {\n      nums1[k++] = nums2[j++];\n    }\n  }\n\n  while (i < m) nums1[k++] = arr[i++];\n  while (j < n) nums1[k++] = nums2[j++];\n};"
+    },
+    {
+      "title": "Approach 3: Optimal In-place (Two Pointers from End)",
+      "steps": [
+        "Set pointers `i = m - 1`, `j = n - 1`, and `k = m + n - 1`.",
+        "Compare `nums1[i]` and `nums2[j]` from the end, place the larger at `nums1[k]`.",
+        "Move the pointer that gave the larger value and decrement `k`.",
+        "Continue until all elements of `nums2` are placed in `nums1`."
+      ],
+      "code": "// Optimal In-place (Two Pointers from End)\nvar merge = function(nums1, m, nums2, n) {\n  let i = m - 1;\n  let j = n - 1;\n  let k = m + n - 1;\n\n  while (j >= 0) {\n    if (i >= 0 && nums1[i] > nums2[j]) {\n      nums1[k--] = nums1[i--];\n    } else {\n      nums1[k--] = nums2[j--];\n    }\n  }\n};"
+    }
+  ],
   "timeComplexity": "O(m + n) — each element is visited once",
   "spaceComplexity": "O(1) — no extra space used in the final solution",
   "leetcodeLink": "https://leetcode.com/problems/merge-sorted-array/",
-  "pptLink": "https://1drv.ms/p/c/d9a1d5f2dacf7aea/IQTSAkn8LKgSQKmJzH8S2Cb6AZPcRbkNUw9sl6Kjpzq2Fb0?em=2&amp;wdAr=1.7777777777777777",
+  "pptLink": "https://1drv.ms/p/c/d9a1d5f2dacf7aea/IQTSAkn8LKgSQKmJzH8S2Cb6AZPcRbkNUw9sl6Kjpzq2Fb0?em=2&wdAr=1.7777777777777777",
   "videoLink": "L0O88eITpEA"
 }

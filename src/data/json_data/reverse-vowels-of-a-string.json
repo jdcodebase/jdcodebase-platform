@@ -26,11 +26,24 @@
       "explanation": "All vowels reversed completely."
     }
   ],
-  "approach": "We use the **Two Pointer Approach**:\n\n1. Convert the string into a character array for easy manipulation.\n2. Initialize two pointers: one at the start and one at the end of the array.\n3. Use a Set to store all vowels (both uppercase and lowercase).\n4. Move the pointers inward while skipping non-vowel characters.\n5. When both pointers are at vowels, swap the characters.\n6. Continue until the pointers meet.\n7. Finally, join the character array back into a string and return it.\n\nThis approach allows us to reverse only the vowels efficiently in O(n) time and O(n) space.",
-  "code": "var reverseVowels = function (s) {\n  const vowels = new Set([\"a\", \"e\", \"i\", \"o\", \"u\", \"A\", \"E\", \"I\", \"O\", \"U\"]);\n  const chars = s.split(\"\");\n  let start = 0;\n  let end = s.length - 1;\n\n  while (start < end) {\n    while (start < end && !vowels.has(chars[start])) start++;\n    while (start < end && !vowels.has(chars[end])) end--;\n\n    [chars[start], chars[end]] = [chars[end], chars[start]];\n    start++;\n    end--;\n  }\n\n  return chars.join(\"\");\n};",
+  "approach": [
+    {
+      "title": "Two Pointer Approach",
+      "steps": [
+        "Convert the string into a character array for easy manipulation.",
+        "Initialize two pointers: one at the start and one at the end of the array.",
+        "Use a Set to store all vowels (both uppercase and lowercase).",
+        "Move the pointers inward while skipping non-vowel characters.",
+        "When both pointers are at vowels, swap the characters.",
+        "Continue this process until the two pointers meet.",
+        "Finally, join the array back into a string and return it."
+      ],
+      "code": "var reverseVowels = function (s) {\n  const vowels = new Set([\"a\", \"e\", \"i\", \"o\", \"u\", \"A\", \"E\", \"I\", \"O\", \"U\"]);\n  const chars = s.split(\"\");\n  let start = 0;\n  let end = s.length - 1;\n\n  while (start < end) {\n    while (start < end && !vowels.has(chars[start])) start++;\n    while (start < end && !vowels.has(chars[end])) end--;\n\n    [chars[start], chars[end]] = [chars[end], chars[start]];\n    start++;\n    end--;\n  }\n\n  return chars.join(\"\");\n};"
+    }
+  ],
   "timeComplexity": "O(n)",
   "spaceComplexity": "O(n)",
   "leetcodeLink": "https://leetcode.com/problems/reverse-vowels-of-a-string/",
-  "pptLink": "https://1drv.ms/p/c/d9a1d5f2dacf7aea/IQTy2HoVVYQtSb0vmAJ6aCFEAcGwcBtzURg2yctFe6UvYm0?em=2&amp;wdAr=1.7777777777777777",
-  "videoLink": "UJzeOmvwg2g"
+  "videoLink": "UJzeOmvwg2g",
+  "pptLink": "https://1drv.ms/p/c/d9a1d5f2dacf7aea/IQTy2HoVVYQtSb0vmAJ6aCFEAcGwcBtzURg2yctFe6UvYm0?em=2&wdAr=1.7777777777777777"
 }

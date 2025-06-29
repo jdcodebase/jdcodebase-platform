@@ -18,8 +18,19 @@
       ]
     }
   ],
-  "approach": "Approach: Loop + Math.max\n1. Use `Math.max(...candies)` to find the current max candy count.\n2. Loop through each kid and check if `candies[i] + extraCandies >= max`.\n3. Replace each element in the candies array with true or false based on this condition.\n4. Return the updated array.\n\nThis method is concise and leverages built-in JavaScript features.",
-  "code": "var kidsWithCandies = function(candies, extraCandies) {\n    let maxCandies = Math.max(...candies);\n    for (let i = 0; i < candies.length; i++) {\n        candies[i] = candies[i] + extraCandies >= maxCandies;\n    }\n    return candies;\n};",
+  "approach": [
+    {
+      "title": "Simple Loop with Math.max",
+      "steps": [
+        "Find the maximum candy count using `Math.max(...candies)`.",
+        "Loop through each kid in the `candies` array.",
+        "For each kid, check if `candies[i] + extraCandies >= maxCandies`.",
+        "If the condition is true, store `true` at that index; otherwise, store `false`.",
+        "Return the resulting boolean array."
+      ],
+      "code": "var kidsWithCandies = function(candies, extraCandies) {\n    let maxCandies = Math.max(...candies);\n    for (let i = 0; i < candies.length; i++) {\n        candies[i] = candies[i] + extraCandies >= maxCandies;\n    }\n    return candies;\n};"
+    }
+  ],
   "timeComplexity": "O(n)",
   "spaceComplexity": "O(1) (excluding output array)",
   "leetcodeLink": "https://leetcode.com/problems/kids-with-the-greatest-number-of-candies/",

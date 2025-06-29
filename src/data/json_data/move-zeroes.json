@@ -3,7 +3,7 @@
   "slug": "move-zeroes",
   "leetcodeId": "#283",
   "category": ["Array", "Two Pointer"],
-  "problemStatement": "Given an integer array nums, move all 0's to the end of it while maintaining the relative order of the non-zero elements. You must do this in-place without making a copy of the array.",
+  "problemStatement": "Given an integer array `nums`, move all 0's to the end of it while maintaining the relative order of the non-zero elements. You must do this in-place without making a copy of the array.",
   "examples": [
     {
       "input": "[0,1,0,3,12]",
@@ -14,11 +14,31 @@
       "output": "[0]"
     }
   ],
-  "approach": "Approach 1:\nUse an extra array to collect non-zero elements, then copy them back to nums followed by zeroes.\n\n1. Iterate through the original array.\n2. Push all non-zero elements to a new array.\n3. Overwrite the original array with elements from the new array.\n4. Fill the rest of the array with zeroes.\n\nApproach 2:\nOptimized in-place method using Two Pointers.\n\n1. Initialize two pointers, `first` at 0 and `sec` at 1.\n2. If `nums[first]` is 0 and `nums[sec]` is non-zero, swap them.\n3. Move both pointers forward.\n4. If both are zero, only move `sec`.\n5. This keeps non-zero elements at the front and pushes zeroes to the end.",
-  "code": "// Approach 1: Using extra space\nvar moveZeroes = function (nums) {\n  let nonZeroes = [];\n\n  for (let i = 0; i < nums.length; i++) {\n    if (nums[i] !== 0) {\n      nonZeroes.push(nums[i]);\n    }\n  }\n\n  let i = 0;\n  while (i < nonZeroes.length) {\n    nums[i] = nonZeroes[i];\n    i++;\n  }\n\n  while (i < nums.length) {\n    nums[i] = 0;\n    i++;\n  }\n\n  return nums;\n};\n\n\n// Approach 2: In-place using Two Pointers\nvar moveZeroes = function (nums) {\n  let first = 0;\n  let sec = 1;\n\n  while (first < sec && sec < nums.length) {\n    if (nums[first] === 0 && nums[sec] !== 0) {\n      [nums[first], nums[sec]] = [nums[sec], nums[first]];\n      first++;\n      sec++;\n    } else if (nums[first] === 0 && nums[sec] === 0) {\n      sec++;\n    } else {\n      first++;\n      sec++;\n    }\n  }\n};",
+  "approach": [
+    {
+      "title": "Approach 1: Using Extra Space",
+      "steps": [
+        "Iterate through the array and collect all non-zero elements in a new array.",
+        "Overwrite the original array with these non-zero elements.",
+        "Fill the remaining positions in the array with zeroes."
+      ],
+      "code": "// Approach 1: Using extra space\nvar moveZeroes = function (nums) {\n  let nonZeroes = [];\n\n  for (let i = 0; i < nums.length; i++) {\n    if (nums[i] !== 0) {\n      nonZeroes.push(nums[i]);\n    }\n  }\n\n  let i = 0;\n  while (i < nonZeroes.length) {\n    nums[i] = nonZeroes[i];\n    i++;\n  }\n\n  while (i < nums.length) {\n    nums[i] = 0;\n    i++;\n  }\n\n  return nums;\n};"
+    },
+    {
+      "title": "Approach 2: In-place Using Two Pointers",
+      "steps": [
+        "Initialize two pointers `first = 0` and `sec = 1`.",
+        "If `nums[first]` is 0 and `nums[sec]` is not, swap them.",
+        "If both are 0, move `sec` only.",
+        "Otherwise, move both pointers forward.",
+        "Repeat until the array is rearranged with all zeroes at the end."
+      ],
+      "code": "// Approach 2: In-place using Two Pointers\nvar moveZeroes = function (nums) {\n  let first = 0;\n  let sec = 1;\n\n  while (first < sec && sec < nums.length) {\n    if (nums[first] === 0 && nums[sec] !== 0) {\n      [nums[first], nums[sec]] = [nums[sec], nums[first]];\n      first++;\n      sec++;\n    } else if (nums[first] === 0 && nums[sec] === 0) {\n      sec++;\n    } else {\n      first++;\n      sec++;\n    }\n  }\n};"
+    }
+  ],
   "timeComplexity": "O(n)",
   "spaceComplexity": "O(1) for in-place solution, O(n) for brute force",
   "leetcodeLink": "https://leetcode.com/problems/move-zeroes/",
-  "pptLink": "https://1drv.ms/p/c/d9a1d5f2dacf7aea/IQSdOQQna87cSJPgwDsn9WNxAUri2_mCrY-N8N1oBbCAbWc?em=2&amp;wdAr=1.7777777777777777",
+  "pptLink": "https://1drv.ms/p/c/d9a1d5f2dacf7aea/IQSdOQQna87cSJPgwDsn9WNxAUri2_mCrY-N8N1oBbCAbWc?em=2&wdAr=1.7777777777777777",
   "videoLink": "ob8TF5jVSYk"
 }

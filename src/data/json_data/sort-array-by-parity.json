@@ -18,11 +18,23 @@
       "output": "[2, 4, 3, 1]"
     }
   ],
-  "approach": "### Two-Pointer Approach\n\n1. Initialize two pointers:\n2. `left` at the start (0)\n3. `right` at the end (`nums.length - 1`)\n\n4. While `left < right`:\n5. If `nums[left]` is odd and `nums[right]` is even → swap them.\n6. If `nums[left]` is even → move `left` forward.\n7. If `nums[right]` is odd → move `right` backward.\n\nThis approach modifies the array in-place and ensures all even numbers come before odd numbers. No need to preserve relative order.",
-  "code": "var sortArrayByParity = function (nums) {\n  let left = 0;\n  let right = nums.length - 1;\n\n  while (left < right) {\n    if (nums[left] % 2 > nums[right] % 2) {\n      [nums[left], nums[right]] = [nums[right], nums[left]];\n    }\n\n    if (nums[left] % 2 === 0) left++;\n    if (nums[right] % 2 === 1) right--;\n  }\n\n  return nums;\n};",
+  "approach": [
+    {
+      "title": "Two-Pointer Approach",
+      "steps": [
+        "Initialize two pointers: `left = 0` and `right = nums.length - 1`.",
+        "While `left < right`:",
+        "- If `nums[left]` is odd and `nums[right]` is even, swap them.",
+        "- If `nums[left]` is even, increment `left`.",
+        "- If `nums[right]` is odd, decrement `right`.",
+        "This ensures all even numbers move to the beginning of the array."
+      ],
+      "code": "var sortArrayByParity = function (nums) {\n  let left = 0;\n  let right = nums.length - 1;\n\n  while (left < right) {\n    if (nums[left] % 2 > nums[right] % 2) {\n      [nums[left], nums[right]] = [nums[right], nums[left]];\n    }\n\n    if (nums[left] % 2 === 0) left++;\n    if (nums[right] % 2 === 1) right--;\n  }\n\n  return nums;\n};"
+    }
+  ],
   "timeComplexity": "O(n) – Each element is checked at most once.",
   "spaceComplexity": "O(1) – In-place swapping, no extra space used.",
   "leetcodeLink": "https://leetcode.com/problems/sort-array-by-parity/",
   "videoLink": "MVq7SO8nmvg",
-  "pptLink": "https://1drv.ms/p/c/d9a1d5f2dacf7aea/IQRnn9KmLIGmSZPno042QYX9ATFMuMl-lZnk6dYkSks6FaE?em=2&amp;wdAr=1.7777777777777777"
+  "pptLink": "https://1drv.ms/p/c/d9a1d5f2dacf7aea/IQRnn9KmLIGmSZPno042QYX9ATFMuMl-lZnk6dYkSks6FaE?em=2&wdAr=1.7777777777777777"
 }

@@ -6,6 +6,7 @@ export default function SEO({
   url = "https://jdcodebase.vercel.app",
   image = "https://jdcodebase.vercel.app/og-banner.png",
   keywords = "DSA, JavaScript, coding projects, developer blogs, JDCodebase, interview prep",
+  robots = "index, follow",
 }) {
   return (
     <Head>
@@ -13,6 +14,7 @@ export default function SEO({
       <meta name="description" content={description} />
       <meta name="keywords" content={keywords} />
       <meta name="author" content="JDCodebase" />
+      <meta name="robots" content={robots} />
       <link rel="canonical" href={url} />
 
       <meta property="og:title" content={title} />
@@ -20,6 +22,7 @@ export default function SEO({
       <meta property="og:type" content="website" />
       <meta property="og:url" content={url} />
       <meta property="og:image" content={image} />
+      <meta property="og:site_name" content="JDCodebase" />
 
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={title} />

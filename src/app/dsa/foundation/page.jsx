@@ -1,22 +1,20 @@
 import Link from "next/link";
 import ProblemsSidebar from "@/components/dsa/ProblemsSidebar";
-import { problems } from "@/data/dsa/problem";
 import SEO from "@/components/common/SEO";
+import { problems } from "@/data/dsa/problem";
+import { topicSEO } from "@/data/dsa/topicSEO";
+
+export const metadata = topicSEO["foundation"];
 
 export default function FoundationsPage() {
   const foundationProblems = problems.filter((p) =>
     p.topics.includes("Foundation")
   );
+  const foundationSEO = topicSEO["foundation"];
 
   return (
     <>
-      <SEO
-        title="DSA Foundations | JDCodebase"
-        description="Start your DSA journey with foundational problems using JavaScript. Learn array and string basics, build logic, and prepare for advanced topics."
-        url="https://jdcodebase.vercel.app/dsa/foundation"
-        image="https://jdcodebase.vercel.app/og-banner.png"
-        keywords="DSA Foundation, JavaScript basics, beginner coding problems, array logic, string problems, JDCodebase, interview prep"
-      />
+      <SEO {...foundationSEO} />
 
       <div className="md:flex min-h-screen">
         <ProblemsSidebar />

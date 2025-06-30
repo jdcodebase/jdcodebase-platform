@@ -1,6 +1,6 @@
 {
   "title": "Remove Duplicates from Sorted Array",
-  "slug": "remove-duplicates-sorted-array",
+  "slug": "remove-duplicates-from-sorted-array",
   "leetcodeId": "#26",
   "category": ["Array", "Two Pointer"],
   "problemStatement": "You’re given a sorted array of integers. You need to remove duplicates in-place so that each element appears only once.\n\nReturn the number of unique elements `k`, and modify the input array such that the first `k` elements are the unique ones. Their order should be preserved. Values beyond index `k-1` can be ignored.",

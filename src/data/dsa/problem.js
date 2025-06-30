@@ -132,10 +132,10 @@ export const problems = [
     id: 15,
     title: "Remove Duplicates from Sorted Array",
     leetcode: "#26",
-    slug: "remove-duplicates-sorted-array",
+    slug: "remove-duplicates-from-sorted-array",
     topic: "Array",
     topics: ["Array", "Two Pointer"],
-    url: "/dsa/array/problem/remove-duplicates-sorted-array",
+    url: "/dsa/array/problem/remove-duplicates-from-sorted-array",
   },
   {
     id: 16,

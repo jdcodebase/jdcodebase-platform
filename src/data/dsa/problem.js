@@ -13,10 +13,10 @@ export const problems = [
     id: 2,
     title: "Find Numbers with Even Number of Digits",
     leetcode: "#1295",
-    slug: "find-numbers-even-digits",
+    slug: "find-numbers-with-even-number-of-digits",
     topic: "Array",
     topics: ["Array", "Math", "Foundation"],
-    url: "/dsa/foundation/problem/find-numbers-even-digits",
+    url: "/dsa/foundation/problem/find-numbers-with-even-number-of-digits",
   },
   {
     id: 3,

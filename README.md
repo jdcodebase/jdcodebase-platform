@@ -32,7 +32,7 @@ This is just the beginning — the site will eventually grow into a full coding 
 ## 🔗 Links
 
 - 📺 YouTube Channel: [@JDCodebase](https://www.youtube.com/@JDCodebase)
-- 🌐 Live Site: _coming soon_
+- 🌐 Live Site: [JDCoebase](https://jdcodebase.vercel.app/)
 
 ## 💡 Future Plans
 

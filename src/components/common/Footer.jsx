@@ -40,7 +40,7 @@ export default function Footer() {
           </h3>
           <div className="flex space-x-4" aria-label="Social Media Links">
             <a
-              href="https://www.youtube.com/@jdcodebase-en"
+              href="https://www.youtube.com/@jdcodebase"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="JDCodebase on YouTube"
@@ -48,7 +48,7 @@ export default function Footer() {
               <FaYoutube size={24} className="hover:text-red-500" />
             </a>
             <a
-              href="https://github.com/jd-code-base"
+              href="https://github.com/jdcodebase"
               target="_blank"
               rel="me noopener noreferrer"
               aria-label="JDCodebase on GitHub"

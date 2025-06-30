@@ -31,7 +31,7 @@ This is just the beginning — the site will eventually grow into a full coding 
 
 ## 🔗 Links
 
-- 📺 YouTube Channel: [@JDCodebase](https://www.youtube.com/@JDCodebase-EN)
+- 📺 YouTube Channel: [@JDCodebase](https://www.youtube.com/@JDCodebase)
 - 🌐 Live Site: _coming soon_
 
 ## 💡 Future Plans
@@ -49,7 +49,7 @@ This is a personal learning and showcase project. If you're interested in collab
 
 **JD**  
 Computer Science graduate (2023) passionate about building impactful tech projects, continuously learning, and helping others grow through clear, practical content.
-**Connect**: [YouTube - JDCodebase](https://www.youtube.com/@JDCodebase-EN)
+**Connect**: [YouTube - JDCodebase](https://www.youtube.com/@JDCodebase)
 
 ## 📜 License
 

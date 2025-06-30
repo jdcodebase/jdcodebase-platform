@@ -94,10 +94,10 @@ export const problems = [
     id: 11,
     title: "Squares of a Sorted Array",
     leetcode: "#977",
-    slug: "squares-of-sorted-array",
+    slug: "squares-of-a-sorted-array",
     topic: "Array",
     topics: ["Array", "Two Pointer", "Sorting", "Foundation"],
-    url: "/dsa/foundation/problem/squares-of-sorted-array",
+    url: "/dsa/foundation/problem/squares-of-a-sorted-array",
   },
 
   // 🔹 Two Pointer

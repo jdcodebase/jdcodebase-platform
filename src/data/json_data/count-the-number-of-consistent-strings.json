@@ -1,6 +1,6 @@
 {
   "title": "Count the Number of Consistent Strings",
-  "slug": "count-consistent-strings",
+  "slug": "count-the-number-of-consistent-strings",
   "leetcodeId": "#1684",
   "category": ["String", "Hash Set", "Foundation"],
   "problemStatement": "You are given a string 'allowed' consisting of distinct characters and an array of strings 'words'. A string is considered consistent if all characters in the string appear in the allowed string. Return the number of consistent strings in the words array.",

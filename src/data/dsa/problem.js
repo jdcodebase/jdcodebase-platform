@@ -58,10 +58,10 @@ export const problems = [
     id: 7,
     title: "Count the Number of Consistent Strings",
     leetcode: "#1684",
-    slug: "count-consistent-strings",
+    slug: "count-the-number-of-consistent-strings",
     topic: "String",
     topics: ["String", "Hash Set", "Foundation"],
-    url: "/dsa/foundation/problem/count-consistent-strings",
+    url: "/dsa/foundation/problem/count-the-number-of-consistent-strings",
   },
   {
     id: 8,

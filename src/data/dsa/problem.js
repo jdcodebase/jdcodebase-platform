@@ -67,10 +67,10 @@ export const problems = [
     id: 8,
     title: "Defanging an IP Address",
     leetcode: "#1108",
-    slug: "defanging-ip-address",
+    slug: "defanging-an-ip-address",
     topic: "String",
     topics: ["String", "Foundation"],
-    url: "/dsa/foundation/problem/defanging-ip-address",
+    url: "/dsa/foundation/problem/defanging-an-ip-address",
   },
   {
     id: 9,

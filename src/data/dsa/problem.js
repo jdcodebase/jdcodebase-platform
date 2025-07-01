@@ -204,10 +204,10 @@ export const problems = [
     id: 23,
     title: "Find the Index of the First Occurrence in a String",
     leetcode: "#28",
-    slug: "find-index-of-first-occurrence",
+    slug: "find-the-index-of-the-first-occurrence-in-a-string",
     topic: "String",
     topics: ["String", "Two Pointer"],
-    url: "/dsa/string/problem/find-index-of-first-occurrence",
+    url: "/dsa/string/problem/find-the-index-of-the-first-occurrence-in-a-string",
   },
   {
     id: 24,

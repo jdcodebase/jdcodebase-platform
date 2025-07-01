@@ -159,10 +159,10 @@ export const problems = [
     id: 18,
     title: "Reverse String",
     leetcode: "#344",
-    slug: "reverse-string",
+    slug: "reverse-a-string",
     topic: "String",
     topics: ["String", "Two Pointer"],
-    url: "/dsa/string/problem/reverse-string",
+    url: "/dsa/string/problem/reverse-a-string",
   },
   {
     id: 19,

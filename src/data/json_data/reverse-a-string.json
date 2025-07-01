@@ -1,6 +1,6 @@
 {
   "title": "Reverse String",
-  "slug": "reverse-string",
+  "slug": "reverse-a-string",
   "leetcodeId": "#344",
   "category": ["String", "Two Pointer"],
   "problemStatement": "Write a function that reverses a character array in-place. You must do this by modifying the input array directly with O(1) extra memory.",

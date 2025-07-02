@@ -308,4 +308,13 @@ export const problems = [
     topics: ["Array", "Sliding Window"],
     url: "/dsa/array/problem/maximum-average-subarray-i",
   },
+  {
+    id: 34,
+    title: "Roman to Integer",
+    leetcode: "#13",
+    slug: "roman-to-integer",
+    topic: "String",
+    topics: ["String", "Hash Map"],
+    url: "/dsa/string/problem/roman-to-integer",
+  },
 ];

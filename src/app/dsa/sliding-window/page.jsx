@@ -9,7 +9,6 @@ export default function SlidingWindowPage() {
   const slidingWindowProblems = problems.filter((p) =>
     p.topics.includes("Sliding Window")
   );
-  const slidingWindowSEO = topicSEO["sliding-window"];
 
   return (
     <div className="md:flex min-h-screen">

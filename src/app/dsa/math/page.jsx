@@ -7,7 +7,6 @@ export const metadata = topicSEO["math"];
 
 export default function MathPage() {
   const mathProblems = problems.filter((p) => p.topics.includes("Math"));
-  const mathSEO = topicSEO["math"];
 
   return (
     <div className="md:flex min-h-screen">

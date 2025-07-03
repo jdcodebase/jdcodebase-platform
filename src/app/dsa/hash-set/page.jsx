@@ -7,7 +7,6 @@ export const metadata = topicSEO["hash-set"];
 
 export default function HashSetPage() {
   const hashsetProblems = problems.filter((p) => p.topics.includes("Hash Set"));
-  const hashSetSEO = topicSEO["hash-set"];
 
   return (
     <div className="md:flex min-h-screen">

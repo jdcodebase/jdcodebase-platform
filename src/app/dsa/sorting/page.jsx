@@ -7,7 +7,6 @@ export const metadata = topicSEO["sorting"];
 
 export default function SortingPage() {
   const sortingProblems = problems.filter((p) => p.topics.includes("Sorting"));
-  const sortingSEO = topicSEO["sorting"];
 
   return (
     <div className="md:flex min-h-screen">

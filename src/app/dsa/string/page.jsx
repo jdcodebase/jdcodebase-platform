@@ -7,7 +7,6 @@ export const metadata = topicSEO["string"];
 
 export default function StringProblemsPage() {
   const stringProblems = problems.filter((p) => p.topics.includes("String"));
-  const stringSEO = topicSEO["string"];
 
   return (
     <div className="md:flex min-h-screen">

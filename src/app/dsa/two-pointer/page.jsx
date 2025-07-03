@@ -9,7 +9,6 @@ export default function TwoPointerPage() {
   const twoPointerProblems = problems.filter((p) =>
     p.topics.includes("Two Pointer")
   );
-  const twoPointerSEO = topicSEO["two-pointer"];
 
   return (
     <div className="md:flex min-h-screen">

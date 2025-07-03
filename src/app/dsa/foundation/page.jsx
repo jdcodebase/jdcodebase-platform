@@ -9,7 +9,6 @@ export default function FoundationsPage() {
   const foundationProblems = problems.filter((p) =>
     p.topics.includes("Foundation")
   );
-  const foundationSEO = topicSEO["foundation"];
 
   return (
     <div className="md:flex min-h-screen">

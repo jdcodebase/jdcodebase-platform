@@ -7,7 +7,6 @@ export const metadata = topicSEO["array"];
 
 export default function ArrayPage() {
   const arrayProblems = problems.filter((p) => p.topics.includes("Array"));
-  const arraySEO = topicSEO["array"];
 
   return (
     <div className="md:flex min-h-screen">

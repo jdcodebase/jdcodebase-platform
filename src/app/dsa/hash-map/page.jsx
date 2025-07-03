@@ -7,7 +7,6 @@ export const metadata = topicSEO["hash-map"];
 
 export default function HashMapPage() {
   const hashmapProblems = problems.filter((p) => p.topics.includes("Hash Map"));
-  const hashMapSEO = topicSEO["hash-map"];
 
   return (
     <div className="md:flex min-h-screen">

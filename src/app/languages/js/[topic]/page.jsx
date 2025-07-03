@@ -1,6 +1,12 @@
 import { notFound } from "next/navigation";
 import { topicComponents, topicMetadataMap } from "../topicConfig";
 
+export async function generateStaticParams() {
+  return Object.keys(topicComponents).map((topic) => ({
+    topic,
+  }));
+}
+
 export async function generateMetadata({ params }) {
   const meta = topicMetadataMap[params.topic];
   if (!meta) return notFound();

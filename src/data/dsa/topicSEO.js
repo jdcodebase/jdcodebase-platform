@@ -173,15 +173,37 @@ const topicList = [
     },
   },
 ];
+
 export const topicSEO = Object.fromEntries(
   topicList.map((topic) => [
     topic.key,
     {
       title: `${topic.title} | JDCodebase`,
       description: topic.description,
-      url: `https://jdcodebase.vercel.app/dsa/${topic.key}`,
-      image: "https://jdcodebase.vercel.app/og-banner.png",
+      url: topic.url,
+      image: topic.image,
       keywords: topic.keywords.join(", "),
+      openGraph: {
+        title: `${topic.title} | JDCodebase`,
+        description: topic.description,
+        url: topic.url,
+        siteName: "JDCodebase",
+        images: [
+          {
+            url: topic.image,
+            width: 1200,
+            height: 630,
+            alt: topic.title,
+          },
+        ],
+        type: "article",
+      },
+      twitter: {
+        card: "summary_large_image",
+        title: `${topic.title} | JDCodebase`,
+        description: topic.description,
+        images: [topic.image],
+      },
     },
   ])
 );

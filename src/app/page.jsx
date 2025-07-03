@@ -1,19 +1,52 @@
 import PlaylistSection from "@/components/home/PlaylistSection";
 import HeroSection from "@/components/home/HeroSection";
 import FeaturesSection from "@/components/home/FeaturesSection";
-import SEO from "@/components/common/SEO";
+
+export const metadata = {
+  title: "JDCodebase – Learn DSA, Projects & Blogs for Developers",
+  description:
+    "Explore developer-focused content in DSA, JavaScript, and hands-on projects. JDCodebase is your launchpad for mastering code.",
+  keywords: [
+    "JDCodebase",
+    "DSA tutorials",
+    "JavaScript projects",
+    "developer blogs",
+    "coding roadmap",
+    "frontend roadmap",
+    "self-taught developer",
+    "MERN stack tutorials",
+    "LeetCode JavaScript",
+    "full stack coding",
+  ],
+  openGraph: {
+    title: "JDCodebase – Learn DSA, Projects & Blogs for Developers",
+    description:
+      "Explore developer-focused content in DSA, JavaScript, and hands-on projects. JDCodebase is your launchpad for mastering code.",
+    url: "https://jdcodebase.vercel.app",
+    siteName: "JDCodebase",
+    type: "website",
+    images: [
+      {
+        url: "https://jdcodebase.vercel.app/og-banner.png",
+        width: 1200,
+        height: 630,
+        alt: "JDCodebase – Banner Image",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "JDCodebase – Learn DSA, Projects & Blogs for Developers",
+    description:
+      "Master DSA and JavaScript through interactive coding content. Follow projects, tutorials, and a self-taught dev journey.",
+    images: ["https://jdcodebase.vercel.app/og-banner.png"],
+  },
+  metadataBase: new URL("https://jdcodebase.vercel.app"),
+};
 
 export default function HomePage() {
   return (
     <>
-      <SEO
-        title="JDCodebase – Learn DSA, Projects & Blogs for Developers"
-        description="Explore developer-focused content in DSA, JavaScript, and hands-on projects. JDCodebase is your launchpad."
-        url="https://jdcodebase.vercel.app"
-        image="https://jdcodebase.vercel.app/og-banner.png"
-        keywords="DSA tutorials, JavaScript projects, developer blogs, self-taught dev roadmap, coding tutorials, JDCodebase"
-      />
-
       <main className="text-white px-5">
         <HeroSection />
         <PlaylistSection />

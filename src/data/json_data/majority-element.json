@@ -1,0 +1,61 @@
+{
+  "title": "Majority Element",
+  "slug": "majority-element",
+  "leetcodeId": "#169",
+  "category": [
+    "Array",
+    "Hash Map",
+    "Boyer-Moore",
+    "Sorting",
+    "Frequency Count"
+  ],
+  "problemStatement": "Given an array nums of size n, return the majority element. The majority element is the element that appears more than ⌊n / 2⌋ times. You may assume that the majority element always exists in the array.",
+  "examples": [
+    {
+      "input": "nums = [3, 2, 3]",
+      "output": "3",
+      "explanation": "3 appears 2 times in an array of length 3, which is more than ⌊3 / 2⌋ = 1."
+    },
+    {
+      "input": "nums = [2, 2, 1, 1, 1, 2, 2]",
+      "output": "2",
+      "explanation": "2 appears 4 times in an array of length 7, which is more than ⌊7 / 2⌋ = 3."
+    }
+  ],
+  "approach": [
+    {
+      "title": "Sorting Approach",
+      "steps": [
+        "Sort the array in ascending order.",
+        "Return the element at the middle index `Math.floor(n / 2)`.",
+        "This works because the majority element must occupy the center position."
+      ],
+      "code": "var majorityElement = function(nums) {\n  nums.sort((a, b) => a - b);\n  return nums[Math.floor(nums.length / 2)];\n};"
+    },
+    {
+      "title": "Hash Map Approach",
+      "steps": [
+        "Create a Hash Map to count the frequency of each element.",
+        "Loop through the array and update the count for each number.",
+        "If any element’s count becomes greater than ⌊n / 2⌋, return that element."
+      ],
+      "code": "var majorityElement = function(nums) {\n  const map = new Map();\n  for (let num of nums) {\n    map.set(num, (map.get(num) || 0) + 1);\n    if (map.get(num) > Math.floor(nums.length / 2)) {\n      return num;\n    }\n  }\n};"
+    },
+    {
+      "title": "Boyer-Moore Voting Algorithm",
+      "steps": [
+        "Initialize `count = 0` and `major = null`.",
+        "Loop through each number in the array:",
+        "- If `count == 0`, set `major = current number`.",
+        "- If `current number == major`, increment count, else decrement count.",
+        "After the loop, return `major` as the majority element."
+      ],
+      "code": "var majorityElement = function(nums) {\n  let count = 0;\n  let major = null;\n  for (let num of nums) {\n    if (count === 0) major = num;\n    count += num === major ? 1 : -1;\n  }\n  return major;\n};"
+    }
+  ],
+  "timeComplexity": "Sorting: O(n log n), Hash Map: O(n), Boyer-Moore: O(n)",
+  "spaceComplexity": "Sorting: O(1), Hash Map: O(n), Boyer-Moore: O(1)",
+  "leetcodeLink": "https://leetcode.com/problems/majority-element/",
+  "pptLink": "https://1drv.ms/p/c/d9a1d5f2dacf7aea/IQR2W9cCgYW1S7LMyACwDolJAUUma-9WDslGvizCtkDhYhM?em=2&amp;wdAr=1.7777777777777777",
+  "videoLink": "rEn-YTJ4IZI"
+}

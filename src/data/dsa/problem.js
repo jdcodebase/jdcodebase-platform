@@ -317,4 +317,13 @@ export const problems = [
     topics: ["String", "Hash Map"],
     url: "/dsa/string/problem/roman-to-integer",
   },
+  {
+    id: 35,
+    title: "Majority Element",
+    leetcode: "#169",
+    slug: "majority-element",
+    topic: "Array",
+    topics: ["Array", "Hash Map", "Boyer-Moore", "Sorting", "Frequency Count"],
+    url: "/dsa/array/problem/majority-element",
+  },
 ];

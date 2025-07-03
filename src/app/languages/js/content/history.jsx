@@ -1,5 +1,43 @@
 import Link from "next/link";
 
+export const metadata = {
+  title: "History of JavaScript | JDCodebase",
+  description:
+    "Explore the fascinating origin of JavaScript — from its creation at Netscape in 1995 to its evolution as the backbone of modern web development. Learn why it's called JavaScript and its key milestones.",
+  keywords: [
+    "History of JavaScript",
+    "JavaScript timeline",
+    "JavaScript evolution",
+    "Brendan Eich",
+    "Netscape",
+    "ECMAScript",
+    "JDCodebase",
+  ],
+  openGraph: {
+    title: "History of JavaScript | JDCodebase",
+    description:
+      "Learn how JavaScript was created, why it was named, and how it became the most widely used programming language for the web.",
+    url: "https://jdcodebase.vercel.app/languages/js/history",
+    siteName: "JDCodebase",
+    type: "article",
+    images: [
+      {
+        url: "https://jdcodebase.vercel.app/og-banner.png",
+        width: 1200,
+        height: 630,
+        alt: "JavaScript History Timeline",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "History of JavaScript | JDCodebase",
+    description:
+      "Understand the naming, origin, and key milestones that shaped JavaScript into the web's core language.",
+    images: ["https://jdcodebase.vercel.app/og-banner.png"],
+  },
+};
+
 export default function HistoryOfJavaScript() {
   return (
     <div className="text-white px-4 md:px-8 py-6 bg-neutral-950 min-h-screen flex flex-col justify-between">

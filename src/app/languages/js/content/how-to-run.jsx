@@ -1,5 +1,43 @@
 import Link from "next/link";
 
+export const metadata = {
+  title: "How to Run JavaScript | JDCodebase",
+  description:
+    "Learn how to run JavaScript in browsers, online editors, and locally with Node.js. Explore simple ways to test JS code as a beginner.",
+  keywords: [
+    "Run JavaScript",
+    "Browser console JavaScript",
+    "Node.js tutorial",
+    "JS Playground",
+    "Execute JavaScript code",
+    "JavaScript online editors",
+    "JDCodebase",
+  ],
+  openGraph: {
+    title: "How to Run JavaScript | JDCodebase",
+    description:
+      "Explore different ways to run JavaScript — in the browser, in HTML, online editors like PlayCode, or locally with Node.js.",
+    url: "https://jdcodebase.vercel.app/languages/js/how-to-run",
+    siteName: "JDCodebase",
+    type: "article",
+    images: [
+      {
+        url: "https://jdcodebase.vercel.app/og-banner.png",
+        width: 1200,
+        height: 630,
+        alt: "How to Run JavaScript Code - JDCodebase",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "How to Run JavaScript | JDCodebase",
+    description:
+      "Learn how to run JavaScript code in the browser console, in HTML pages, using Node.js, or online editors like JSFiddle.",
+    images: ["https://jdcodebase.vercel.app/og-banner.png"],
+  },
+};
+
 export default function HowToRunJavaScript() {
   return (
     <div className="text-white px-4 md:px-8 py-6 bg-neutral-950 min-h-screen flex flex-col justify-between">

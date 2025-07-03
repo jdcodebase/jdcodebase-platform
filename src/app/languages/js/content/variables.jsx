@@ -1,7 +1,39 @@
 export const metadata = {
   title: "JavaScript Variables | JDCodebase",
   description:
-    "Learn all about JavaScript variables, including var, let, const, scoping, hoisting, best practices, and common interview questions.",
+    "Learn all about JavaScript variables including var, let, const, scoping, hoisting, best practices, and common interview questions.",
+  keywords: [
+    "JavaScript variables",
+    "var let const",
+    "hoisting in JavaScript",
+    "JS scope",
+    "temporal dead zone",
+    "variable declaration",
+    "JDCodebase",
+  ],
+  openGraph: {
+    title: "JavaScript Variables | JDCodebase",
+    description:
+      "Master JavaScript variables: var, let, const, hoisting, scoping, and best practices for cleaner code. A must-know for interviews.",
+    url: "https://jdcodebase.vercel.app/languages/js/variables",
+    siteName: "JDCodebase",
+    type: "article",
+    images: [
+      {
+        url: "https://jdcodebase.vercel.app/og-banner.png",
+        width: 1200,
+        height: 630,
+        alt: "JavaScript Variables Explained - JDCodebase",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "JavaScript Variables | JDCodebase",
+    description:
+      "Deep dive into JS variables: var, let, const, hoisting, scope, and real examples. Learn smarter coding with JDCodebase.",
+    images: ["https://jdcodebase.vercel.app/og-banner.png"],
+  },
 };
 
 export default function VariablesPage() {

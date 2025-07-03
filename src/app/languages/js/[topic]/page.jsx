@@ -1,22 +1,16 @@
 import { notFound } from "next/navigation";
-import dynamic from "next/dynamic";
+import { topicComponents, topicMetadataMap } from "../topicConfig";
 
-const topicComponents = {
-  "what-is-js": dynamic(() => import("../content/what-is-js")),
-  history: dynamic(() => import("../content/history")),
-  versions: dynamic(() => import("../content/versions")),
-  "how-to-run": dynamic(() => import("../content/how-to-run")),
-  variables: dynamic(() => import("../content/variables")),
-};
+export async function generateMetadata({ params }) {
+  const meta = topicMetadataMap[params.topic];
+  if (!meta) return notFound();
+  return meta;
+}
 
-export default function TopicPage({ params }) {
-  const TopicComponent = topicComponents[params.topic];
+export default async function TopicPage({ params }) {
+  const loader = topicComponents[params.topic];
+  if (!loader) return notFound();
 
-  if (!TopicComponent) return notFound();
-
-  return (
-    <div>
-      <TopicComponent />
-    </div>
-  );
+  const Component = (await loader()).default;
+  return <Component />;
 }

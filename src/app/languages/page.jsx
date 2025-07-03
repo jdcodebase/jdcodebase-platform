@@ -1,5 +1,43 @@
 import Link from "next/link";
 
+export const metadata = {
+  title: "Programming Languages for Beginners | JDCodebase",
+  description:
+    "Explore beginner-friendly resources, coding guides, and DSA problems for popular programming languages like JavaScript. Start your coding journey with JDCodebase.",
+  keywords: [
+    "Programming languages",
+    "JavaScript tutorials",
+    "Learn to code",
+    "Beginner coding guides",
+    "DSA in JavaScript",
+    "Web development",
+    "JDCodebase",
+  ],
+  openGraph: {
+    title: "Programming Languages for Beginners | JDCodebase",
+    description:
+      "Begin your coding journey with beginner-friendly language tutorials, DSA problems, and guides. Explore JavaScript and more at JDCodebase.",
+    url: "https://jdcodebase.vercel.app/languages",
+    siteName: "JDCodebase",
+    type: "website",
+    images: [
+      {
+        url: "https://jdcodebase.vercel.app/og-banner.png",
+        width: 1200,
+        height: 630,
+        alt: "JDCodebase Programming Languages",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Programming Languages for Beginners | JDCodebase",
+    description:
+      "Explore JavaScript and more with beginner-friendly tutorials and coding resources.",
+    images: ["https://jdcodebase.vercel.app/og-banner.png"],
+  },
+};
+
 const languages = [
   {
     name: "JavaScript",
@@ -7,18 +45,18 @@ const languages = [
     description: "Master the language of the web.",
     color: "bg-yellow-500",
   },
-  {
-    name: "TypeScript",
-    code: "ts",
-    description: "Strongly typed JavaScript for scalable apps.",
-    color: "bg-blue-500",
-  },
-  {
-    name: "C++",
-    code: "cpp",
-    description: "Powerful language for performance-critical apps.",
-    color: "bg-purple-600",
-  },
+  // {
+  //   name: "TypeScript",
+  //   code: "ts",
+  //   description: "Strongly typed JavaScript for scalable apps.",
+  //   color: "bg-blue-500",
+  // },
+  // {
+  //   name: "C++",
+  //   code: "cpp",
+  //   description: "Powerful language for performance-critical apps.",
+  //   color: "bg-purple-600",
+  // },
 ];
 
 export default function LanguagesPage() {

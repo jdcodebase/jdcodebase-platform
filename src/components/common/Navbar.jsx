@@ -18,11 +18,11 @@ import {
 const courseLinks = [
   { name: "DSA", href: "/dsa" },
   { name: "JavaScript", href: "/languages/js" },
-  { name: "C++", href: "/languages/cpp" },
+  // { name: "C++", href: "/languages/cpp" },
 ];
 
 const utilityLinks = [
-  { name: "Projects", href: "/projects" },
+  // { name: "Projects", href: "/projects" },
   { name: "Playground", href: "/playground" },
 ];
 

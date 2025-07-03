@@ -1,5 +1,43 @@
 import Link from "next/link";
 
+export const metadata = {
+  title: "Versions of JavaScript | JDCodebase",
+  description:
+    "Explore the evolution of JavaScript from ES3 to ES2023 and beyond. Understand major ECMAScript updates, key features, and why versioning matters.",
+  keywords: [
+    "JavaScript versions",
+    "ECMAScript history",
+    "ES6 features",
+    "ES2023 updates",
+    "JavaScript timeline",
+    "ES5 ES6 ES7",
+    "JDCodebase",
+  ],
+  openGraph: {
+    title: "Versions of JavaScript | JDCodebase",
+    description:
+      "A complete breakdown of JavaScript versions: ES5, ES6, ES7+ to ES2023. Learn how the language evolved and the features introduced in each update.",
+    url: "https://jdcodebase.vercel.app/languages/js/versions",
+    siteName: "JDCodebase",
+    type: "article",
+    images: [
+      {
+        url: "https://jdcodebase.vercel.app/og-banner.png",
+        width: 1200,
+        height: 630,
+        alt: "JavaScript Versions Timeline - JDCodebase",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Versions of JavaScript | JDCodebase",
+    description:
+      "Learn all major JavaScript (ECMAScript) versions from ES3 to ES13 and beyond. Perfect for developers keeping up with modern JavaScript.",
+    images: ["https://jdcodebase.vercel.app/og-banner.png"],
+  },
+};
+
 export default function VersionsOfJavaScript() {
   return (
     <div className="text-white px-4 md:px-8 py-6 bg-neutral-950 min-h-screen flex flex-col justify-between">

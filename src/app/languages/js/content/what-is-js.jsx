@@ -1,3 +1,42 @@
+export const metadata = {
+  title: "What is JavaScript? | JDCodebase",
+  description:
+    "Learn what JavaScript is, why it's used, and how it powers interactive websites. Explore its features, use cases, and real-world analogies — perfect for beginners.",
+  keywords: [
+    "What is JavaScript",
+    "JavaScript introduction",
+    "JavaScript basics",
+    "JDCodebase",
+    "JavaScript for beginners",
+    "learn JavaScript",
+    "JavaScript features",
+    "JavaScript use cases",
+  ],
+  openGraph: {
+    title: "What is JavaScript? | JDCodebase",
+    description:
+      "Explore the basics of JavaScript, a high-level scripting language used for dynamic websites. Learn its purpose, characteristics, and why it's essential.",
+    url: "https://jdcodebase.vercel.app/languages/js/what-is-js",
+    siteName: "JDCodebase",
+    type: "article",
+    images: [
+      {
+        url: "https://jdcodebase.vercel.app/og-banner.png",
+        width: 1200,
+        height: 630,
+        alt: "What is JavaScript - JDCodebase",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "What is JavaScript? | JDCodebase",
+    description:
+      "Understand what JavaScript is and how it works. A beginner-friendly introduction to the language of the web.",
+    images: ["https://jdcodebase.vercel.app/og-banner.png"],
+  },
+};
+
 export default function WhatIsJavascript() {
   return (
     <div className="text-white px-3 md:px-6">

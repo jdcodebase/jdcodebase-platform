@@ -1,11 +1,11 @@
 import { getProblemData } from "@/lib/problemUtils";
 import ProblemPage from "@/components/dsa/ProblemPage";
 import { notFound } from "next/navigation";
-import { problems } from "@/data/dsa/problem"; // <-- Add this line
+import { problems } from "@/data/dsa/problem";
 
 export async function generateStaticParams() {
   return problems.map((problem) => ({
-    topic: problem.topic, // ⬅️ Must match your dynamic folder name
+    topic: problem.topic.toLowerCase(),
     slug: problem.slug,
   }));
 }

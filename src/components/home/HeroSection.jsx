@@ -1,56 +1,38 @@
-"use client";
-
 import Link from "next/link";
-import { Code, BookOpen, Hammer } from "lucide-react";
+import { FaCode, FaLanguage } from "react-icons/fa";
 
 export default function HeroSection() {
   return (
-    <section
-      className="pt-5 max-w-5xl mx-auto text-center md:min-h-screen flex flex-col justify-center items-center px-4"
-      role="region"
-      aria-label="Hero Section"
-    >
-      <h1 className="text-4xl sm:text-5xl font-extrabold leading-tight mb-4 md:mb-8">
-        Welcome to{" "}
-        <span className="text-blue-600 dark:text-blue-400">JDCodebase</span>
-      </h1>
+    <div className="bg-gradient-to-br from-black via-gray-900 to-black min-h-screen text-white flex justify-center items-center px-4">
+      <div className="max-w-3xl w-full text-center space-y-8">
+        <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight">
+          Welcome to <span className="text-sky-500">JDCodebase</span>
+        </h1>
 
-      <p className="text-lg sm:text-xl mb-6 max-w-2xl text-gray-300">
-        🌐 Your one-stop hub for all things tech — from programming languages
-        and DSA to real-world projects, blogs, and developer resources.
-      </p>
+        <p className="text-gray-300 text-lg md:text-xl flex items-center justify-center gap-2">
+          Your one-stop hub for all things tech — from programming languages and
+          DSA to real-world projects, blogs, and developer resources.
+        </p>
 
-      <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6 my-8 w-full sm:w-auto">
-        <HeroButton href="/dsa" icon={<Code size={18} />} text="Master DSA" />
-        <HeroButton
-          href="/languages"
-          icon={<BookOpen size={18} />}
-          text="Learn Languages"
-        />
-        <HeroButton
-          href="/projects"
-          icon={<Hammer size={18} />}
-          text="Build Projects"
-        />
+        <div className="flex flex-col md:flex-row justify-center items-center gap-4 pt-4">
+          <Link
+            href={"/dsa"}
+            className="border border-white hover:border-sky-500 hover:text-sky-400 transition duration-300 px-6 py-3 rounded-lg text-lg flex items-center gap-2 shadow-sm hover:shadow-md shadow-white/40"
+          >
+            <FaCode /> Master DSA
+          </Link>
+          <Link href={"/languages"}>
+            <button className="border border-white hover:border-sky-500 hover:text-sky-400 transition duration-300 px-6 py-3 rounded-lg text-lg flex items-center gap-2 shadow-sm hover:shadow-md shadow-white/40">
+              <FaLanguage /> Learn Languages
+            </button>
+          </Link>
+        </div>
+
+        <p className="text-sm text-gray-400 pt-6 flex items-center justify-center gap-2">
+          Constantly evolving to empower developers with content, code, and
+          clarity.
+        </p>
       </div>
-
-      <p className="mt-10 text-md text-gray-400">
-        ⚡ Constantly evolving to empower developers with content, code, and
-        clarity.
-      </p>
-    </section>
-  );
-}
-
-function HeroButton({ href, icon, text }) {
-  return (
-    <Link
-      href={href}
-      aria-label={`Go to ${text}`}
-      className="bg-black border border-gray-600 hover:shadow-blue-500/20 hover:shadow-md text-white px-6 py-3 rounded-md shadow transition flex justify-center items-center gap-2 w-full sm:w-auto focus:outline-none focus:ring-2 focus:ring-blue-500"
-    >
-      {icon}
-      <span>{text}</span>
-    </Link>
+    </div>
   );
 }

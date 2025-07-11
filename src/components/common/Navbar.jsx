@@ -1,39 +1,35 @@
 "use client";
 
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
-import clsx from "clsx";
+import { Ubuntu } from "next/font/google";
+import { FaBars } from "react-icons/fa";
+import { MdClose } from "react-icons/md";
+import { RiArrowDropDownLine } from "react-icons/ri";
 import { CiSearch } from "react-icons/ci";
-import { IoIosArrowDown, IoMdClose } from "react-icons/io";
-import { FaBars } from "react-icons/fa6";
 import {
-  Button,
   Dropdown,
-  DropdownItem,
-  DropdownMenu,
   DropdownTrigger,
-} from "@nextui-org/react";
+  DropdownMenu,
+  DropdownItem,
+} from "@heroui/react";
+import Link from "next/link";
+import { useState } from "react";
+import { usePathname } from "next/navigation";
+
+const ubuntu = Ubuntu({ weight: "400", subsets: ["latin"] });
 
 const courseLinks = [
   { name: "DSA", href: "/dsa" },
-  { name: "JavaScript", href: "/languages/js" },
-  // { name: "C++", href: "/languages/cpp" },
+  { name: "Languages", href: "/languages" },
 ];
 
-const utilityLinks = [
-  // { name: "Projects", href: "/projects" },
-  { name: "Playground", href: "/playground" },
-];
+const utilityLinks = [{ name: "Playground", href: "/playground" }];
 
-export default function Navbar() {
+const Navbar = () => {
   const pathname = usePathname();
-  const [isSideBarOpen, setIsSideBarOpen] = useState(false);
+  const [isOpenSidebar, setIsOpenSidebar] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
 
-  useEffect(() => {
-    document.body.classList.toggle("overflow-hidden", isSideBarOpen);
-  }, [isSideBarOpen]);
+  const isActive = (href) => pathname.startsWith(href);
 
   const handleSearch = (e) => {
     e.preventDefault();
@@ -43,101 +39,60 @@ export default function Navbar() {
     setSearchQuery("");
   };
 
-  const isActive = (href) => pathname.startsWith(href);
-
-  const renderSidebar = () => (
-    <div className="fixed inset-0 z-50 flex md:hidden">
-      <aside
-        className="w-60 bg-neutral-900 text-white p-5 flex flex-col justify-between transform transition-transform duration-300 ease-in-out translate-x-0"
-        role="navigation"
-        aria-label="Mobile Sidebar Navigation"
-      >
-        <div>
-          <button
-            onClick={() => setIsSideBarOpen(false)}
-            className="mb-6"
-            aria-label="Close Sidebar"
-          >
-            <IoMdClose size={26} />
-          </button>
-
-          <nav className="flex flex-col gap-4">
-            {[...courseLinks, ...utilityLinks].map((link) => (
-              <Link
-                key={link.name}
-                href={link.href}
-                onClick={() => setIsSideBarOpen(false)}
-                className={clsx(
-                  "px-2 py-2 rounded text-sm",
-                  isActive(link.href)
-                    ? "bg-blue-600 text-white"
-                    : "hover:bg-neutral-700 text-gray-300"
-                )}
-              >
-                {link.name}
-              </Link>
-            ))}
-          </nav>
-        </div>
-      </aside>
-
-      <div
-        className="flex-1 bg-black/50 backdrop-blur-sm"
-        onClick={() => setIsSideBarOpen(false)}
-        aria-hidden="true"
-      />
-    </div>
-  );
-
   return (
-    <header className="sticky top-0 z-40 shadow-md bg-neutral-900 text-white">
-      <nav className="flex items-center justify-between px-4 py-4">
+    <div>
+      <nav className="w-full z-50 bg-gradient-to-bl from-black via-gray-900 to-black text-white py-5 px-4 shadow-md flex justify-between">
         <Link
-          href="/"
-          className="text-xl font-serif italic font-bold hover:not-italic"
+          href={"/"}
+          className={`text-xl font-bold tracking-wide ${ubuntu.className}`}
         >
           JDCodebase
         </Link>
 
-        <div className="hidden md:flex items-center gap-6">
+        <div className="md:hidden">
+          <button onClick={() => setIsOpenSidebar(true)}>
+            <FaBars size={22} />
+          </button>
+        </div>
+
+        <div className="hidden md:flex items-center gap-2">
           <Dropdown>
-            <DropdownTrigger>
-              <Button
-                variant="light"
-                className="flex items-center gap-1 text-white text-sm"
-              >
-                Courses <IoIosArrowDown />
-              </Button>
+            <DropdownTrigger className="flex items-center">
+              <button className="text-white text-md tracking-wide hover:text-blue-400">
+                Courses <RiArrowDropDownLine size={22} />
+              </button>
             </DropdownTrigger>
-            <DropdownMenu className="bg-neutral-900 text-white p-2 rounded-md">
+            <DropdownMenu className="bg-black text-white shadow-lg p-2 rounded-lg">
               {courseLinks.map((link) => (
-                <DropdownItem key={link.name} className="w-full">
-                  <Link
-                    href={link.href}
-                    className={clsx(
-                      "block px-2 py-1 text-sm rounded hover:bg-neutral-800",
-                      isActive(link.href) && "text-blue-400"
-                    )}
-                  >
-                    {link.name}
-                  </Link>
+                <DropdownItem
+                  key={link.name}
+                  className={`rounded-md px-3 py-1 text-sm mt-1 border border-black ${
+                    isActive(link.href)
+                      ? "bg-blue-600 text-white"
+                      : "hover:border-white"
+                  }`}
+                >
+                  <Link href={link.href}>{link.name}</Link>
                 </DropdownItem>
               ))}
             </DropdownMenu>
           </Dropdown>
 
-          {utilityLinks.map((link) => (
-            <Link
-              key={link.name}
-              href={link.href}
-              className={clsx(
-                "text-sm hover:text-blue-400 transition",
-                isActive(link.href) && "text-blue-400 font-medium"
-              )}
-            >
-              {link.name}
-            </Link>
-          ))}
+          <div className="flex mr-1 items-center">
+            {utilityLinks.map((link) => (
+              <Link
+                key={link.name}
+                href={link.href}
+                className={`text-md tracking-wide transition-colors duration-20 hover:text-blue-500  ${
+                  isActive(link.href)
+                    ? "text-blue-500 font-medium"
+                    : "hover:text-blue-400 hover:border-white hover:border-b"
+                }`}
+              >
+                {link.name}
+              </Link>
+            ))}
+          </div>
 
           <form
             onSubmit={handleSearch}
@@ -148,23 +103,48 @@ export default function Navbar() {
               placeholder="Search topic/problem..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="bg-transparent outline-none px-1 text-sm text-white w-44"
-              aria-label="Search input"
+              className="outline-none px-1 text-sm text-white w-44"
             />
-            <button type="submit" aria-label="Search">
+            <button type="submit">
               <CiSearch size={20} />
             </button>
           </form>
         </div>
-
-        <div className="md:hidden">
-          <button onClick={() => setIsSideBarOpen(true)} aria-label="Open Menu">
-            <FaBars size={22} />
-          </button>
-        </div>
       </nav>
 
-      {isSideBarOpen && renderSidebar()}
-    </header>
+      {isOpenSidebar && (
+        <div className="fixed inset-0 z-50 flex md:hidden transition-all">
+          <div
+            className="flex-1 bg-black/60 backdrop-blur-sm"
+            onClick={() => setIsOpenSidebar(false)}
+          />
+
+          <aside className="bg-black text-white w-2/3 sm:w-1/2 p-4">
+            <div className="flex justify-end mb-4">
+              <button onClick={() => setIsOpenSidebar(false)}>
+                <MdClose size={24} />
+              </button>
+            </div>
+
+            {[...courseLinks, ...utilityLinks].map((link) => (
+              <Link
+                key={link.name}
+                href={link.href}
+                onClick={() => setIsOpenSidebar(false)}
+                className={`block px-4 py-2 rounded-md text-lg font-medium mb-1 ${
+                  isActive(link.href)
+                    ? "bg-blue-600 text-white"
+                    : "hover:bg-neutral-700"
+                }`}
+              >
+                {link.name}
+              </Link>
+            ))}
+          </aside>
+        </div>
+      )}
+    </div>
   );
-}
+};
+
+export default Navbar;

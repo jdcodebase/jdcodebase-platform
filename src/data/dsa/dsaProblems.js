@@ -1988,7 +1988,7 @@ export const dsaProblems = [
     slug: "palindrome-number",
     difficulty: "Easy",
     leetcodeId: "#9",
-    category: ["Math", "Two Pointers"],
+    category: ["Math"],
     problemStatement:
       "Given an integer `x`, return `true` if `x` is a palindrome, and `false` otherwise.\n\nA palindrome is a number that reads the same backward as forward. Negative numbers are **not** considered palindromes.",
 
@@ -2045,6 +2045,77 @@ export const dsaProblems = [
     pptLink:
       "https://1drv.ms/p/c/d9a1d5f2dacf7aea/IQQg7J1vh06RQqP3KSgbuJZ8AfgljzogjpF3qLskFDISDHU?em=2&amp;wdAr=1.7777777777777777",
     leetcodeLink: "https://leetcode.com/problems/palindrome-number/",
+    videoLink: "",
+  },
+  {
+    title: "Length of Last Word",
+    slug: "length-of-last-word",
+    difficulty: "Easy",
+    leetcodeId: "#58",
+    category: ["String"],
+    problemStatement:
+      "Given a string `s` consisting of words and spaces, return the length of the **last word** in the string.\n\nA word is a maximal substring consisting of non-space characters only.",
+
+    examples: [
+      {
+        input: 's = "Hello World"',
+        output: "5",
+        explanation: "The last word is 'World', which has 5 characters.",
+      },
+      {
+        input: 's = "   fly me   to   the moon  "',
+        output: "4",
+        explanation: "The last word is 'moon', which has 4 characters.",
+      },
+      {
+        input: 's = "luffy is still joyboy"',
+        output: "6",
+        explanation: "The last word is 'joyboy', which has 6 characters.",
+      },
+    ],
+
+    approach: [
+      {
+        title: "Approach: Reverse Traversal",
+        steps: [
+          "Initialize an empty string `subStr`.",
+          "Loop from the end of the string to the beginning:",
+          "  - If the current character is a space and `subStr` is empty, continue (skip trailing spaces).",
+          "  - If the current character is a space and `subStr` is not empty, return `subStr.length` (we found the last word).",
+          "  - Otherwise, append the current character to `subStr`.",
+          "After the loop, return `subStr.length` in case the string has only one word.",
+        ],
+        code: `// 🔹 Manual Reverse Loop Approach
+  var lengthOfLastWord = function (s) {
+    let subStr = "";
+    for (let i = s.length - 1; i >= 0; i--) {
+      if (s[i] === " " && subStr === "") continue;
+      else if (s[i] === " " && subStr.length > 0) return subStr.length;
+      else subStr += s[i];
+    }
+    return subStr.length;
+  };`,
+      },
+      {
+        title: "Approach: Trim and Split",
+        steps: [
+          "Use `trim()` to remove trailing and leading spaces.",
+          'Use `split(" ")` to convert the string into words.',
+          "Return the length of the last element in the resulting array.",
+        ],
+        code: `// 🔹 Built-in Method (Short Code)
+  var lengthOfLastWord = function (s) {
+    let words = s.trim().split(" ");
+    return words[words.length - 1].length;
+  };`,
+      },
+    ],
+
+    timeComplexity: "O(n) – We scan the string once",
+    spaceComplexity: "O(1) for reverse loop, O(n) for split-based version",
+    pptLink:
+      "https://1drv.ms/p/c/d9a1d5f2dacf7aea/IQQcqCJ8cB0YRbWH17ygiBdiAX9ktqSRW-up415m3gp4iN8?em=2&amp;wdAr=1.7777777777777777",
+    leetcodeLink: "https://leetcode.com/problems/length-of-last-word/",
     videoLink: "",
   },
 ];

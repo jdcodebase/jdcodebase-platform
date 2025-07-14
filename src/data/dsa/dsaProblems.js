@@ -1983,4 +1983,68 @@ export const dsaProblems = [
     leetcodeLink: "https://leetcode.com/problems/valid-anagram/",
     videoLink: "hcPxY3m0hzw",
   },
+  {
+    title: "Palindrome Number",
+    slug: "palindrome-number",
+    difficulty: "Easy",
+    leetcodeId: "#9",
+    category: ["Math", "Two Pointers"],
+    problemStatement:
+      "Given an integer `x`, return `true` if `x` is a palindrome, and `false` otherwise.\n\nA palindrome is a number that reads the same backward as forward. Negative numbers are **not** considered palindromes.",
+
+    examples: [
+      {
+        input: "x = 121",
+        output: "true",
+        explanation: "121 reads the same forward and backward.",
+      },
+      {
+        input: "x = -121",
+        output: "false",
+        explanation: "Reversed = 121-, which is not valid.",
+      },
+      {
+        input: "x = 10",
+        output: "false",
+        explanation: "Reversed = 01, which is not equal to 10.",
+      },
+    ],
+
+    approach: [
+      {
+        title: "Approach: Reverse Integer Comparison",
+        steps: [
+          "If `x` is negative, immediately return `false`.",
+          "Initialize a `reversed` variable to 0 and store the original value in a temporary variable `temp`.",
+          "While `temp > 0`:",
+          "  - Extract the last digit: `lastDigit = temp % 10`",
+          "  - Build reversed number: `reversed = reversed * 10 + lastDigit`",
+          "  - Remove last digit: `temp = Math.floor(temp / 10)`",
+          "After the loop, compare `reversed` with `x`. If equal, return `true`; otherwise, return `false`.",
+        ],
+        code: `// 🔹 Approach: Reversing Number
+  var isPalindrome = function (x) {
+    if (x < 0) return false;
+  
+    let temp = x;
+    let reversed = 0;
+  
+    while (temp > 0) {
+      let lastDigit = temp % 10;
+      reversed = reversed * 10 + lastDigit;
+      temp = Math.floor(temp / 10);
+    }
+  
+    return reversed === x;
+  };`,
+      },
+    ],
+
+    timeComplexity: "O(log₁₀n) – We divide the number by 10 each iteration",
+    spaceComplexity: "O(1) – Constant space for variables",
+    pptLink:
+      "https://1drv.ms/p/c/d9a1d5f2dacf7aea/IQQg7J1vh06RQqP3KSgbuJZ8AfgljzogjpF3qLskFDISDHU?em=2&amp;wdAr=1.7777777777777777",
+    leetcodeLink: "https://leetcode.com/problems/palindrome-number/",
+    videoLink: "",
+  },
 ];

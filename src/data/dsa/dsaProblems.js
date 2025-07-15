@@ -2045,7 +2045,7 @@ export const dsaProblems = [
     pptLink:
       "https://1drv.ms/p/c/d9a1d5f2dacf7aea/IQQg7J1vh06RQqP3KSgbuJZ8AfgljzogjpF3qLskFDISDHU?em=2&amp;wdAr=1.7777777777777777",
     leetcodeLink: "https://leetcode.com/problems/palindrome-number/",
-    videoLink: "",
+    videoLink: "dijqWuQaT1o",
   },
   {
     title: "Length of Last Word",
@@ -2116,6 +2116,6 @@ export const dsaProblems = [
     pptLink:
       "https://1drv.ms/p/c/d9a1d5f2dacf7aea/IQQcqCJ8cB0YRbWH17ygiBdiAX9ktqSRW-up415m3gp4iN8?em=2&amp;wdAr=1.7777777777777777",
     leetcodeLink: "https://leetcode.com/problems/length-of-last-word/",
-    videoLink: "",
+    videoLink: "bKUSxfwjypE",
   },
 ];

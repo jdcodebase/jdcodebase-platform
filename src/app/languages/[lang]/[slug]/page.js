@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { GrFormNextLink, GrFormPreviousLink } from "react-icons/gr";
 import { languageContentMap } from "@/data/pl/allTopics";
+import QuizBlock from "@/components/pl/js/QuizBlock";
 
 export async function generateMetadata({ params }) {
   const { lang, slug } = params;
@@ -152,15 +153,8 @@ export default function JSTopicPage({ params }) {
                 </div>
               );
             case "quiz":
-              return (
-                <div key={i} className="mb-2">
-                  <ul className="list-disc pl-6 text-gray-300 space-y-2">
-                    {block.questions.map((ques, idx) => (
-                      <li key={idx}>{ques}</li>
-                    ))}
-                  </ul>
-                </div>
-              );
+              return <QuizBlock key={i} block={block} />;
+
             case "navigation":
               return (
                 <div

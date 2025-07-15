@@ -21,10 +21,11 @@ export default function HeroSection() {
           >
             <FaCode /> Master DSA
           </Link>
-          <Link href={"/languages"}>
-            <button className="border border-white hover:border-sky-500 hover:text-sky-400 transition duration-300 px-6 py-3 rounded-lg text-lg flex items-center gap-2 shadow-sm hover:shadow-md shadow-white/40">
-              <FaLanguage /> Learn Languages
-            </button>
+          <Link
+            href={"/languages"}
+            className="border border-white hover:border-sky-500 hover:text-sky-400 transition duration-300 px-6 py-3 rounded-lg text-lg flex items-center gap-2 shadow-sm hover:shadow-md shadow-white/40"
+          >
+            <FaLanguage /> Learn Languages
           </Link>
         </div>
 

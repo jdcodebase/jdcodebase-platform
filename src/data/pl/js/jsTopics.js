@@ -25,7 +25,7 @@ export const jsTopics = [
     ],
   },
   {
-    label: "Variables & Data",
+    label: "Variables & Data Types",
     items: [
       {
         name: "Variables",

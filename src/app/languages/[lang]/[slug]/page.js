@@ -113,6 +113,14 @@ export default function JSTopicPage({ params }) {
                   </h2>
                 </div>
               );
+            case "subHeading":
+              return (
+                <div key={i}>
+                  <h2 className="text-lg font-light my-2 text-blue-500">
+                    {block.text}
+                  </h2>
+                </div>
+              );
             case "list":
               return (
                 <div key={i} className="mb-6">

@@ -582,6 +582,11 @@ testScope();`,
           "`const` must be initialized during declaration and cannot be reassigned or redeclared. It is block-scoped.",
       },
       {
+        type: "video",
+        title: "Watch this concept in action",
+        url: "PHxAcEP7WKE",
+      },
+      {
         type: "navigation",
         previous: {
           title: "How to Run JavaScript",

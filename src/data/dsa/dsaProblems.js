@@ -2202,7 +2202,7 @@ export const dsaProblems = [
       "https://1drv.ms/p/c/d9a1d5f2dacf7aea/IQSZaKGB5jCCTLJyqNq2-bxlAdj6BsLOqVT9E4YSjj305ZM?em=2&amp;wdAr=1.7777777777777777",
     leetcodeLink:
       "https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/",
-    videoLink: "",
+    videoLink: "yI1pkFltawg",
   },
   {
     title: "Find the Difference",

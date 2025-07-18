@@ -162,7 +162,25 @@ export default function JSTopicPage({ params }) {
               );
             case "quiz":
               return <QuizBlock key={i} block={block} />;
-
+            case "video":
+              return (
+                <div key={i} className="my-8 space-y-3">
+                  {block.title && (
+                    <h2 className="text-2xl font-semibold text-blue-500 text-center">
+                      {block.title}
+                    </h2>
+                  )}
+                  <div className="relative overflow-hidden rounded-lg w-full aspect-video">
+                    <iframe
+                      src={`https://www.youtube.com/embed/${block.url}`}
+                      title={block.title || "YouTube video"}
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      className="w-full h-full"
+                    />
+                  </div>
+                </div>
+              );
             case "navigation":
               return (
                 <div

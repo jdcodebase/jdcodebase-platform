@@ -2243,18 +2243,19 @@ export const dsaProblems = [
           "If no mismatch is found, the extra character is the last one in `t`.",
         ],
         code: `// 🔹 Sorting Approach
-  var findTheDifference = function(s, t) {
-    let sArr = s.split('').sort();
-    let tArr = t.split('').sort();
-  
-    for (let i = 0; i < sArr.length; i++) {
-      if (sArr[i] !== tArr[i]) {
-        return tArr[i];
+    var findTheDifference = function(s, t) {
+      let sArr = s.split('').sort();
+      let tArr = t.split('').sort();
+    
+      for (let i = 0; i < sArr.length; i++) {
+        if (sArr[i] !== tArr[i]) {
+          return tArr[i];
+        }
       }
-    }
-  
-    return tArr[tArr.length - 1];
-  };`,
+    
+      return tArr[tArr.length - 1];
+    };`,
+        explanation: `Sorting helps align characters of both strings. The mismatch reveals the added character.`,
       },
       {
         title: "Approach 2: Using Hash Map to Track Frequency",
@@ -2264,50 +2265,72 @@ export const dsaProblems = [
           "Loop through string `t`:",
           "  - If the character is not in the map or its count is zero, return that character.",
           "  - Otherwise, decrement its count in the map.",
-          "This will give us the extra character added in `t`.",
         ],
         code: `// 🔹 Using Hash Map
-  var findTheDifference = function(s, t) {
-    let map = new Map();
-  
-    for (let char of s) {
-      map.set(char, (map.get(char) || 0) + 1);
-    }
-  
-    for (let char of t) {
-      if (!map.has(char) || map.get(char) === 0) {
-        return char;
-      } else {
-        map.set(char, map.get(char) - 1);
+    var findTheDifference = function(s, t) {
+      let map = new Map();
+    
+      for (let char of s) {
+        map.set(char, (map.get(char) || 0) + 1);
       }
-    }
-  };`,
+    
+      for (let char of t) {
+        if (!map.has(char) || map.get(char) === 0) {
+          return char;
+        } else {
+          map.set(char, map.get(char) - 1);
+        }
+      }
+    };`,
+        explanation: `Each character from s is counted, and characters in t are matched against the map. The first unmatched one is the extra character.`,
       },
       {
-        title: "Approach 3: Optimized Using Character Codes (ASCII Sum)",
+        title: "Approach 3: ASCII Sum Difference",
         steps: [
-          "Initialize a variable `sum` to 0.",
-          "Loop through each character in `t` and add its ASCII code to `sum`.",
-          "Loop through each character in `s` and subtract its ASCII code from `sum`.",
-          "The final value of `sum` corresponds to the ASCII of the extra character.",
-          "Return `String.fromCharCode(sum)` as the result.",
+          "Initialize two variables: `sumS = 0` and `sumT = 0`.",
+          "Loop through `s` and accumulate the ASCII codes into `sumS`.",
+          "Loop through `t` and accumulate the ASCII codes into `sumT`.",
+          "The extra character is `sumT - sumS`, convert it using `String.fromCharCode()`.",
         ],
-        code: `// 🔹 Optimized ASCII Sum Approach
-  var findTheDifference = function(s, t) {
-    let sum = 0;
-  
-    for (let char of t) {
-      sum += char.charCodeAt(0);
-    }
-  
-    for (let char of s) {
-      sum -= char.charCodeAt(0);
-    }
-  
-    return String.fromCharCode(sum);
-  };`,
-      },
+        code: `// 🔹 ASCII Sum Method
+    var findTheDifference = function(s, t) {
+      let sumS = 0, sumT = 0;
+      for (let char of s) sumS += char.charCodeAt(0);
+      for (let char of t) sumT += char.charCodeAt(0);
+      return String.fromCharCode(sumT - sumS);
+    };`,
+        explanation: `🔍 ASCII Sum Dry Run:
 
+    Idea:
+    - Add ASCII values of all characters in both strings.
+    - The difference gives the ASCII of the extra character.
+    
+    Example:
+    s = "abcd"
+    t = "abcde"
+    
+    ASCII Breakdown:
+    s:
+    'a' → 97  
+    'b' → 98  
+    'c' → 99  
+    'd' → 100  
+    Total sumS = 97 + 98 + 99 + 100 = 394
+    
+    t:
+    'a' → 97  
+    'b' → 98  
+    'c' → 99  
+    'd' → 100  
+    'e' → 101  
+    Total sumT = 97 + 98 + 99 + 100 + 101 = 495
+    
+    Final Step:
+    sumT - sumS = 495 - 394 = 101  
+    Extra character = String.fromCharCode(101) = 'e'
+    
+    ✅ This works because all matching characters cancel out in the sum, leaving only the added one.`,
+      },
       {
         title: "Approach 4: XOR (Bit Manipulation)",
         steps: [
@@ -2318,22 +2341,60 @@ export const dsaProblems = [
           "Return the character using `String.fromCharCode(xor)`.",
         ],
         code: `// 🔹 XOR Approach
-  var findTheDifference = function(s, t) {
-    let xor = 0;
-  
-    for (let char of s) {
-      xor ^= char.charCodeAt(0);
-    }
-  
-    for (let char of t) {
-      xor ^= char.charCodeAt(0);
-    }
-  
-    return String.fromCharCode(xor);
-  };`,
+    var findTheDifference = function(s, t) {
+      let xor = 0;
+    
+      for (let char of s) {
+        xor ^= char.charCodeAt(0);
+      }
+    
+      for (let char of t) {
+        xor ^= char.charCodeAt(0);
+      }
+    
+      return String.fromCharCode(xor);
+    };`,
+        explanation: `🔍 XOR Dry Run (Bit Manipulation):
+
+    We use XOR (^) because:
+    - a ^ a = 0 (same characters cancel out)
+    - 0 ^ b = b (0 XOR any number = that number)
+    
+    Let's take:
+    s = "abcd"
+    t = "abcde"
+    
+    Step-by-step XOR on ASCII values:
+    Start with xor = 0
+    
+    Characters in s:
+    xor = 0 ^ 97 ('a')   = 97  
+    xor = 97 ^ 98 ('b')  = 3  
+    xor = 3 ^ 99 ('c')   = 96  
+    xor = 96 ^ 100 ('d') = 4  
+    
+    Characters in t:
+    xor = 4 ^ 97 ('a')   = 101  
+    xor = 101 ^ 98 ('b') = 7  
+    xor = 7 ^ 99 ('c')   = 100  
+    xor = 100 ^ 100 ('d')= 0  
+    xor = 0 ^ 101 ('e')  = 101
+    
+    Final result:
+    String.fromCharCode(101) = 'e'
+    
+    ✅ All matching characters canceled out, leaving the added one.`,
+        table: {
+          headers: ["Method", "Time", "Space", "Notes"],
+          rows: [
+            ["Sorting", "O(n log n)", "O(n)", "Easy but slower"],
+            ["Hash Map", "O(n)", "O(1)", "Handles duplicates"],
+            ["ASCII Sum", "O(n)", "O(1)", "Clean logic"],
+            ["XOR", "O(n)", "O(1)", "Elegant and fastest"],
+          ],
+        },
       },
     ],
-
     timeComplexity:
       "O(n log n) for sorting approach, O(n) for map, ASCII, and XOR methods",
     spaceComplexity: "O(1) for ASCII and XOR, O(n) for map/sorting",

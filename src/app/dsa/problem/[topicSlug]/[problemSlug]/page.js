@@ -128,15 +128,61 @@ export default function ProblemPage({ params }) {
               <h3 className="text-xl font-semibold text-white mb-2">
                 {appr.title}
               </h3>
-              <ul className="list-disc list-inside text-gray-300 mb-3">
-                {appr.steps.map((step, idx) => (
-                  <li key={idx}>{step}</li>
-                ))}
-              </ul>
+
+              {appr.steps?.length > 0 && (
+                <ul className="list-disc list-inside text-gray-300 mb-3">
+                  {appr.steps.map((step, idx) => (
+                    <li key={idx}>{step}</li>
+                  ))}
+                </ul>
+              )}
+
               {appr.code && (
                 <pre className="bg-gray-900 text-green-400 p-4 rounded-lg overflow-auto text-sm shadow">
                   <code className="whitespace-pre-wrap">{appr.code}</code>
                 </pre>
+              )}
+
+              {appr.explanation && (
+                <div className="mt-4 text-gray-300 whitespace-pre-wrap">
+                  <strong className="text-blue-400">
+                    Explanation / Dry Run:
+                  </strong>
+                  <div className="mt-2">{appr.explanation}</div>
+                </div>
+              )}
+
+              {appr.table && (
+                <div className="overflow-x-auto mt-4">
+                  <table className="min-w-full border-collapse border border-gray-600 text-sm text-gray-200">
+                    <thead>
+                      <tr>
+                        {appr.table.headers.map((header, idx) => (
+                          <th
+                            key={idx}
+                            className="border border-gray-600 px-3 py-2 bg-gray-800"
+                          >
+                            {header}
+                          </th>
+                        ))}
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {appr.table.rows.map((row, rIdx) => (
+                        <tr key={rIdx}>
+                          {row.map((cell, cIdx) => (
+                            <td
+                              key={cIdx}
+                              className="border border-gray-600 px-3 py-2"
+                            >
+                              {cell}
+                            </td>
+                          ))}
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
               )}
             </div>
           ))}

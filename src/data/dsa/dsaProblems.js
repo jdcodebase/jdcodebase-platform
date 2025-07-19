@@ -2401,6 +2401,6 @@ export const dsaProblems = [
     pptLink:
       "https://1drv.ms/p/c/d9a1d5f2dacf7aea/IQRPlRaj0Jd_Q4XoqKbjveVXAcWA1N_WWhvvSLw9cxqy_zY?em=2&amp;wdAr=1.7777777777777777",
     leetcodeLink: "https://leetcode.com/problems/find-the-difference/",
-    videoLink: "",
+    videoLink: "7Uem4GwdY4k",
   },
 ];

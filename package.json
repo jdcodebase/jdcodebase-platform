@@ -3,11 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "build": "next build && next-sitemap",
     "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
-    "postbuild": "next-sitemap"
+    "start": "next start"
   },
   "dependencies": {
     "@heroui/react": "^2.7.11",

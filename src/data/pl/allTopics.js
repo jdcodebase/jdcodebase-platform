@@ -1,7 +1,7 @@
-import { jsTopics } from "./js/jsTopics";
-import { jsTopicsContent } from "./js/jsTopicsContent";
+import { jsTopics } from "./js/jsTopics.js";
+import { jsTopicsContent } from "./js/jsTopicsContent.js";
 
-import { cppTopics } from "./cpp/cppTopics";
+import { cppTopics } from "./cpp/cppTopics.js";
 
 export const languageTopicsMap = {
   js: jsTopics,

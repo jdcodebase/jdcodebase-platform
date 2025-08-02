@@ -74,7 +74,7 @@ export default function Sidebar() {
         </Link>
         {topics.map((section, index) => (
           <div key={index}>
-            <h2 className="text-xl font-light my-1 text-blue-600">
+            <h2 className="text-lg font-light my-1 text-blue-600">
               {section.label}
             </h2>
             <ul className="space-y-1 ml-4">

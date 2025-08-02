@@ -1,6 +1,6 @@
 export const jsTopics = [
   {
-    label: "Basics",
+    label: "Introduction to JavaScript",
     items: [
       {
         name: "What is JavaScript",
@@ -13,199 +13,284 @@ export const jsTopics = [
         path: "/languages/js/history-of-javascript",
       },
       {
-        name: "JS Versions",
+        name: "JavaScript Versions",
         slug: "versions-of-javascript",
         path: "/languages/js/versions-of-javascript",
       },
       {
-        name: "How to Run",
-        slug: "how-to-run-javascript",
-        path: "/languages/js/how-to-run-javascript",
+        name: "How JavaScript Works",
+        slug: "how-javascript-works",
+        path: "/languages/js/how-javascript-works",
+      },
+      {
+        name: "JavaScript in Browser vs Node.js",
+        slug: "browser-vs-node",
+        path: "/languages/js/browser-vs-node",
       },
     ],
   },
   {
-    label: "Variables & Data Types",
+    label: "JavaScript Basics",
     items: [
       {
-        name: "Variables",
-        slug: "variables-in-javascript",
-        path: "/languages/js/variables-in-javascript",
-      },
-      {
-        name: "Hoisting",
-        slug: "hoisting-in-javascript",
-        path: "/languages/js/hoisting-in-javascript",
-      },
-      {
-        name: "Scope",
-        slug: "scope-in-javascript",
-        path: "/languages/js/scope-in-javascript",
+        name: "Variables (var, let, const)",
+        slug: "variables-var-let-const",
+        path: "/languages/js/variables-var-let-const",
       },
       {
         name: "Data Types",
-        slug: "data-types-in-javascript",
-        path: "/languages/js/data-types-in-javascript",
+        slug: "data-types",
+        path: "/languages/js/data-types",
       },
       {
-        name: "Type Casting",
-        slug: "type-casting-in-javascript",
-        path: "/languages/js/type-casting-in-javascript",
-      },
-    ],
-  },
-  {
-    label: "Operators",
-    items: [
-      {
-        name: "Comparison",
-        slug: "comparison-operators-in-javascript",
-        path: "/languages/js/comparison-operators-in-javascript",
+        name: "Operators in JavaScript",
+        slug: "operators",
+        path: "/languages/js/operators",
       },
       {
-        name: "Arithmetic",
-        slug: "arithmetic-operators-in-javascript",
-        path: "/languages/js/arithmetic-operators-in-javascript",
+        name: "Control Flow: if, else, switch",
+        slug: "control-flow",
+        path: "/languages/js/control-flow",
       },
       {
-        name: "Logical",
-        slug: "logical-operators-in-javascript",
-        path: "/languages/js/logical-operators-in-javascript",
+        name: "Loops: for, while, do-while",
+        slug: "loops",
+        path: "/languages/js/loops",
       },
       {
-        name: "Bitwise",
-        slug: "bitwise-operators-in-javascript",
-        path: "/languages/js/bitwise-operators-in-javascript",
-      },
-      {
-        name: "Ternary",
-        slug: "ternary-operator-in-javascript",
-        path: "/languages/js/ternary-operator-in-javascript",
+        name: "Truthy and Falsy Values",
+        slug: "truthy-falsy",
+        path: "/languages/js/truthy-falsy",
       },
     ],
   },
   {
-    label: "Control Flow",
+    label: "Functions and Scope",
     items: [
       {
-        name: "if/else",
-        slug: "if-else-in-javascript",
-        path: "/languages/js/if-else-in-javascript",
-      },
-      {
-        name: "switch",
-        slug: "switch-in-javascript",
-        path: "/languages/js/switch-in-javascript",
-      },
-      {
-        name: "loops",
-        slug: "loops-in-javascript",
-        path: "/languages/js/loops-in-javascript",
-      },
-      {
-        name: "break/continue",
-        slug: "break-continue-in-javascript",
-        path: "/languages/js/break-continue-in-javascript",
-      },
-    ],
-  },
-  {
-    label: "Functions",
-    items: [
-      {
-        name: "Function Basics",
-        slug: "function-basics-in-javascript",
-        path: "/languages/js/function-basics-in-javascript",
+        name: "Function Declaration vs Expression",
+        slug: "function-declaration-vs-expression",
+        path: "/languages/js/function-declaration-vs-expression",
       },
       {
         name: "Arrow Functions",
-        slug: "arrow-functions-in-javascript",
-        path: "/languages/js/arrow-functions-in-javascript",
+        slug: "arrow-functions",
+        path: "/languages/js/arrow-functions",
       },
       {
-        name: "Rest/Spread",
-        slug: "rest-spread-in-javascript",
-        path: "/languages/js/rest-spread-in-javascript",
-      },
-    ],
-  },
-  {
-    label: "Objects",
-    items: [
-      {
-        name: "Objects",
-        slug: "objects-in-javascript",
-        path: "/languages/js/objects-in-javascript",
+        name: "Parameters, Arguments & Return",
+        slug: "parameters-arguments-return",
+        path: "/languages/js/parameters-arguments-return",
       },
       {
-        name: "Built-in Objects",
-        slug: "built-in-objects-in-javascript",
-        path: "/languages/js/built-in-objects-in-javascript",
+        name: "Default Parameters & Rest/Spread",
+        slug: "default-rest-spread",
+        path: "/languages/js/default-rest-spread",
       },
       {
-        name: "JSON",
-        slug: "json-in-javascript",
-        path: "/languages/js/json-in-javascript",
+        name: "Callback Functions",
+        slug: "callback-functions",
+        path: "/languages/js/callback-functions",
       },
       {
-        name: "Prototypes",
-        slug: "prototypes-in-javascript",
-        path: "/languages/js/prototypes-in-javascript",
+        name: "Scope & Hoisting",
+        slug: "scope-hoisting",
+        path: "/languages/js/scope-hoisting",
+      },
+      {
+        name: "Closures",
+        slug: "closures",
+        path: "/languages/js/closures",
       },
     ],
   },
   {
-    label: "Arrays & Data Structures",
+    label: "Arrays and Objects",
     items: [
       {
-        name: "Arrays",
-        slug: "arrays-in-javascript",
-        path: "/languages/js/arrays-in-javascript",
-      },
-      {
-        name: "Set/Map",
-        slug: "set-map-in-javascript",
-        path: "/languages/js/set-map-in-javascript",
+        name: "Array Basics and Iteration",
+        slug: "array-basics",
+        path: "/languages/js/array-basics",
       },
       {
         name: "Array Methods",
-        slug: "array-methods-in-javascript",
-        path: "/languages/js/array-methods-in-javascript",
+        slug: "array-methods",
+        path: "/languages/js/array-methods",
+      },
+      {
+        name: "Object Basics and Notation",
+        slug: "object-basics",
+        path: "/languages/js/object-basics",
+      },
+      {
+        name: "Object Methods and Destructuring",
+        slug: "object-methods-destructuring",
+        path: "/languages/js/object-methods-destructuring",
       },
     ],
   },
   {
-    label: "Advanced",
+    label: "DOM and Events",
     items: [
       {
-        name: "Closures",
-        slug: "closures-in-javascript",
-        path: "/languages/js/closures-in-javascript",
+        name: "DOM Selectors and Manipulation",
+        slug: "dom-selectors-manipulation",
+        path: "/languages/js/dom-selectors-manipulation",
       },
       {
+        name: "Event Listeners",
+        slug: "event-listeners",
+        path: "/languages/js/event-listeners",
+      },
+      {
+        name: "Event Bubbling and Delegation",
+        slug: "event-bubbling-delegation",
+        path: "/languages/js/event-bubbling-delegation",
+      },
+      {
+        name: "Creating and Removing Elements",
+        slug: "create-remove-elements",
+        path: "/languages/js/create-remove-elements",
+      },
+    ],
+  },
+  {
+    label: "Asynchronous JavaScript",
+    items: [
+      {
         name: "Callbacks",
-        slug: "callbacks-in-javascript",
-        path: "/languages/js/callbacks-in-javascript",
+        slug: "callbacks",
+        path: "/languages/js/callbacks",
       },
       {
         name: "Promises",
-        slug: "promises-in-javascript",
-        path: "/languages/js/promises-in-javascript",
+        slug: "promises",
+        path: "/languages/js/promises",
       },
       {
-        name: "async/await",
-        slug: "async-await-in-javascript",
-        path: "/languages/js/async-await-in-javascript",
+        name: "Async/Await",
+        slug: "async-await",
+        path: "/languages/js/async-await",
       },
       {
-        name: "Modules",
-        slug: "modules-in-javascript",
-        path: "/languages/js/modules-in-javascript",
+        name: "Fetch API and JSON",
+        slug: "fetch-api-json",
+        path: "/languages/js/fetch-api-json",
+      },
+    ],
+  },
+  {
+    label: "Modern JavaScript (ES6+)",
+    items: [
+      {
+        name: "Template Literals",
+        slug: "template-literals",
+        path: "/languages/js/template-literals",
       },
       {
-        name: "Error Handling",
-        slug: "error-handling-in-javascript",
-        path: "/languages/js/error-handling-in-javascript",
+        name: "Destructuring (Array/Object)",
+        slug: "destructuring",
+        path: "/languages/js/destructuring",
+      },
+      {
+        name: "Spread and Rest Operators",
+        slug: "spread-rest-operators",
+        path: "/languages/js/spread-rest-operators",
+      },
+      {
+        name: "Modules: Import and Export",
+        slug: "modules-import-export",
+        path: "/languages/js/modules-import-export",
+      },
+      {
+        name: "Optional Chaining & Nullish Coalescing",
+        slug: "optional-chaining-nullish",
+        path: "/languages/js/optional-chaining-nullish",
+      },
+    ],
+  },
+  {
+    label: "Object-Oriented JavaScript (OOP)",
+    items: [
+      {
+        name: "Prototypes and Inheritance",
+        slug: "prototypes-inheritance",
+        path: "/languages/js/prototypes-inheritance",
+      },
+      {
+        name: "Classes and Constructors",
+        slug: "classes-constructors",
+        path: "/languages/js/classes-constructors",
+      },
+      {
+        name: "Encapsulation and Private Fields",
+        slug: "encapsulation-private-fields",
+        path: "/languages/js/encapsulation-private-fields",
+      },
+    ],
+  },
+  {
+    label: "Advanced Concepts",
+    items: [
+      {
+        name: "IIFE and Module Pattern",
+        slug: "iife-module-pattern",
+        path: "/languages/js/iife-module-pattern",
+      },
+      {
+        name: "Event Loop and Call Stack",
+        slug: "event-loop-callstack",
+        path: "/languages/js/event-loop-callstack",
+      },
+      {
+        name: "Memory Management and Garbage Collection",
+        slug: "memory-management",
+        path: "/languages/js/memory-management",
+      },
+    ],
+  },
+  {
+    label: "Browser APIs",
+    items: [
+      {
+        name: "Local Storage & Session Storage",
+        slug: "local-session-storage",
+        path: "/languages/js/local-session-storage",
+      },
+      {
+        name: "Timers: setTimeout & setInterval",
+        slug: "timers",
+        path: "/languages/js/timers",
+      },
+      {
+        name: "Geolocation API",
+        slug: "geolocation-api",
+        path: "/languages/js/geolocation-api",
+      },
+    ],
+  },
+  {
+    label: "Debugging and Tools",
+    items: [
+      {
+        name: "Console Methods",
+        slug: "console-methods",
+        path: "/languages/js/console-methods",
+      },
+      {
+        name: "Chrome DevTools for Debugging",
+        slug: "chrome-devtools-debugging",
+        path: "/languages/js/chrome-devtools-debugging",
+      },
+      {
+        name: "Linting with ESLint",
+        slug: "linting-eslint",
+        path: "/languages/js/linting-eslint",
+      },
+      {
+        name: "Code Formatting with Prettier",
+        slug: "formatting-prettier",
+        path: "/languages/js/formatting-prettier",
       },
     ],
   },

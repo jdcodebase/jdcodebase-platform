@@ -2403,4 +2403,113 @@ export const dsaProblems = [
     leetcodeLink: "https://leetcode.com/problems/find-the-difference/",
     videoLink: "7Uem4GwdY4k",
   },
+  {
+    title: "Plus One",
+    slug: "plus-one",
+    difficulty: "Easy",
+    leetcodeId: "#66",
+    category: ["Array", "Math"],
+    problemStatement:
+      "You are given a large integer represented as an integer array `digits`, where each `digits[i]` is the i-th digit of the integer. The digits are ordered from most significant to least significant in left-to-right order. The large integer does not contain any leading 0's. Increment the large integer by one and return the resulting array of digits.",
+
+    examples: [
+      {
+        input: "digits = [1,2,3]",
+        output: "[1,2,4]",
+        explanation: "123 + 1 = 124",
+      },
+      {
+        input: "digits = [4,3,2,1]",
+        output: "[4,3,2,2]",
+        explanation: "4321 + 1 = 4322",
+      },
+      {
+        input: "digits = [9]",
+        output: "[1,0]",
+        explanation: "9 + 1 = 10 (new digit added)",
+      },
+      {
+        input: "digits = [9,9,9]",
+        output: "[1,0,0,0]",
+        explanation: "999 + 1 = 1000 (carry over all digits)",
+      },
+    ],
+
+    approach: [
+      {
+        title: "Carry-Over Approach (Optimal)",
+        steps: [
+          "Start from the last digit (rightmost index of the array).",
+          "Repeat while index ≥ 0:",
+          "  - If the current digit is less than 9:",
+          "      - Increment the digit by 1.",
+          "      - Return the digits array (no further carry needed).",
+          "  - Else (digit is 9):",
+          "      - Set the digit to 0 (carry 1 to the left).",
+          "If all digits were 9, insert 1 at the beginning of the array.",
+          "Return the updated digits array.",
+        ],
+        code: `// 🔹 Carry Over Approach
+var plusOne = function(digits) {
+  for (let i = digits.length - 1; i >= 0; i--) {
+    if (digits[i] < 9) {
+      digits[i]++;
+      return digits;
+    }
+    digits[i] = 0;
+  }
+  digits.unshift(1);
+  return digits;
+};`,
+        explanation:
+          "This approach works without converting the number, and handles all edge cases efficiently. Carry is propagated only when a digit is 9.",
+      },
+      {
+        title: "Naive Approach (Convert to Number) ❌",
+        steps: [
+          "Join the digits into a string and convert it to a number.",
+          "Add one to the number.",
+          "Convert the result back to a string and split into digits.",
+          "Return the resulting array.",
+        ],
+        code: `// ❌ Naive Approach (Precision issue with large inputs)
+var plusOne = function(digits) {
+  let num = Number(digits.join("")) + 1;
+  return num.toString().split("").map(Number);
+};`,
+        explanation:
+          "This method works only for small inputs. JavaScript’s `Number` loses precision beyond 15–16 digits, so it fails for large arrays.",
+      },
+    ],
+
+    dryRun: {
+      input: "[9,9,9]",
+      table: [
+        ["Step", "Index", "digits", "Carry"],
+        ["1", "2", "[9,9,0]", "Yes"],
+        ["2", "1", "[9,0,0]", "Yes"],
+        ["3", "0", "[0,0,0]", "Yes"],
+        ["4", "-", "[1,0,0,0]", "Final"],
+      ],
+      explanation:
+        "Since all digits were 9, we converted all to 0 and prepended 1.",
+    },
+
+    timeComplexity:
+      "O(n) for optimal approach (loop from end to start of digits)",
+
+    spaceComplexity: "O(1) (in-place modification, ignoring output array)",
+
+    summary: [
+      "✅ Handles all edge cases like [9,9,9]",
+      "✅ No precision loss (unlike Number() method)",
+      "✅ Uses simple carry-over logic",
+      "✅ Works safely within constraint: 1 <= digits.length <= 100",
+    ],
+
+    leetcodeLink: "https://leetcode.com/problems/plus-one/",
+    // videoLink: "YOUR_YOUTUBE_VIDEO_ID",
+    pptLink:
+      "https://1drv.ms/p/c/d9a1d5f2dacf7aea/IQSjvh-ViJQoTpenPBdVXlpyAcn37Z0tusHDMKHLnRkE40Y?em=2&amp;wdAr=1.7777777777777777",
+  },
 ];

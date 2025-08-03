@@ -124,7 +124,7 @@ export default function JSTopicPage({ params }) {
             case "list":
               return (
                 <div key={i} className="mb-6">
-                  <h2 className="text-2xl font-semibold mb-2">
+                  <h2 className="text-xl font-semibold mb-2">
                     {block.heading}
                   </h2>
                   <ul className="list-disc pl-6 text-gray-300 space-y-2">
@@ -143,7 +143,7 @@ export default function JSTopicPage({ params }) {
             case "code":
               return (
                 <div key={i} className="mb-6">
-                  <h2 className="text-2xl font-semibold mb-2">
+                  <h2 className="text-xl font-semibold mb-2">
                     {block.heading}
                   </h2>
                   <pre className="bg-gray-900 text-green-400 p-4 rounded-lg overflow-auto text-sm shadow text-wrap">

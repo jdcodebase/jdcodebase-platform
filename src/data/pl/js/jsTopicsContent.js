@@ -128,11 +128,11 @@ export const jsTopicsContent = [
         type: "paragraph",
         text: "Modern browsers use engines like V8 (Chrome) or SpiderMonkey (Firefox) to run JavaScript efficiently.",
       },
-      // {
-      //   type: "video",
-      //   title: "What is JavaScript - Explained Simply",
-      //   url: "upDLs1sn7g4",
-      // },
+      {
+        type: "video",
+        title: "What is JavaScript - Explained Simply",
+        url: "FuL-u88lS7E",
+      },
       {
         type: "navigation",
         previous: null,
@@ -232,11 +232,11 @@ export const jsTopicsContent = [
         explanation:
           "JavaScript was created in 1995 by Brendan Eich while working at Netscape.",
       },
-      // {
-      //   type: "video",
-      //   title: "The History of JavaScript Explained",
-      //   url: "Sh6lK57Cuk4", // Replace with your own or real YouTube video ID if needed
-      // },
+      {
+        type: "video",
+        title: "The History of JavaScript Explained",
+        url: "Tcm9Vry65M0",
+      },
       {
         type: "navigation",
         previous: {

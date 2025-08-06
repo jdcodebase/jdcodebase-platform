@@ -134,6 +134,44 @@ export default function JSTopicPage({ params }) {
                   </ul>
                 </div>
               );
+            case "table":
+              return (
+                <div key={i} className="overflow-x-auto mb-6">
+                  <table className="w-full border-collapse border border-gray-700 text-gray-300 text-sm">
+                    <thead className="bg-gray-800 text-blue-400">
+                      <tr>
+                        {block.headers.map((header, idx) => (
+                          <th
+                            key={idx}
+                            className="border border-gray-700 px-4 py-2 text-left"
+                          >
+                            {header}
+                          </th>
+                        ))}
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {block.rows.map((row, rowIndex) => (
+                        <tr
+                          key={rowIndex}
+                          className={
+                            rowIndex % 2 === 0 ? "bg-gray-900" : "bg-gray-800"
+                          }
+                        >
+                          {row.map((cell, cellIndex) => (
+                            <td
+                              key={cellIndex}
+                              className="border border-gray-700 px-4 py-2"
+                            >
+                              {cell}
+                            </td>
+                          ))}
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              );
             case "paragraph":
               return (
                 <p key={i} className="text-gray-300 mb-4">

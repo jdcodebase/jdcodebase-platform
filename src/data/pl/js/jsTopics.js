@@ -18,14 +18,9 @@ export const jsTopics = [
         path: "/languages/js/versions-of-javascript",
       },
       {
-        name: "How JavaScript Works",
-        slug: "how-javascript-works",
-        path: "/languages/js/how-javascript-works",
-      },
-      {
-        name: "JavaScript in Browser vs Node.js",
-        slug: "browser-vs-node",
-        path: "/languages/js/browser-vs-node",
+        name: "How to Run JavaScript",
+        slug: "how-to-run-javascript",
+        path: "/languages/js/how-to-run-javascript",
       },
     ],
   },

@@ -251,92 +251,75 @@ export const jsTopicsContent = [
     ],
   },
   {
+    name: "JavaScript Versions",
     slug: "versions-of-javascript",
-    title: "Versions of JavaScript",
+    path: "/languages/js/versions-of-javascript",
     content: [
       {
-        type: "paragraph",
-        text: "JavaScript evolves through ECMAScript (ES) versions, each bringing new features to the language. Here’s a timeline of major updates.",
-      },
-      {
         type: "heading",
         level: 2,
-        text: "ES3 (1999) – The Foundation",
+        text: "What Do We Mean by 'JavaScript Versions'?",
       },
       {
         type: "paragraph",
-        text: "Introduced features like try...catch, switch, and do...while. This was the first widely adopted version of JavaScript.",
+        text: "Like your phone apps get updated with new features and bug fixes, JavaScript also gets updates to make it better. These updates are called versions. Earlier, JavaScript was simple. But now it has powerful tools to build modern websites and apps easily.",
       },
       {
         type: "heading",
         level: 2,
-        text: "ES5 (2009) – The Game Changer",
-      },
-      {
-        type: "list",
-        style: "unordered",
-        items: [
-          'Strict mode: "use strict"',
-          "Array methods: map(), filter(), reduce()",
-          "JSON support",
-        ],
-      },
-      {
-        type: "heading",
-        level: 2,
-        text: "ES6 / ES2015 – The Modern Era Begins",
-      },
-      {
-        type: "list",
-        style: "unordered",
-        items: [
-          "let and const",
-          "Arrow functions: () => {}",
-          "Template literals: `Hello ${name}`",
-          "Destructuring, Classes, Modules",
-          "Promises",
-        ],
-      },
-      {
-        type: "heading",
-        level: 2,
-        text: "ES7 to ES13 (2016–2022)",
-      },
-      {
-        type: "list",
-        style: "unordered",
-        items: [
-          "ES7: includes(), exponentiation operator **",
-          "ES8: async/await, Object.entries()",
-          "ES9: Rest/spread for objects, Promise.finally()",
-          "ES10: flat(), trimStart(), trimEnd()",
-          "ES11: Optional chaining ?., Nullish coalescing ??",
-          "ES12: replaceAll(), logical assignment operators",
-          "ES13: Top-level await, static class blocks",
-        ],
-      },
-      {
-        type: "heading",
-        level: 2,
-        text: "ES2023 & Beyond",
-      },
-      {
-        type: "list",
-        style: "unordered",
-        items: [
-          "Array.findLast(), Array.findLastIndex()",
-          "Set operations: union(), intersection(), etc.",
-          "Explicit resource management with using",
-        ],
-      },
-      {
-        type: "heading",
-        level: 2,
-        text: "Why It Matters",
+        text: "Who Decides These Versions?",
       },
       {
         type: "paragraph",
-        text: "Understanding JavaScript versions helps you write cleaner, modern code and stay up-to-date with best practices.",
+        text: "A team called TC39 (under ECMA organization) handles JavaScript updates. They create a standard called ECMAScript (short form: ES). So when someone says ES6 or ES2020, they're talking about a specific version of JavaScript.",
+      },
+      {
+        type: "heading",
+        level: 2,
+        text: "Popular JavaScript Versions You Should Know",
+      },
+      {
+        type: "list",
+        style: "unordered",
+        items: [
+          "**ES1 (1997)** – First version of JavaScript. Very basic, used for small tasks.",
+          "**ES5 (2009)** – A stable version. Introduced `strict mode`, JSON support, and array methods like `map`, `filter`, and `forEach`.",
+          "**ES6 (2015)** – A major update! This changed JavaScript forever. It added modern features like `let`, `const`, arrow functions, classes, template strings, promises, modules, and more.",
+          "**ES7 to ES14 (2016–2023)** – Every year, JavaScript gets small improvements. Some useful features: `includes()`, `async/await`, object spread/rest, optional chaining (`?.`), nullish coalescing (`??`), `flat()`, top-level `await`, and more.",
+        ],
+      },
+      {
+        type: "heading",
+        level: 2,
+        text: "Why Should You Care About These Versions?",
+      },
+      {
+        type: "paragraph",
+        text: "When you're learning or writing code, it’s helpful to know which features are available in your version of JavaScript. If you know ES6, you already cover most of the modern features used today. Plus, it helps you read and understand others’ code more easily.",
+      },
+      {
+        type: "heading",
+        level: 2,
+        text: "How to Check Feature Support in Browsers",
+      },
+      {
+        type: "paragraph",
+        text: "Not all browsers support all features. You can check support for any JavaScript feature using this website: https://caniuse.com. It tells you if a feature will work in Chrome, Firefox, Safari, etc.",
+      },
+      {
+        type: "heading",
+        level: 2,
+        text: "Summary",
+      },
+      {
+        type: "list",
+        style: "unordered",
+        items: [
+          "JavaScript is updated regularly with new versions called ECMAScript (ES).",
+          "ES6 (2015) is the most important version — it's the foundation of modern JavaScript.",
+          "After ES6, small improvements are added every year (ES7, ES8, and so on).",
+          "Understanding versions helps you write clean, modern, and browser-compatible code.",
+        ],
       },
       {
         type: "navigation",
@@ -357,16 +340,30 @@ export const jsTopicsContent = [
     content: [
       {
         type: "paragraph",
-        text: "JavaScript can run in many environments—from web browsers to local machines. Here are the most common and practical ways to execute JS code:",
+        text: "Before diving deep into how JavaScript works, it’s important to know where and how you can run your code. Whether you’re building websites, testing small snippets, or creating backend apps — JavaScript can run in many environments.",
+      },
+      {
+        type: "paragraph",
+        text: "Let’s explore the most common and practical ways to run JavaScript — from browsers to your local machine.",
       },
       {
         type: "heading",
         level: 2,
-        text: "1. Browser Console",
+        text: "1. Run JavaScript in the Browser Console",
       },
       {
         type: "paragraph",
-        text: "Every modern browser has a built-in JavaScript console. Right-click anywhere, choose Inspect, and go to the Console tab. Try:",
+        text: "Every modern browser (like Chrome, Firefox, Edge) comes with built-in developer tools — including a JavaScript console.",
+      },
+      {
+        type: "list",
+        style: "ordered",
+        items: [
+          "Open Chrome (or any modern browser)",
+          "Right-click on the page → Click Inspect",
+          "Go to the Console tab",
+          "Type the following code and press Enter:",
+        ],
       },
       {
         type: "code",
@@ -374,13 +371,17 @@ export const jsTopicsContent = [
         code: 'console.log("Hello from JDCodebase!");',
       },
       {
+        type: "paragraph",
+        text: "You’ll see the message appear instantly in the console. Great for quick testing and learning.",
+      },
+      {
         type: "heading",
         level: 2,
-        text: "2. Online Editors",
+        text: "2. Use Online Editors (Playgrounds)",
       },
       {
         type: "paragraph",
-        text: "Quickly test code with platforms like:",
+        text: "If you don’t want to install anything, you can test your code directly online using JavaScript playgrounds. These are simple to use and beginner-friendly.",
       },
       {
         type: "list",
@@ -393,53 +394,89 @@ export const jsTopicsContent = [
         ],
       },
       {
+        type: "paragraph",
+        text: "These platforms let you write and run HTML, CSS, and JavaScript together with instant results.",
+      },
+      {
         type: "heading",
         level: 2,
-        text: "3. Node.js (Locally)",
+        text: "3. Run JavaScript Locally with Node.js",
       },
       {
         type: "paragraph",
-        text: "Node.js allows JavaScript to run outside the browser—on your local machine.",
+        text: "Node.js allows JavaScript to run outside the browser — directly on your computer. Perfect for backend apps and tools.",
       },
       {
         type: "list",
         style: "ordered",
         items: [
-          "Download from [nodejs.org](https://nodejs.org)",
-          "Create a file: `index.js`",
-          "Write JS code inside",
-          "Open terminal and run: `node index.js`",
+          "Download and install Node.js from [nodejs.org](https://nodejs.org)",
+          "Create a file named `index.js`",
+          "Write JS code like this:",
         ],
+      },
+      {
+        type: "code",
+        language: "javascript",
+        code: 'console.log("Hello from Node.js!");',
+      },
+      {
+        type: "list",
+        style: "ordered",
+        items: ["Open your terminal or command prompt", "Run: `node index.js`"],
       },
       {
         type: "heading",
         level: 2,
-        text: "4. Embedded in HTML",
+        text: "4. Embed JavaScript in an HTML File",
       },
       {
         type: "paragraph",
-        text: "JavaScript can also run inside a web page using the `<script>` tag.",
+        text: "You can also run JavaScript inside a webpage using the <script> tag.",
       },
       {
         type: "code",
         language: "html",
         code: `<!DOCTYPE html>
-  <html>
-    <body>
-      <script>
-        alert("Hello from JDCodebase!");
-      </script>
-    </body>
-  </html>`,
+<html>
+  <body>
+    <script>
+      alert("Hello from JDCodebase!");
+    </script>
+  </body>
+</html>`,
+      },
+      {
+        type: "paragraph",
+        text: "Save this as an `.html` file and open it in your browser. You’ll see an alert popup.",
       },
       {
         type: "heading",
         level: 2,
-        text: "Which One to Use?",
+        text: "Which One Should You Use?",
       },
       {
         type: "paragraph",
-        text: "Start with the browser console or the JDCodebase Playground. As you grow, use Node.js or embed JS in your projects.",
+        text: "Here’s a quick comparison to help you decide where to start:",
+      },
+      {
+        type: "table",
+        headers: ["Method", "Setup Needed", "Best For"],
+        rows: [
+          ["Browser Console", "❌ No", "Quick testing, learning basics"],
+          ["Online Editors", "❌ No", "Practicing without setup"],
+          ["Node.js", "✅ Yes", "Backend, CLI tools, local testing"],
+          ["HTML + JS", "❌ No", "Frontend development, web projects"],
+        ],
+      },
+      {
+        type: "heading",
+        level: 2,
+        text: "Conclusion",
+      },
+      {
+        type: "paragraph",
+        text: "JavaScript runs in many places — browser, online editors, your computer, or even inside an HTML file. Start with the console or JDCodebase Playground, and expand as you grow!",
       },
       {
         type: "navigation",

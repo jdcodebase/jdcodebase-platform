@@ -207,11 +207,11 @@ export const jsTopicsContent = [
         type: "list",
         heading: "Quick Timeline",
         items: [
-          "🟢 1995 – JavaScript created by Brendan Eich at Netscape",
-          "🟡 1997 – ECMAScript standard introduced",
-          "🟣 2009 – Node.js lets JS run outside the browser",
-          "🔵 2015 – ES6 brings major improvements",
-          "🟠 2020s – JavaScript powers the full web: frontend, backend, and beyond",
+          "1995 – JavaScript created by Brendan Eich at Netscape",
+          "1997 – ECMAScript standard introduced",
+          "2009 – Node.js lets JS run outside the browser",
+          "2015 – ES6 brings major improvements",
+          "2020s – JavaScript powers the full web: frontend, backend, and beyond",
         ],
       },
       {
@@ -251,9 +251,8 @@ export const jsTopicsContent = [
     ],
   },
   {
-    name: "JavaScript Versions",
     slug: "versions-of-javascript",
-    path: "/languages/js/versions-of-javascript",
+    title: "JavaScript Versions",
     content: [
       {
         type: "heading",
@@ -322,13 +321,18 @@ export const jsTopicsContent = [
         ],
       },
       {
+        type: "video",
+        title: "JavaScript Versions Explained",
+        url: "cLTL4X8M0Xw",
+      },
+      {
         type: "navigation",
         previous: {
           title: "History of JavaScript",
           href: "/languages/js/history-of-javascript",
         },
         next: {
-          title: "Running JS",
+          title: "How to Run JavaScript",
           href: "/languages/js/how-to-run-javascript",
         },
       },
@@ -463,10 +467,10 @@ export const jsTopicsContent = [
         type: "table",
         headers: ["Method", "Setup Needed", "Best For"],
         rows: [
-          ["Browser Console", "❌ No", "Quick testing, learning basics"],
-          ["Online Editors", "❌ No", "Practicing without setup"],
-          ["Node.js", "✅ Yes", "Backend, CLI tools, local testing"],
-          ["HTML + JS", "❌ No", "Frontend development, web projects"],
+          ["Browser Console", "No", "Quick testing, learning basics"],
+          ["Online Editors", "No", "Practicing without setup"],
+          ["Node.js", "Yes", "Backend, CLI tools, local testing"],
+          ["HTML + JS", "No", "Frontend development, web projects"],
         ],
       },
       {
@@ -479,186 +483,244 @@ export const jsTopicsContent = [
         text: "JavaScript runs in many places — browser, online editors, your computer, or even inside an HTML file. Start with the console or JDCodebase Playground, and expand as you grow!",
       },
       {
+        type: "video",
+        title: "How to Run JavaScript",
+        url: "roFqYkcQuO0",
+      },
+      {
         type: "navigation",
         previous: {
-          title: "JS Versions",
+          title: "JavaScript Versions",
           href: "/languages/js/versions-of-javascript",
         },
         next: {
-          title: "Variables in JS",
-          href: "/languages/js/variables-in-javascript",
+          title: "Variables (var, let, const)",
+          href: "/languages/js/variables-var-let-const",
         },
       },
     ],
   },
   {
-    slug: "variables-in-javascript",
-    title: "JavaScript Variables",
+    slug: "variables-var-let-const",
+    title: "Variables (var, let, const)",
     content: [
       {
+        type: "heading",
+        level: 2,
+        text: "What Are Variables in JavaScript?",
+      },
+      {
         type: "paragraph",
-        text: "Variables in JavaScript are used to store data values. You can declare variables using `var`, `let`, and `const`. Understanding how they work is key to writing bug-free and efficient code.",
+        text: "Variables are containers used to store data in your program. You can think of them as labeled boxes where you can keep values like numbers, text, or other types of data.",
       },
       {
         type: "heading",
         level: 2,
-        text: "Why Use Variables?",
-      },
-      {
-        type: "list",
-        style: "unordered",
-        items: [
-          "To store and reuse data.",
-          "To make code dynamic and flexible.",
-          "To make programs more readable and maintainable.",
-        ],
-      },
-      {
-        type: "heading",
-        level: 2,
-        text: "Variable Declaration",
+        text: "A Real-Life Analogy",
       },
       {
         type: "paragraph",
-        text: "There are three ways to declare variables in JavaScript:",
+        text: "Imagine labeling a box as 'age' and putting the number 25 inside it. That’s what variables do — they store a value with a name so you can access or change it later.",
       },
       {
         type: "code",
-        language: "javascript",
-        code: `var name = "JD";     // function-scoped
-let age = 25;        // block-scoped
-const PI = 3.14;     // block-scoped, read-only`,
+        language: "js",
+        code: 'let age = 25;\nlet name = "JD";',
       },
       {
         type: "heading",
-        level: 3,
-        text: "var",
+        level: 2,
+        text: "Why Are Variables Important?",
       },
       {
         type: "list",
         style: "unordered",
         items: [
-          "Function-scoped.",
-          "Can be redeclared and updated.",
-          "Hoisted to the top of its scope and initialized as `undefined`.",
-        ],
-      },
-      {
-        type: "heading",
-        level: 3,
-        text: "let",
-      },
-      {
-        type: "list",
-        style: "unordered",
-        items: [
-          "Block-scoped.",
-          "Cannot be redeclared in the same scope.",
-          "Hoisted but not initialized (TDZ - Temporal Dead Zone).",
-        ],
-      },
-      {
-        type: "heading",
-        level: 3,
-        text: "const",
-      },
-      {
-        type: "list",
-        style: "unordered",
-        items: [
-          "Block-scoped.",
-          "Cannot be redeclared or reassigned.",
-          "Must be initialized during declaration.",
+          "They store values you want to use later",
+          "They make your code reusable and dynamic",
+          "They help you organize and manage data",
+          "They allow you to perform operations and logic",
         ],
       },
       {
         type: "heading",
         level: 2,
-        text: "Scope of Variables",
+        text: "Ways to Declare Variables in JavaScript",
       },
       {
-        type: "list",
-        style: "unordered",
-        items: [
-          "**Global Scope:** Declared outside any block or function.",
-          "**Function Scope:** Accessible only within a function (applies to `var`).",
-          "**Block Scope:** Declared inside a block (`{}`) and only accessible within (applies to `let` and `const`).",
-        ],
-      },
-      {
-        type: "heading",
-        level: 2,
-        text: "Best Practices",
-      },
-      {
-        type: "list",
-        style: "unordered",
-        items: [
-          "Use `const` by default.",
-          "Use `let` only if the value will change.",
-          "Avoid `var` to prevent unexpected bugs due to scope leakage.",
-        ],
-      },
-      {
-        type: "heading",
-        level: 2,
-        text: "Interview Questions",
+        type: "paragraph",
+        text: "There are three keywords to declare variables: var, let, and const. Each behaves differently and is used in different scenarios.",
       },
       {
         type: "list",
         style: "ordered",
         items: [
-          "What is the difference between `var`, `let`, and `const`?",
-          "What is variable hoisting in JavaScript?",
-          "What is the Temporal Dead Zone (TDZ)?",
-          "Why should we prefer `const` and `let` over `var`?",
-          "What are global, function, and block scopes?",
+          "`var` – Old way (function scoped)",
+          "`let` – Modern way (block scoped)",
+          "`const` – For constants (block scoped)",
         ],
       },
       {
         type: "heading",
         level: 2,
-        text: "Practice Exercise",
+        text: "`var` – The Old Way",
       },
       {
         type: "paragraph",
-        text: "Write a JavaScript program to demonstrate scoping and hoisting:",
+        text: "`var` is the traditional way to declare variables in JavaScript, but it has some problems due to how it's scoped.",
       },
       {
         type: "code",
-        language: "javascript",
-        code: `function testScope() {
-  console.log(x); // undefined
-  var x = 5;
-  
-  if (true) {
-    let y = 10;
-    console.log(y); // 10
-  }
-  
-  console.log(typeof y); // ReferenceError
-}
-  
-testScope();`,
+        language: "js",
+        code: 'var city = "Delhi";',
       },
       {
-        type: "quiz",
-        question:
-          "Which of the following statements is TRUE about `const` in JavaScript?",
-        options: [
-          "It can be redeclared.",
-          "It can be reassigned.",
-          "It must be initialized at the time of declaration.",
-          "It is function-scoped.",
+        type: "list",
+        style: "unordered",
+        items: [
+          "Function scoped",
+          "Can be redeclared",
+          "Can be reassigned",
+          "Prone to bugs — avoid in modern code",
         ],
-        correctAnswerIndex: 2,
-        explanation:
-          "`const` must be initialized during declaration and cannot be reassigned or redeclared. It is block-scoped.",
+      },
+      {
+        type: "heading",
+        level: 2,
+        text: "`let` – The Modern Way",
+      },
+      {
+        type: "paragraph",
+        text: "`let` is block scoped and prevents many issues found with `var`. Use it when the variable value might change later.",
+      },
+      {
+        type: "code",
+        language: "js",
+        code: "let age = 30;\nage = 31; // allowed",
+      },
+      {
+        type: "list",
+        style: "unordered",
+        items: [
+          "Block scoped",
+          "Can be reassigned",
+          "Cannot be redeclared in the same scope",
+          "Use when value will change",
+        ],
+      },
+      {
+        type: "heading",
+        level: 2,
+        text: "`const` – For Constants",
+      },
+      {
+        type: "paragraph",
+        text: "`const` is also block scoped but used when the value should never change after declaration.",
+      },
+      {
+        type: "code",
+        language: "js",
+        code: "const pi = 3.14;\npi = 3.14159; // Error: Assignment to constant variable",
+      },
+      {
+        type: "list",
+        style: "unordered",
+        items: [
+          "Block scoped",
+          "Cannot be reassigned",
+          "Cannot be redeclared",
+          "Use when value should stay constant",
+        ],
+      },
+      {
+        type: "heading",
+        level: 2,
+        text: "Comparison Table",
+      },
+      {
+        type: "paragraph",
+        text: "Here’s a quick comparison of `var`, `let`, and `const`:",
+      },
+      {
+        type: "table",
+        headers: ["Feature", "var", "let", "const"],
+        rows: [
+          ["Reassignable", "Yes", "Yes", "No"],
+          ["Redeclarable", "Yes", "No", "No"],
+          ["Scope", "Function", "Block", "Block"],
+          [
+            "Hoisting Behavior",
+            "Yes (undefined)",
+            "Yes (temporal dead zone)",
+            "Yes (temporal dead zone)",
+          ],
+          [
+            "Use Case",
+            "Avoid in modern JS",
+            "When value changes",
+            "When value stays constant",
+          ],
+        ],
+      },
+      {
+        type: "heading",
+        level: 2,
+        text: "Variable Naming Rules",
+      },
+      {
+        type: "list",
+        style: "unordered",
+        items: [
+          "Names must start with a letter, `_`, or `$`",
+          "Cannot start with a number",
+          "No spaces or hyphens allowed",
+          "Use camelCase (e.g., `userName`, `totalPrice`)",
+          "Avoid reserved words like `let`, `if`, `return`",
+        ],
+      },
+      {
+        type: "heading",
+        level: 2,
+        text: "JavaScript Is Dynamically Typed",
+      },
+      {
+        type: "paragraph",
+        text: "In JavaScript, variables don’t require a specific type. You can assign a number, then change it to a string later — the type is determined at runtime.",
+      },
+      {
+        type: "code",
+        language: "js",
+        code: 'let value = 100;\nvalue = "one hundred"; // allowed',
+      },
+      {
+        type: "heading",
+        level: 2,
+        text: "Example with All Three Declarations",
+      },
+      {
+        type: "code",
+        language: "js",
+        code: `var city = "Delhi";\nlet age = 25;\nconst birthYear = 2000;\n\nage = 26; // allowed\nbirthYear = 1999; // Error`,
+      },
+      {
+        type: "heading",
+        level: 2,
+        text: "Summary",
+      },
+      {
+        type: "list",
+        style: "unordered",
+        items: [
+          "Use `let` for values that will change",
+          "Use `const` for values that stay the same",
+          "Avoid `var` in modern JavaScript",
+          "Always use clear, camelCase names for variables",
+        ],
       },
       {
         type: "video",
-        title: "Watch this concept in action",
-        url: "PHxAcEP7WKE",
+        title: "JavaScript Variables Explained (var, let, const)",
+        url: "VIDEO_ID_HERE", // Replace with actual YouTube video ID
       },
       {
         type: "navigation",
@@ -667,158 +729,214 @@ testScope();`,
           href: "/languages/js/how-to-run-javascript",
         },
         next: {
-          title: "Hoisting in JavaScript",
-          href: "/languages/js/hoisting-in-javascript",
+          title: "Data Types",
+          href: "/languages/js/data-types",
         },
       },
     ],
   },
   {
-    slug: "hoisting-in-javascript",
-    title: "Hoisting in JavaScript",
+    title: "Data Types",
+    slug: "data-types",
     content: [
       {
+        type: "heading",
+        text: "What are Data Types in JavaScript?",
+      },
+      {
         type: "paragraph",
-        text: "Hoisting is a JavaScript mechanism where variable and function declarations are moved to the top of their scope during the compilation phase. It allows functions and variables to be used before they are declared.",
+        text: "Data types define the kind of value a variable can hold. In JavaScript, every value has a data type — like a label that tells the interpreter how to handle the data. Understanding data types is crucial because it affects how your code behaves, compares, and manipulates data.",
       },
       {
         type: "heading",
-        level: 2,
-        text: "What Gets Hoisted?",
+        text: "Two Categories of Data Types",
       },
       {
         type: "list",
-        style: "unordered",
+        heading: "",
         items: [
-          "`var` declarations (not initializations).",
-          "Function declarations.",
-          "`let` and `const` declarations are hoisted but not initialized.",
+          "**Primitive Data Types** – Simple and immutable values.",
+          "**Reference (Non-Primitive) Data Types** – More complex structures like objects, arrays, etc.",
         ],
       },
       {
         type: "heading",
-        level: 2,
-        text: "Variable Hoisting Example",
-      },
-      {
-        type: "code",
-        language: "javascript",
-        code: `console.log(a); // undefined
-var a = 10;`,
+        text: "Primitive Data Types",
       },
       {
         type: "paragraph",
-        text: "In the above example, the variable `a` is hoisted to the top and initialized as `undefined`, so it doesn't throw an error.",
+        text: "Primitive types are stored directly in the variable. They are immutable (cannot be changed once created) and copied by value.",
       },
       {
-        type: "heading",
-        level: 2,
-        text: "Function Hoisting Example",
+        type: "list",
+        heading: "",
+        items: [
+          "**1. String** – Textual data. Written inside quotes.",
+          "**2. Number** – Any number (integer or floating point).",
+          "**3. Boolean** – Logical values: `true` or `false`.",
+          "**4. Null** – Explicitly no value.",
+          "**5. Undefined** – A variable that hasn't been assigned a value yet.",
+          "**6. Symbol** – Unique and immutable values (used as object keys).",
+          "**7. BigInt** – Large integers beyond the safe range of regular `Number`.",
+        ],
       },
       {
         type: "code",
-        language: "javascript",
-        code: `greet(); // Hello!
+        heading: "Examples of Primitive Types",
+        code: `// String
+let name = "JD";    
+
+// Number
+let age = 25;        
+let rating = 4.5;     
+
+// Boolean
+let isOnline = true;
+
+// Null
+let selectedColor = null;
+
+// Undefined
+let score; // default is undefined
+
+// Symbol
+let sym = Symbol("unique");
+
+// BigInt
+let bigNumber = 1234567890123456789012345678901234567890n;`,
+      },
+      {
+        type: "heading",
+        text: "Reference (Non-Primitive) Data Types",
+      },
+      {
+        type: "paragraph",
+        text: "Reference types store **references** to memory locations. They are mutable (can be changed) and are copied by reference — meaning two variables can refer to the same object.",
+      },
+      {
+        type: "list",
+        heading: "",
+        items: [
+          "**1. Object** – Key-value pairs (like a real-world dictionary).",
+          "**2. Array** – Ordered list of values (indexed collection).",
+          "**3. Function** – A block of reusable code (also treated as objects in JS).",
+          "**4. Date, RegExp, Map, Set, etc.** – Built-in JavaScript object types.",
+        ],
+      },
+      {
+        type: "code",
+        heading: "Examples of Reference Types",
+        code: `// Object
+let user = {
+  name: "JD",
+  age: 25
+};
+
+// Array
+let colors = ["red", "green", "blue"];
+
+// Function
 function greet() {
   console.log("Hello!");
 }`,
       },
       {
-        type: "paragraph",
-        text: "Function declarations are fully hoisted, so they can be called before being defined in the code.",
+        type: "heading",
+        text: "typeof Operator – Check Data Type",
       },
       {
-        type: "heading",
-        level: 2,
-        text: "let & const Hoisting",
+        type: "paragraph",
+        text: "You can use the `typeof` operator to find the type of a value or variable. It's handy for debugging and type checking.",
       },
       {
         type: "code",
-        language: "javascript",
-        code: `console.log(b); // ReferenceError
-let b = 20;`,
-      },
-      {
-        type: "paragraph",
-        text: "`let` and `const` are hoisted but not initialized. Accessing them before declaration results in a ReferenceError due to the Temporal Dead Zone (TDZ).",
-      },
-      {
-        type: "heading",
-        level: 2,
-        text: "Temporal Dead Zone (TDZ)",
-      },
-      {
-        type: "paragraph",
-        text: "The TDZ is the time between entering a scope and the actual declaration of the variable. Accessing a variable during this period causes a ReferenceError.",
+        heading: "typeof Examples",
+        code: `typeof "JD"           // "string"
+typeof 25             // "number"
+typeof true           // "boolean"
+typeof undefined      // "undefined"
+typeof null           // "object" (weird JS quirk!)
+typeof { a: 1 }       // "object"
+typeof [1, 2, 3]      // "object"
+typeof function() {}  // "function"`,
       },
       {
         type: "heading",
-        level: 2,
-        text: "Best Practices",
+        text: "Key Differences: Primitive vs Reference",
       },
       {
         type: "list",
-        style: "unordered",
+        heading: "",
         items: [
-          "Declare variables at the top of their scope.",
-          "Use `let` and `const` instead of `var` to avoid confusion with hoisting.",
-          "Avoid using variables before they are declared.",
+          "**Storage:** Primitive stores value directly, Reference stores memory address.",
+          "**Mutability:** Primitives are immutable, Reference types are mutable.",
+          "**Comparison:** Primitives compared by value, references compared by memory address.",
         ],
-      },
-      {
-        type: "heading",
-        level: 2,
-        text: "Interview Questions",
-      },
-      {
-        type: "list",
-        style: "ordered",
-        items: [
-          "What is hoisting in JavaScript?",
-          "What gets hoisted — declarations or initializations?",
-          "How does hoisting differ between `var`, `let`, and `const`?",
-          "What is the Temporal Dead Zone?",
-          "Are function expressions hoisted?",
-        ],
-      },
-      {
-        type: "heading",
-        level: 2,
-        text: "Practice Exercise",
-      },
-      {
-        type: "paragraph",
-        text: "What will be the output of the following code? Explain why:",
       },
       {
         type: "code",
-        language: "javascript",
-        code: `console.log(x); // ?
-let x = 5;
-  
-foo(); // ?
-const foo = function() {
-  console.log("Hello!");
-};`,
+        heading: "Comparison Example",
+        code: `// Primitive Example
+let a = 10;
+let b = a;
+b = 20;
+console.log(a); // 10 — stays unchanged
+
+// Reference Example
+let obj1 = { name: "JD" };
+let obj2 = obj1;
+obj2.name = "Codebase";
+console.log(obj1.name); // "Codebase" — because obj1 and obj2 point to same object`,
       },
       {
-        type: "quiz",
-        question:
-          "What will be the output of the following code?\n\n```javascript\nconsole.log(a);\nvar a = 10;\n```",
-        options: ["`10`", "`undefined`", "`ReferenceError`", "`null`"],
-        correctAnswerIndex: 1,
-        explanation:
-          "Due to hoisting, `var a` is moved to the top and initialized as `undefined` before the `console.log` runs.",
+        type: "heading",
+        text: "Advanced: Type Conversion (Coercion)",
+      },
+      {
+        type: "paragraph",
+        text: "JavaScript is a dynamically typed language, which means it automatically converts between types when needed. This is called **type coercion**. It can be implicit or explicit.",
+      },
+      {
+        type: "list",
+        heading: "",
+        items: [
+          "**Implicit Coercion:** Happens automatically by JavaScript.",
+          "**Explicit Coercion:** You manually convert using functions like `String()`, `Number()`, etc.",
+        ],
+      },
+      {
+        type: "code",
+        heading: "Type Coercion Examples",
+        code: `// Implicit Coercion
+console.log("5" + 2);     // "52" — number 2 is converted to string
+console.log("5" - 2);     // 3 — string "5" is converted to number
+
+// Explicit Coercion
+let num = Number("123");
+let str = String(123);`,
+      },
+      {
+        type: "heading",
+        text: "Conclusion",
+      },
+      {
+        type: "paragraph",
+        text: "Understanding JavaScript data types helps you write safer, more predictable code. From handling numbers and strings to working with objects and arrays — knowing how each type behaves will make you a much stronger developer.",
+      },
+      {
+        type: "video",
+        url: "ADD_YOUTUBE_ID_HERE", // replace with your actual YouTube ID
+        title: "JavaScript Data Types Explained",
       },
       {
         type: "navigation",
         previous: {
-          title: "Variables in JavaScript",
-          href: "/languages/js/variables-in-javascript",
+          title: "Variables (var, let, const)",
+          href: "/languages/js/variables-var-let-const",
         },
         next: {
-          title: "Scope in JavaScript",
-          href: "/languages/js/scope-in-javascript",
+          title: "Operators in JavaScript",
+          href: "/languages/js/operators",
         },
       },
     ],

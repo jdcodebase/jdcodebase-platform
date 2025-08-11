@@ -813,7 +813,7 @@ export const jsTopicsContent = [
       {
         type: "video",
         title: "JavaScript Variables Explained (var, let, const)",
-        url: "VIDEO_ID_HERE",
+        url: "EaL-AO0oU0A",
       },
 
       {

@@ -12,7 +12,7 @@ const getDSATopicPaths = () =>
 const getDSAProblemPaths = () =>
   dsaProblems.flatMap((p) =>
     p.category.map(
-      (cat) => `/problem/${cat.toLowerCase().replace(/\s+/g, "-")}/${p.slug}`
+      (cat) => `dsa/problem/${cat.toLowerCase().replace(/\s+/g, "-")}/${p.slug}`
     )
   );
 

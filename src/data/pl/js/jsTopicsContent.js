@@ -835,193 +835,238 @@ export const jsTopicsContent = [
     content: [
       {
         type: "heading",
-        text: "What are Data Types in JavaScript?",
+        level: 2,
+        text: "What Are Data Types in JavaScript?",
       },
       {
         type: "paragraph",
-        text: "Data types define the kind of value a variable can hold. In JavaScript, every value has a data type — like a label that tells the interpreter how to handle the data. Understanding data types is crucial because it affects how your code behaves, compares, and manipulates data.",
+        text: "Data types tell JavaScript what kind of value you are working with. Every value — whether it's a number, text, list, or object — belongs to a specific data type. Knowing them helps you write better, bug-free code.",
       },
+
       {
         type: "heading",
-        text: "Two Categories of Data Types",
+        level: 2,
+        text: "Categories of Data Types",
       },
       {
         type: "list",
-        heading: "",
+        style: "unordered",
         items: [
-          "**Primitive Data Types** – Simple and immutable values.",
-          "**Reference (Non-Primitive) Data Types** – More complex structures like objects, arrays, etc.",
+          "**Primitive Data Types** – Simple, single values that are immutable.",
+          "**Reference (Non-Primitive) Data Types** – Complex data structures stored by reference.",
         ],
       },
       {
         type: "heading",
+        level: 2,
         text: "Primitive Data Types",
       },
       {
         type: "paragraph",
-        text: "Primitive types are stored directly in the variable. They are immutable (cannot be changed once created) and copied by value.",
+        text: "Primitive types are stored directly in the variable and are immutable (cannot be changed directly). When copied, their value is duplicated — they are compared by value.",
+      },
+      {
+        type: "heading",
+        level: 3,
+        text: "1. Number",
+      },
+      {
+        type: "paragraph",
+        text: "Represents both integers and floating-point numbers. JavaScript has only one number type for all numeric values.",
       },
       {
         type: "list",
-        heading: "",
+        style: "unordered",
         items: [
-          "**1. String** – Textual data. Written inside quotes.",
-          "**2. Number** – Any number (integer or floating point).",
-          "**3. Boolean** – Logical values: `true` or `false`.",
-          "**4. Null** – Explicitly no value.",
-          "**5. Undefined** – A variable that hasn't been assigned a value yet.",
-          "**6. Symbol** – Unique and immutable values (used as object keys).",
-          "**7. BigInt** – Large integers beyond the safe range of regular `Number`.",
+          "Integer: `let count = 42;`",
+          "Floating-point: `let price = 99.99;`",
+          "Infinity: `let inf = Infinity;`",
+          "Negative Infinity: `let negInf = -Infinity;`",
+          "NaN (Not-a-Number): Result of invalid math, e.g., `0 / 0`",
         ],
       },
       {
         type: "code",
-        heading: "Examples of Primitive Types",
-        code: `// String
-let name = "JD";    
-
-// Number
-let age = 25;        
-let rating = 4.5;     
-
-// Boolean
-let isOnline = true;
-
-// Null
-let selectedColor = null;
-
-// Undefined
-let score; // default is undefined
-
-// Symbol
-let sym = Symbol("unique");
-
-// BigInt
-let bigNumber = 1234567890123456789012345678901234567890n;`,
+        language: "js",
+        code: "let num1 = 10;      // integer\nlet num2 = 3.14;    // floating-point\nlet inf = Infinity; // infinite value\nlet notNum = NaN;   // invalid number",
       },
       {
         type: "heading",
+        level: 3,
+        text: "2. BigInt",
+      },
+      {
+        type: "paragraph",
+        text: "Used for very large integers beyond the safe range of Number. Created by adding an `n` at the end of the number.",
+      },
+      {
+        type: "code",
+        language: "js",
+        code: "let big = 123456789012345678901234567890n;\nlet sum = big + 10n;",
+      },
+      {
+        type: "heading",
+        level: 3,
+        text: "3. String",
+      },
+      {
+        type: "paragraph",
+        text: "Represents text. Strings can be enclosed in single quotes `'`, double quotes `\"`, or backticks `` ` `` (template literals).",
+      },
+      {
+        type: "code",
+        language: "js",
+        code: "let str1 = 'Hello';\nlet str2 = \"World\";\nlet name = `JD`;\nconsole.log(`Hello ${name}`); // template literal",
+      },
+      {
+        type: "heading",
+        level: 3,
+        text: "4. Boolean",
+      },
+      {
+        type: "paragraph",
+        text: "Represents logical values — either `true` or `false`. Used for decision making.",
+      },
+      {
+        type: "code",
+        language: "js",
+        code: "let isOnline = true;\nlet isAdmin = false;",
+      },
+      {
+        type: "heading",
+        level: 3,
+        text: "5. Null",
+      },
+      {
+        type: "paragraph",
+        text: "Represents an intentional 'no value'. You assign `null` to indicate an empty value.",
+      },
+      {
+        type: "code",
+        language: "js",
+        code: "let selectedColor = null;",
+      },
+      {
+        type: "heading",
+        level: 3,
+        text: "6. Undefined",
+      },
+      {
+        type: "paragraph",
+        text: "A variable that has been declared but not assigned a value yet will be `undefined`.",
+      },
+      {
+        type: "code",
+        language: "js",
+        code: "let score; // undefined by default",
+      },
+      {
+        type: "heading",
+        level: 3,
+        text: "7. Symbol",
+      },
+      {
+        type: "paragraph",
+        text: "Represents a unique and immutable value. Often used as object keys to avoid property name collisions.",
+      },
+      {
+        type: "code",
+        language: "js",
+        code: "let sym1 = Symbol('id');\nlet sym2 = Symbol('id');\nconsole.log(sym1 === sym2); // false",
+      },
+      {
+        type: "heading",
+        level: 2,
         text: "Reference (Non-Primitive) Data Types",
       },
       {
         type: "paragraph",
-        text: "Reference types store **references** to memory locations. They are mutable (can be changed) and are copied by reference — meaning two variables can refer to the same object.",
+        text: "Reference types store a reference (memory address) rather than the actual value. They are mutable and compared by reference.",
       },
       {
         type: "list",
-        heading: "",
+        style: "unordered",
         items: [
-          "**1. Object** – Key-value pairs (like a real-world dictionary).",
-          "**2. Array** – Ordered list of values (indexed collection).",
-          "**3. Function** – A block of reusable code (also treated as objects in JS).",
-          "**4. Date, RegExp, Map, Set, etc.** – Built-in JavaScript object types.",
+          "**Object** – Collection of key-value pairs. [Read full Object topic](/languages/js/objects) *(Read in sequence — don't jump here directly)*",
+          "**Array** – Ordered list of values. [Read full Array topic](/languages/js/arrays) *(Read in sequence — don't jump here directly)*",
+          "**Function** – Block of reusable code. [Read full Function topic](/languages/js/functions) *(Read in sequence — don't jump here directly)*",
         ],
       },
       {
         type: "code",
-        heading: "Examples of Reference Types",
-        code: `// Object
-let user = {
-  name: "JD",
-  age: 25
-};
-
-// Array
-let colors = ["red", "green", "blue"];
-
-// Function
-function greet() {
-  console.log("Hello!");
-}`,
+        language: "js",
+        code: "// Object\nlet user = { name: 'JD', age: 25 };\n\n// Array\nlet colors = ['red', 'green', 'blue'];\n\n// Function\nfunction greet() {\n  console.log('Hello!');\n}",
       },
       {
         type: "heading",
-        text: "typeof Operator – Check Data Type",
+        level: 2,
+        text: "The typeof Operator",
       },
       {
         type: "paragraph",
-        text: "You can use the `typeof` operator to find the type of a value or variable. It's handy for debugging and type checking.",
+        text: "The `typeof` operator tells you the type of a value or variable.",
       },
       {
         type: "code",
-        heading: "typeof Examples",
-        code: `typeof "JD"           // "string"
-typeof 25             // "number"
-typeof true           // "boolean"
-typeof undefined      // "undefined"
-typeof null           // "object" (weird JS quirk!)
-typeof { a: 1 }       // "object"
-typeof [1, 2, 3]      // "object"
-typeof function() {}  // "function"`,
+        language: "js",
+        code: "typeof 'JD';            // string\ntypeof 42;              // number\ntypeof true;            // boolean\ntypeof undefined;       // undefined\ntypeof null;            // object (quirk in JS)\ntypeof {a: 1};          // object\ntypeof [1, 2, 3];       // object\ntypeof function() {};   // function\ntypeof 123456789n;      // bigint\ntypeof Symbol('id');    // symbol",
       },
       {
         type: "heading",
-        text: "Key Differences: Primitive vs Reference",
+        level: 2,
+        text: "Primitive vs Reference Types",
+      },
+      {
+        type: "table",
+        headers: ["Feature", "Primitive", "Reference"],
+        rows: [
+          ["Stored As", "Value directly", "Memory reference"],
+          ["Mutability", "Immutable", "Mutable"],
+          ["Comparison", "By value", "By reference"],
+          [
+            "Examples",
+            "Number, String, Boolean, etc.",
+            "Objects, Arrays, Functions",
+          ],
+        ],
+      },
+      {
+        type: "heading",
+        level: 2,
+        text: "Type Conversion & Coercion",
+      },
+      {
+        type: "paragraph",
+        text: "JavaScript can change a value's type automatically (coercion) or you can do it manually (conversion).",
       },
       {
         type: "list",
-        heading: "",
+        style: "unordered",
         items: [
-          "**Storage:** Primitive stores value directly, Reference stores memory address.",
-          "**Mutability:** Primitives are immutable, Reference types are mutable.",
-          "**Comparison:** Primitives compared by value, references compared by memory address.",
+          "**Implicit Coercion** – JS changes type automatically, e.g., `5 + '5' → '55'`",
+          "**Explicit Conversion** – You manually change type using `String()`, `Number()`, `Boolean()` etc.",
         ],
       },
       {
         type: "code",
-        heading: "Comparison Example",
-        code: `// Primitive Example
-let a = 10;
-let b = a;
-b = 20;
-console.log(a); // 10 — stays unchanged
-
-// Reference Example
-let obj1 = { name: "JD" };
-let obj2 = obj1;
-obj2.name = "Codebase";
-console.log(obj1.name); // "Codebase" — because obj1 and obj2 point to same object`,
+        language: "js",
+        code: "// Implicit coercion\nconsole.log('5' + 2); // '52'\nconsole.log('5' - 2); // 3\n\n// Explicit conversion\nlet num = Number('123');\nlet str = String(123);",
       },
       {
         type: "heading",
-        text: "Advanced: Type Conversion (Coercion)",
+        level: 2,
+        text: "Summary",
       },
       {
         type: "paragraph",
-        text: "JavaScript is a dynamically typed language, which means it automatically converts between types when needed. This is called **type coercion**. It can be implicit or explicit.",
-      },
-      {
-        type: "list",
-        heading: "",
-        items: [
-          "**Implicit Coercion:** Happens automatically by JavaScript.",
-          "**Explicit Coercion:** You manually convert using functions like `String()`, `Number()`, etc.",
-        ],
-      },
-      {
-        type: "code",
-        heading: "Type Coercion Examples",
-        code: `// Implicit Coercion
-console.log("5" + 2);     // "52" — number 2 is converted to string
-console.log("5" - 2);     // 3 — string "5" is converted to number
-
-// Explicit Coercion
-let num = Number("123");
-let str = String(123);`,
-      },
-      {
-        type: "heading",
-        text: "Conclusion",
-      },
-      {
-        type: "paragraph",
-        text: "Understanding JavaScript data types helps you write safer, more predictable code. From handling numbers and strings to working with objects and arrays — knowing how each type behaves will make you a much stronger developer.",
+        text: "JavaScript data types fall into two categories: primitive and reference. Primitives store simple values and are immutable, while reference types store memory addresses and can hold complex data. Understanding these helps you write cleaner, bug-free code and work effectively with type conversions and comparisons.",
       },
       {
         type: "video",
-        url: "ADD_YOUTUBE_ID_HERE", // replace with your actual YouTube ID
         title: "JavaScript Data Types Explained",
+        url: "VIDEO_ID_HERE",
       },
+
       {
         type: "navigation",
         previous: {

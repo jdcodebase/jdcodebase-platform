@@ -513,6 +513,23 @@ export const jsTopicsContent = [
         type: "paragraph",
         text: "Variables are containers used to store data in your program. You can think of them as labeled boxes where you can keep values like numbers, text, or other types of data.",
       },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "Why Do We Need Variables?",
+      },
+      {
+        type: "list",
+        style: "unordered",
+        items: [
+          "They store values you want to use later",
+          "They make your code reusable and dynamic",
+          "They help you organize and manage data",
+          "They allow you to perform operations and logic",
+        ],
+      },
+
       {
         type: "heading",
         level: 2,
@@ -527,29 +544,15 @@ export const jsTopicsContent = [
         language: "js",
         code: 'let age = 25;\nlet name = "JD";',
       },
+
       {
         type: "heading",
         level: 2,
-        text: "Why Are Variables Important?",
-      },
-      {
-        type: "list",
-        style: "unordered",
-        items: [
-          "They store values you want to use later",
-          "They make your code reusable and dynamic",
-          "They help you organize and manage data",
-          "They allow you to perform operations and logic",
-        ],
-      },
-      {
-        type: "heading",
-        level: 2,
-        text: "Ways to Declare Variables in JavaScript",
+        text: "Types of Variable Declarations in JavaScript",
       },
       {
         type: "paragraph",
-        text: "There are three keywords to declare variables: var, let, and const. Each behaves differently and is used in different scenarios.",
+        text: "There are three ways to declare variables: var, let, and const. Each has its own rules and use cases.",
       },
       {
         type: "list",
@@ -560,6 +563,7 @@ export const jsTopicsContent = [
           "`const` – For constants (block scoped)",
         ],
       },
+
       {
         type: "heading",
         level: 2,
@@ -567,12 +571,22 @@ export const jsTopicsContent = [
       },
       {
         type: "paragraph",
-        text: "`var` is the traditional way to declare variables in JavaScript, but it has some problems due to how it's scoped.",
+        text: "`var` is the traditional way to declare variables in JavaScript, but it has some issues due to function scoping.",
+      },
+      {
+        type: "heading",
+        level: 3,
+        text: "Declaring vs Initializing with var",
       },
       {
         type: "code",
         language: "js",
-        code: 'var city = "Delhi";',
+        code: '// Declaring without initializing\nvar city;\n\n// Initializing\ncity = "Delhi";',
+      },
+      {
+        type: "code",
+        language: "js",
+        code: 'var city; // declaration\ncity = "Delhi"; // initialization\nvar city = "Mumbai"; // redeclaration allowed\ncity = "Pune"; // reassignment allowed',
       },
       {
         type: "list",
@@ -585,6 +599,11 @@ export const jsTopicsContent = [
         ],
       },
       {
+        type: "paragraph",
+        text: "**Summary**: Use `var` only for legacy code or when you specifically need function scoping. Prefer `let` or `const` in modern JavaScript.",
+      },
+
+      {
         type: "heading",
         level: 2,
         text: "`let` – The Modern Way",
@@ -594,9 +613,14 @@ export const jsTopicsContent = [
         text: "`let` is block scoped and prevents many issues found with `var`. Use it when the variable value might change later.",
       },
       {
+        type: "heading",
+        level: 3,
+        text: "Declaring, Initializing, and Redeclaring with let",
+      },
+      {
         type: "code",
         language: "js",
-        code: "let age = 30;\nage = 31; // allowed",
+        code: "let age; // declaration\nage = 30; // initialization\n// let age = 40; // redeclaration not allowed in same scope\nage = 31; // reassignment allowed",
       },
       {
         type: "list",
@@ -604,10 +628,15 @@ export const jsTopicsContent = [
         items: [
           "Block scoped",
           "Can be reassigned",
-          "Cannot be redeclared in the same scope",
+          "Cannot be redeclared in same scope",
           "Use when value will change",
         ],
       },
+      {
+        type: "paragraph",
+        text: "**Summary**: Use `let` when the value will change during the program. It avoids the pitfalls of `var`.",
+      },
+
       {
         type: "heading",
         level: 2,
@@ -615,12 +644,17 @@ export const jsTopicsContent = [
       },
       {
         type: "paragraph",
-        text: "`const` is also block scoped but used when the value should never change after declaration.",
+        text: "`const` is block scoped and used when the value should never change. It must be initialized at declaration.",
+      },
+      {
+        type: "heading",
+        level: 3,
+        text: "Errors When Redeclaring or Reassigning const",
       },
       {
         type: "code",
         language: "js",
-        code: "const pi = 3.14;\npi = 3.14159; // Error: Assignment to constant variable",
+        code: "const pi = 3.14; // declaration + initialization\n// const pi; // Error: Must be initialized\n// pi = 3.14159; // Error: Cannot reassign\n// const pi = 3.15; // redeclaration not allowed",
       },
       {
         type: "list",
@@ -629,17 +663,19 @@ export const jsTopicsContent = [
           "Block scoped",
           "Cannot be reassigned",
           "Cannot be redeclared",
+          "Must be initialized at declaration",
           "Use when value should stay constant",
         ],
       },
       {
+        type: "paragraph",
+        text: "**Summary**: Use `const` by default unless you know the value will change — in that case, use `let`.",
+      },
+
+      {
         type: "heading",
         level: 2,
-        text: "Comparison Table",
-      },
-      {
-        type: "paragraph",
-        text: "Here’s a quick comparison of `var`, `let`, and `const`:",
+        text: "var vs let vs const",
       },
       {
         type: "table",
@@ -650,9 +686,9 @@ export const jsTopicsContent = [
           ["Scope", "Function", "Block", "Block"],
           [
             "Hoisting Behavior",
-            "Yes (undefined)",
-            "Yes (temporal dead zone)",
-            "Yes (temporal dead zone)",
+            "Yes (initialized as undefined)",
+            "Yes (TDZ - ReferenceError until initialized)",
+            "Yes (TDZ - ReferenceError until initialized)",
           ],
           [
             "Use Case",
@@ -662,6 +698,17 @@ export const jsTopicsContent = [
           ],
         ],
       },
+
+      {
+        type: "heading",
+        level: 2,
+        text: "Which One Should You Use?",
+      },
+      {
+        type: "paragraph",
+        text: "Use `const` for most cases, and `let` only when the value will change. Avoid `var` unless maintaining old code.",
+      },
+
       {
         type: "heading",
         level: 2,
@@ -678,50 +725,97 @@ export const jsTopicsContent = [
           "Avoid reserved words like `let`, `if`, `return`",
         ],
       },
+
       {
         type: "heading",
         level: 2,
-        text: "JavaScript Is Dynamically Typed",
+        text: "JavaScript is Dynamically and Loosely Typed",
       },
       {
         type: "paragraph",
-        text: "In JavaScript, variables don’t require a specific type. You can assign a number, then change it to a string later — the type is determined at runtime.",
+        text: "JavaScript doesn’t require you to declare a variable type — the type is decided at runtime (dynamic typing). It’s also loosely typed, meaning it automatically converts between types when needed (type coercion).",
+      },
+      {
+        type: "table",
+        headers: ["Feature", "Dynamically Typed", "Loosely Typed"],
+        rows: [
+          [
+            "Definition",
+            "Variable type is decided at runtime and can change during execution.",
+            "JavaScript automatically converts data types when needed.",
+          ],
+          [
+            "Main Behavior",
+            "You can store any type of value in the same variable at different times.",
+            "Type coercion happens implicitly or explicitly.",
+          ],
+          [
+            "Example",
+            "let x = 10; x = 'Hello'; // works fine",
+            "5 + '5' → '55', '10' - 2 → 8",
+          ],
+          [
+            "Pros",
+            "Flexible and easy to write code without worrying about types.",
+            "Convenient when mixing values of different types.",
+          ],
+          [
+            "Cons",
+            "Can cause bugs if you forget the current type of a variable.",
+            "May produce unexpected results if coercion logic isn’t clear.",
+          ],
+        ],
       },
       {
         type: "code",
         language: "js",
-        code: 'let value = 100;\nvalue = "one hundred"; // allowed',
+        code: '// Dynamically typed example\nlet value = 100;    // number\nvalue = "hundred";  // string\n\n// Loosely typed example\nconsole.log(5 + "5");   // "55"\nconsole.log("10" - 2);  // 8',
+      },
+      {
+        type: "heading",
+        level: 3,
+        text: "Quick Recall",
+      },
+      {
+        type: "list",
+        style: "unordered",
+        items: [
+          "Dynamic typing → “Change clothes anytime” (variable changes type freely at runtime)",
+          "Loose typing → “Mix and match outfits” (JS automatically mixes types via coercion)",
+        ],
       },
       {
         type: "heading",
         level: 2,
-        text: "Example with All Three Declarations",
+        text: "Best Practices",
       },
       {
-        type: "code",
-        language: "js",
-        code: `var city = "Delhi";\nlet age = 25;\nconst birthYear = 2000;\n\nage = 26; // allowed\nbirthYear = 1999; // Error`,
+        type: "list",
+        style: "unordered",
+        items: [
+          "Use const by default for values that won't change.",
+          "Use let for values that may change later.",
+          "Avoid var in modern JavaScript unless you specifically need function-scoped variables.",
+          "Always use clear, camelCase names for variables.",
+        ],
       },
+
       {
         type: "heading",
         level: 2,
         text: "Summary",
       },
       {
-        type: "list",
-        style: "unordered",
-        items: [
-          "Use `let` for values that will change",
-          "Use `const` for values that stay the same",
-          "Avoid `var` in modern JavaScript",
-          "Always use clear, camelCase names for variables",
-        ],
+        type: "paragraph",
+        text: "Variables store and manage data in JavaScript. You can declare them with var, let, or const. Modern best practice is to use const unless you know the value will change, then use let. Avoid var in most cases. JavaScript’s dynamic and loose typing makes variables flexible but can also lead to unexpected results if not handled carefully.",
       },
+
       {
         type: "video",
         title: "JavaScript Variables Explained (var, let, const)",
-        url: "VIDEO_ID_HERE", // Replace with actual YouTube video ID
+        url: "VIDEO_ID_HERE",
       },
+
       {
         type: "navigation",
         previous: {

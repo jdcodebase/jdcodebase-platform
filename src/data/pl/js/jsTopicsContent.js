@@ -1064,7 +1064,7 @@ export const jsTopicsContent = [
       {
         type: "video",
         title: "JavaScript Data Types Explained",
-        url: "VIDEO_ID_HERE",
+        url: "UMW20CklhWQ",
       },
 
       {

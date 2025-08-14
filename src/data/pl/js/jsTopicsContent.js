@@ -824,14 +824,14 @@ export const jsTopicsContent = [
         },
         next: {
           title: "Data Types",
-          href: "/languages/js/data-types",
+          href: "/languages/js/data-types-in-javascript",
         },
       },
     ],
   },
   {
     title: "Data Types",
-    slug: "data-types",
+    slug: "data-types-in-javascript",
     content: [
       {
         type: "heading",
@@ -1066,7 +1066,6 @@ export const jsTopicsContent = [
         title: "JavaScript Data Types Explained",
         url: "UMW20CklhWQ",
       },
-
       {
         type: "navigation",
         previous: {
@@ -1075,532 +1074,305 @@ export const jsTopicsContent = [
         },
         next: {
           title: "Operators in JavaScript",
-          href: "/languages/js/operators",
+          href: "/languages/js/operators-in-javascript",
         },
       },
     ],
   },
   {
-    slug: "scope-in-javascript",
-    title: "Scope in JavaScript",
+    title: "Operators in JavaScript",
+    slug: "operators-in-javascript",
     content: [
       {
-        type: "paragraph",
-        text: "Scope in JavaScript refers to the current context of execution — which determines the accessibility of variables. Understanding scope helps avoid unexpected behaviors and bugs.",
+        type: "heading",
+        text: "Introduction to Operators",
       },
       {
-        type: "heading",
-        level: 2,
-        text: "Types of Scope",
+        type: "paragraph",
+        text: "In JavaScript, an operator is a special symbol that performs an action on values (called operands). You use operators to perform calculations, compare values, assign data, combine strings, and more.",
       },
       {
         type: "list",
         style: "unordered",
         items: [
-          "**Global Scope** – Variables declared outside any function or block. Accessible anywhere.",
-          "**Function Scope** – Variables declared with `var` inside a function are accessible only within that function.",
-          "**Block Scope** – Variables declared with `let` or `const` inside a block (`{}`) are accessible only within that block.",
+          "Operand: The value or variable the operator works on.",
+          "Operator: The symbol that performs the action.",
+          "Expression: A combination of operands and operators that produces a result.",
         ],
       },
       {
-        type: "heading",
-        level: 2,
-        text: "Function Scope Example",
-      },
-      {
         type: "code",
         language: "javascript",
-        code: `function greet() {
-  var message = "Hello";
-  console.log(message); // "Hello"
-}
-console.log(message); // ReferenceError`,
+        code: "let sum = 5 + 3; // '+' is the operator, 5 and 3 are operands, sum is 8",
       },
+
+      // Unary & Binary
       {
         type: "heading",
-        level: 2,
-        text: "Block Scope Example",
-      },
-      {
-        type: "code",
-        language: "javascript",
-        code: `{
-  let x = 10;
-  const y = 20;
-  console.log(x, y); // 10 20
-}
-console.log(x); // ReferenceError`,
-      },
-      {
-        type: "heading",
-        level: 2,
-        text: "Lexical Scope",
+        text: "Unary and Binary Operators",
       },
       {
         type: "paragraph",
-        text: "Lexical scope means that a function can access variables from its parent scope. JavaScript uses lexical scoping.",
-      },
-      {
-        type: "code",
-        language: "javascript",
-        code: `function outer() {
-  let outerVar = "I am outside!";
-  function inner() {
-    console.log(outerVar); // Accessible
-  }
-  inner();
-}
-outer();`,
-      },
-      {
-        type: "heading",
-        level: 2,
-        text: "Best Practices",
+        text: "Operators are classified based on the number of operands they use:",
       },
       {
         type: "list",
         style: "unordered",
         items: [
-          "Use `let` and `const` to take advantage of block scoping.",
-          "Avoid declaring variables in the global scope.",
-          "Understand lexical scoping to avoid reference errors.",
+          "Unary operator: Works on a single operand. Example: `++x` or `typeof x`.",
+          "Binary operator: Works on two operands. Example: `x + y`.",
         ],
       },
       {
-        type: "heading",
-        level: 2,
-        text: "Interview Questions",
-      },
-      {
-        type: "list",
-        style: "ordered",
-        items: [
-          "What is the difference between block, function, and global scope?",
-          "What is lexical scope?",
-          "How do `var`, `let`, and `const` behave in different scopes?",
-          "What will happen if you access a variable outside its scope?",
-        ],
-      },
-      {
-        type: "quiz",
-        question:
-          "What type of scope does `let` and `const` have in JavaScript?",
-        options: [
-          "Global scope",
-          "Function scope",
-          "Block scope",
-          "Lexical scope only",
-        ],
-        correctAnswerIndex: 2,
-        explanation:
-          "`let` and `const` are block-scoped, meaning they are accessible only within the block they are declared in.",
-      },
-      {
-        type: "navigation",
-        previous: {
-          title: "Hoisting in JavaScript",
-          href: "/languages/js/hoisting-in-javascript",
-        },
-        next: {
-          title: "Data Types in JavaScript",
-          href: "/languages/js/data-types-in-javascript",
-        },
-      },
-    ],
-  },
-  {
-    slug: "data-types-in-javascript",
-    title: "Data Types in JavaScript",
-    content: [
-      {
-        type: "paragraph",
-        text: "Data types in JavaScript define the type of value a variable can hold. JavaScript is a dynamically typed language, meaning variables can hold any type of data without specifying the type explicitly.",
-      },
-      {
-        type: "heading",
-        level: 2,
-        text: "Primitive Data Types",
-      },
-      {
-        type: "paragraph",
-        text: "Primitive data types are immutable and hold single values. JavaScript has 7 primitive types.",
-      },
-      {
-        type: "heading",
-        level: 3,
-        text: "1. String",
-      },
-      {
-        type: "paragraph",
-        text: "Used to represent textual data.",
-      },
-      {
         type: "code",
         language: "javascript",
-        code: `let name = "JD"; // String`,
+        code: "let x = 5;\nconsole.log(-x); // Unary minus, outputs -5\nconsole.log(x + 2); // Binary addition, outputs 7",
       },
+
+      // Arithmetic
       {
         type: "heading",
-        level: 3,
-        text: "2. Number",
-      },
-      {
-        type: "paragraph",
-        text: "Represents both integer and floating-point numbers.",
-      },
-      {
-        type: "code",
-        language: "javascript",
-        code: `let age = 25;      // Integer
-let pi = 3.14;    // Float`,
-      },
-      {
-        type: "heading",
-        level: 3,
-        text: "3. Boolean",
-      },
-      {
-        type: "paragraph",
-        text: "Represents logical entities: `true` or `false`.",
-      },
-      {
-        type: "code",
-        language: "javascript",
-        code: `let isLoggedIn = true;`,
-      },
-      {
-        type: "heading",
-        level: 3,
-        text: "4. Undefined",
-      },
-      {
-        type: "paragraph",
-        text: "A variable that has been declared but not assigned a value.",
-      },
-      {
-        type: "code",
-        language: "javascript",
-        code: `let result;
-console.log(result); // undefined`,
-      },
-      {
-        type: "heading",
-        level: 3,
-        text: "5. Null",
-      },
-      {
-        type: "paragraph",
-        text: "Represents the intentional absence of any value or object.",
-      },
-      {
-        type: "code",
-        language: "javascript",
-        code: `let value = null;`,
-      },
-      {
-        type: "heading",
-        level: 3,
-        text: "6. Symbol",
-      },
-      {
-        type: "paragraph",
-        text: "Used to create unique identifiers, often for object properties.",
-      },
-      {
-        type: "code",
-        language: "javascript",
-        code: `const sym = Symbol("id");`,
-      },
-      {
-        type: "heading",
-        level: 3,
-        text: "7. BigInt",
-      },
-      {
-        type: "paragraph",
-        text: "Represents integers with arbitrary precision, beyond `Number.MAX_SAFE_INTEGER`.",
-      },
-      {
-        type: "code",
-        language: "javascript",
-        code: `let bigNumber = 9007199254740991n;`,
-      },
-      {
-        type: "heading",
-        level: 2,
-        text: "Non-Primitive (Reference) Data Types",
-      },
-      {
-        type: "paragraph",
-        text: "Non-primitive types can hold collections or more complex data structures. They're mutable and stored by reference.",
-      },
-      {
-        type: "heading",
-        level: 3,
-        text: "1. Object",
-      },
-      {
-        type: "paragraph",
-        text: "A collection of key-value pairs.",
-      },
-      {
-        type: "code",
-        language: "javascript",
-        code: `const person = {
-  name: "JD",
-  age: 25
-};`,
-      },
-      {
-        type: "heading",
-        level: 3,
-        text: "2. Array",
-      },
-      {
-        type: "paragraph",
-        text: "An ordered collection of values.",
-      },
-      {
-        type: "code",
-        language: "javascript",
-        code: `const numbers = [1, 2, 3];`,
-      },
-      {
-        type: "heading",
-        level: 3,
-        text: "3. Function",
-      },
-      {
-        type: "paragraph",
-        text: "A block of reusable code.",
-      },
-      {
-        type: "code",
-        language: "javascript",
-        code: `function greet() {
-  console.log("Hello!");
-}`,
-      },
-      {
-        type: "heading",
-        level: 3,
-        text: "4. Others (Date, RegExp, Map, Set, etc.)",
-      },
-      {
-        type: "paragraph",
-        text: "JavaScript also provides built-in reference types like `Date`, `RegExp`, `Map`, `Set`, etc.",
-      },
-      {
-        type: "heading",
-        level: 2,
-        text: "typeof Operator",
-      },
-      {
-        type: "paragraph",
-        text: "You can check the type of any value using the `typeof` operator.",
-      },
-      {
-        type: "code",
-        language: "javascript",
-        code: `typeof "hello";    // "string"
-typeof 123;        // "number"
-typeof true;       // "boolean"
-typeof undefined;  // "undefined"
-typeof null;       // "object" (quirk!)
-typeof {};         // "object"
-typeof [];         // "object"
-typeof function() {}; // "function"`,
-      },
-      {
-        type: "heading",
-        level: 2,
-        text: "Best Practices",
+        text: "Arithmetic Operators",
       },
       {
         type: "list",
         style: "unordered",
         items: [
-          "Use `typeof` to check value types at runtime.",
-          "`typeof null` returns `'object'` — this is a known JavaScript bug.",
-          "Use `Array.isArray()` instead of `typeof` for arrays.",
-          "Use `typeof value === 'function'` to check for functions.",
+          "`+` Addition",
+          "`-` Subtraction",
+          "`*` Multiplication",
+          "`/` Division",
+          "`%` Remainder (modulus)",
+          "`**` Exponentiation",
         ],
       },
       {
-        type: "heading",
-        level: 2,
-        text: "Interview Questions",
-      },
-      {
-        type: "list",
-        style: "ordered",
-        items: [
-          "What are the primitive data types in JavaScript?",
-          "What is the difference between `null` and `undefined`?",
-          "Why does `typeof null` return `object`?",
-          "How do you check if a value is an array?",
-          "What is BigInt used for?",
-        ],
-      },
-      {
-        type: "quiz",
-        question: "What is the output of `typeof null` in JavaScript?",
-        options: ["`null`", "`object`", "`undefined`", "`false`"],
-        correctAnswerIndex: 1,
-        explanation:
-          "`typeof null` returns `'object'`, which is a well-known quirk in JavaScript for backward compatibility.",
-      },
-      {
-        type: "navigation",
-        previous: {
-          title: "Scope in JavaScript",
-          href: "/languages/js/scope-in-javascript",
-        },
-        next: {
-          title: "Type Casting in JavaScript",
-          href: "/languages/js/type-casting-in-javascript",
-        },
-      },
-    ],
-  },
-  {
-    slug: "type-casting-in-javascript",
-    title: "Type Casting in JavaScript",
-    content: [
-      {
-        type: "paragraph",
-        text: "Type casting (or type conversion) in JavaScript refers to converting a value from one data type to another. JavaScript performs type conversion both explicitly and implicitly.",
+        type: "code",
+        language: "javascript",
+        code: "console.log(5 + 3); // 8\nconsole.log(5 - 3); // 2\nconsole.log(5 * 3); // 15\nconsole.log(5 / 2); // 2.5\nconsole.log(5 % 2); // 1 (remainder)\nconsole.log(2 ** 3); // 8 (2 to the power 3)",
       },
 
+      // String Concatenation
       {
         type: "heading",
-        level: 2,
-        text: "Types of Type Casting",
+        text: "String Concatenation with +",
+      },
+      {
+        type: "paragraph",
+        text: "The `+` operator can also join strings. If one operand is a string, JavaScript converts the other to a string and concatenates them.",
+      },
+      {
+        type: "code",
+        language: "javascript",
+        code: "console.log('Hello' + ' ' + 'World'); // Hello World\nconsole.log('Number: ' + 5); // Number: 5",
+      },
+
+      // Unary plus numeric conversion
+      {
+        type: "heading",
+        text: "Unary Plus for Numeric Conversion",
+      },
+      {
+        type: "paragraph",
+        text: "The unary `+` converts its operand to a number if possible.",
+      },
+      {
+        type: "code",
+        language: "javascript",
+        code: 'console.log(+"5" + 2); // 7\nconsole.log(+true); // 1\nconsole.log(+false); // 0',
+      },
+
+      // Operator precedence
+      {
+        type: "heading",
+        text: "Operator Precedence",
+      },
+      {
+        type: "paragraph",
+        text: "Precedence determines which operator is applied first in an expression. For example, multiplication has higher precedence than addition.",
+      },
+      {
+        type: "code",
+        language: "javascript",
+        code: "console.log(2 + 3 * 4); // 14, because * runs before +\nconsole.log((2 + 3) * 4); // 20, parentheses change the order",
+      },
+
+      // Assignment & chaining
+      {
+        type: "heading",
+        text: "Assignment Operators",
+      },
+      {
+        type: "paragraph",
+        text: "The `=` operator assigns a value. Other assignment operators combine assignment with another operation.",
       },
       {
         type: "list",
         style: "unordered",
         items: [
-          "**Implicit Type Casting** – Done automatically by JavaScript (also called type coercion).",
-          "**Explicit Type Casting** – Done manually using constructors or functions.",
+          "`x += y` → x = x + y",
+          "`x -= y` → x = x - y",
+          "`x *= y` → x = x * y",
+          "`x /= y` → x = x / y",
+          "`x %= y` → x = x % y",
+          "`x **= y` → x = x ** y",
         ],
       },
-
       {
-        type: "heading",
-        level: 2,
-        text: "Implicit Type Casting",
+        type: "code",
+        language: "javascript",
+        code: "let a = 5;\na += 3; // a = 8\na *= 2; // a = 16",
       },
       {
-        type: "paragraph",
-        text: "JavaScript automatically converts types when it thinks it's needed. This often happens in arithmetic or logical operations.",
+        type: "heading",
+        text: "Chaining Assignment",
       },
       {
         type: "code",
         language: "javascript",
-        code: `"5" + 1;        // "51" (number 1 is converted to string)
-"5" - 1;        // 4 (string "5" is converted to number)
-true + 1;       // 2 (true becomes 1)
-false + "1";    // "false1" (false becomes string)
-null + 1;       // 1 (null becomes 0)
-undefined + 1;  // NaN (undefined can't convert to number)`,
+        code: "let a, b, c;\na = b = c = 5; // all become 5",
       },
 
+      // Increment & decrement
       {
         type: "heading",
-        level: 2,
-        text: "Explicit Type Casting",
+        text: "Increment and Decrement",
       },
       {
         type: "paragraph",
-        text: "You can forcefully convert types using functions like `Number()`, `String()`, and `Boolean()`.",
+        text: "`++` increases a number by 1, `--` decreases it by 1. Prefix form changes before using the value, postfix changes after.",
       },
       {
         type: "code",
         language: "javascript",
-        code: `Number("42");       // 42
-String(123);       // "123"
-Boolean(0);        // false
-Boolean("hello");  // true`,
+        code: "let count = 5;\n\n// Prefix increment: increases first, then returns the value\nconsole.log(++count); // 6 (count is now 6)\n\n// Postfix increment: returns the value first, then increases\nconsole.log(count++); // 6 (count becomes 7 after this line)\nconsole.log(count);   // 7 (now updated)\n\n// Postfix decrement example\nlet num = 3;\nconsole.log(num--); // 3 (num becomes 2 after this line)\nconsole.log(num);   // 2",
       },
 
+      // Bitwise operators
       {
         type: "heading",
-        level: 2,
-        text: "Falsy and Truthy Values",
+        text: "Bitwise Operators",
+      },
+      {
+        type: "paragraph",
+        text: "Bitwise operators work at the binary level. JavaScript converts numbers to 32-bit signed integers, operates on their binary form, and then converts back.",
       },
       {
         type: "list",
         style: "unordered",
         items: [
-          '**Falsy values**: `false`, `0`, `""`, `null`, `undefined`, `NaN`',
-          "All other values are **truthy**.",
+          "`&` AND",
+          "`|` OR",
+          "`^` XOR",
+          "`~` NOT",
+          "`<<` Left shift",
+          "`>>` Right shift (sign-propagating)",
+          "`>>>` Zero-fill right shift",
         ],
       },
       {
         type: "code",
         language: "javascript",
-        code: `Boolean("");         // false
-Boolean("text");     // true
-Boolean(0);          // false
-Boolean(100);        // true`,
+        code: "// Example: Bitwise AND\nlet x = 5; // 0101 in binary\nlet y = 3; // 0011 in binary\nconsole.log(x & y); // 0001 → 1\n\n// Bitwise OR\nconsole.log(x | y); // 0111 → 7\n\n// Bitwise XOR\nconsole.log(x ^ y); // 0110 → 6\n\n// Bitwise NOT\nconsole.log(~x); // -(x+1) → -6\n\n// Left Shift\nconsole.log(x << 1); // 1010 → 10\n\n// Right Shift\nconsole.log(x >> 1); // 0010 → 2\n\n// Zero-fill Right Shift\nconsole.log(x >>> 1); // 0010 → 2",
       },
 
+      // Comma operator
       {
         type: "heading",
-        level: 2,
-        text: "`==` vs `===` in Type Comparison",
+        text: "Comma Operator",
       },
       {
         type: "paragraph",
-        text: "`==` compares values after type coercion (loose equality), while `===` compares both value and type (strict equality).",
+        text: "The comma `,` evaluates multiple expressions and returns the result of the last one.",
       },
       {
         type: "code",
         language: "javascript",
-        code: `"5" == 5;     // true (coerced)
-"5" === 5;    // false (no coercion)`,
+        code: "let result = (1 + 2, 3 + 4);\nconsole.log(result); // 7",
       },
 
+      // Comparison
       {
         type: "heading",
-        level: 2,
-        text: "Best Practices",
+        text: "Comparison Operators",
       },
       {
         type: "list",
         style: "unordered",
         items: [
-          "Prefer `===` and `!==` to avoid implicit coercion.",
-          "Be cautious when relying on JavaScript's automatic type conversions.",
-          "Use `Boolean()`, `Number()`, `String()` for safe explicit conversions.",
+          "`>` greater than",
+          "`<` less than",
+          "`>=` greater than or equal",
+          "`<=` less than or equal",
+          "`==` equal (loose, type converts)",
+          "`===` strict equal",
+          "`!=` not equal (loose)",
+          "`!==` strict not equal",
         ],
       },
+      {
+        type: "code",
+        language: "javascript",
+        code: "console.log(5 == '5'); // true (type conversion)\nconsole.log(5 === '5'); // false (different type)",
+      },
 
+      // Logical
       {
         type: "heading",
-        level: 2,
-        text: "Interview Questions",
+        text: "Logical Operators",
+      },
+      {
+        type: "paragraph",
+        text: "Logical operators work with boolean values but can also return non-boolean results.",
       },
       {
         type: "list",
-        style: "ordered",
-        items: [
-          "What is the difference between implicit and explicit type casting?",
-          "What are truthy and falsy values in JavaScript?",
-          "Explain the difference between `==` and `===`.",
-          "How does JavaScript handle type coercion in arithmetic operations?",
-        ],
+        style: "unordered",
+        items: ["`&&` AND", "`||` OR", "`!` NOT"],
+      },
+      {
+        type: "code",
+        language: "javascript",
+        code: "console.log(true && false); // false\nconsole.log(true || false); // true\nconsole.log(!true); // false",
+      },
+
+      // Conditional ternary
+      {
+        type: "heading",
+        text: "Conditional (Ternary) Operator",
+      },
+      {
+        type: "paragraph",
+        text: "The ternary operator `? :` chooses between two values based on a condition.",
+      },
+      {
+        type: "code",
+        language: "javascript",
+        code: "let age = 18;\nlet message = (age >= 18) ? 'Adult' : 'Minor';\nconsole.log(message); // Adult",
       },
 
       {
-        type: "quiz",
-        question: "What is the result of `'5' - 2` in JavaScript?",
-        options: ["'3'", "NaN", "3", "'52'"],
-        correctAnswerIndex: 2,
-        explanation: `"5" is implicitly converted to a number, so '5' - 2 becomes 3.`,
+        type: "list",
+        style: "unordered",
+        heading: "JavaScript Operators — Quick Summary",
+        items: [
+          "An operator is a symbol that performs an action on values (operands).",
+          "Operands are the values on which operators work, e.g., in 5 + 3, '5' and '3' are operands and '+' is the operator.",
+          "Operators can be unary (work with one operand) or binary (work with two operands).",
+          "Mathematical operators include +, -, *, /, %, ** for arithmetic operations.",
+          "String concatenation (+) joins strings together; the unary + can convert strings to numbers.",
+          "Operator precedence decides the order in which operations are performed.",
+          "Assignment (=) stores a value in a variable; compound assignments like +=, -=, *= modify in place.",
+          "Increment (++), decrement (--) increase or decrease a number by 1 (prefix or postfix forms).",
+          "Bitwise operators (&, |, ^, ~, <<, >>, >>>) work on the binary representation of numbers.",
+          "The comma (,) operator evaluates multiple expressions and returns the last one.",
+          "Comparison operators (==, ===, !=, !==, >, <, >=, <=) compare values and return a boolean.",
+          "Logical operators (&&, ||, !) combine or invert boolean values.",
+          "The conditional (ternary) operator condition ? value1 : value2 returns one of two values based on a condition.",
+        ],
       },
 
+      // Navigation
       {
         type: "navigation",
         previous: {
@@ -1608,943 +1380,8 @@ Boolean(100);        // true`,
           href: "/languages/js/data-types-in-javascript",
         },
         next: {
-          title: "Comparison Operators in JavaScript",
-          href: "/languages/js/comparison-operators-in-javascript",
-        },
-      },
-    ],
-  },
-  {
-    slug: "comparison-operators-in-javascript",
-    title: "Comparison Operators in JavaScript",
-    content: [
-      {
-        type: "paragraph",
-        text: "Comparison operators are used to evaluate relationships between two values, resulting in a Boolean value (`true` or `false`). JavaScript provides both loose (`==`) and strict (`===`) comparison operators, along with relational comparisons like greater than (`>`), less than (`<`), and others.",
-      },
-
-      {
-        type: "heading",
-        level: 2,
-        text: "Equality Operators",
-      },
-
-      {
-        type: "subHeading",
-        level: 3,
-        text: "`==` (Loose Equality)",
-      },
-      {
-        type: "paragraph",
-        text: "Compares two values after performing type coercion. It tries to convert the operands to the same type before making the comparison.",
-      },
-      {
-        type: "code",
-        language: "javascript",
-        code: `"5" == 5; // true
-false == 0; // true
-null == undefined; // true`,
-      },
-
-      {
-        type: "subHeading",
-        level: 3,
-        text: "`===` (Strict Equality)",
-      },
-      {
-        type: "paragraph",
-        text: "Checks both value and type without type coercion. It’s generally the safer and more predictable choice.",
-      },
-      {
-        type: "code",
-        language: "javascript",
-        code: `"5" === 5; // false
-true === 1; // false
-0 === 0; // true`,
-      },
-
-      {
-        type: "subHeading",
-        level: 3,
-        text: "`!=` (Loose Inequality)",
-      },
-      {
-        type: "paragraph",
-        text: "Checks if two values are not equal after type coercion.",
-      },
-      {
-        type: "code",
-        language: "javascript",
-        code: `5 != "5"; // false
-null != undefined; // false`,
-      },
-
-      {
-        type: "subHeading",
-        level: 3,
-        text: "`!==` (Strict Inequality)",
-      },
-      {
-        type: "paragraph",
-        text: "Checks if two values are not equal without type coercion.",
-      },
-      {
-        type: "code",
-        language: "javascript",
-        code: `5 !== "5"; // true
-true !== 1; // true`,
-      },
-
-      {
-        type: "heading",
-        level: 2,
-        text: "Relational Operators",
-      },
-
-      {
-        type: "subHeading",
-        level: 3,
-        text: "`>` (Greater Than)",
-      },
-      {
-        type: "code",
-        language: "javascript",
-        code: `10 > 5; // true
-"b" > "a"; // true (based on Unicode values)`,
-      },
-
-      {
-        type: "subHeading",
-        level: 3,
-        text: "`<` (Less Than)",
-      },
-      {
-        type: "code",
-        language: "javascript",
-        code: `3 < 8; // true
-"apple" < "banana"; // true`,
-      },
-
-      {
-        type: "subHeading",
-        level: 3,
-        text: "`>=` (Greater Than or Equal To)",
-      },
-      {
-        type: "code",
-        language: "javascript",
-        code: `10 >= 10; // true
-5 >= 6; // false`,
-      },
-
-      {
-        type: "subHeading",
-        level: 3,
-        text: "`<=` (Less Than or Equal To)",
-      },
-      {
-        type: "code",
-        language: "javascript",
-        code: `4 <= 4; // true
-2 <= 1; // false`,
-      },
-
-      {
-        type: "heading",
-        level: 2,
-        text: "Abstract vs Strict Comparison",
-      },
-      {
-        type: "paragraph",
-        text: "`==` allows JavaScript to convert operands to the same type before comparing, while `===` does not. Always prefer `===` unless there's a specific reason to use `==`.",
-      },
-      {
-        type: "code",
-        language: "javascript",
-        code: `0 == false; // true
-0 === false; // false  
-"0" == 0; // true
-"0" === 0; // false`,
-      },
-
-      {
-        type: "heading",
-        level: 2,
-        text: "Falsy Comparisons",
-      },
-      {
-        type: "paragraph",
-        text: "JavaScript has several falsy values which behave strangely in loose comparisons:",
-      },
-      {
-        type: "list",
-        style: "unordered",
-        items: [
-          '`false`, `0`, `""`, `null`, `undefined`, `NaN` — all are falsy.',
-          "`false == 0` → true",
-          '`"" == 0` → true',
-          "`null == undefined` → true",
-          "`NaN == NaN` → false (only value not equal to itself)",
-        ],
-      },
-
-      {
-        type: "heading",
-        level: 2,
-        text: "Best Practices",
-      },
-      {
-        type: "list",
-        style: "unordered",
-        items: [
-          "Use `===` and `!==` by default.",
-          "Avoid `==` and `!=` to prevent type coercion confusion.",
-          "Use `Object.is()` for precise equality (including `NaN`).",
-        ],
-      },
-
-      {
-        type: "heading",
-        level: 2,
-        text: "Interview Questions",
-      },
-      {
-        type: "list",
-        style: "ordered",
-        items: [
-          "What is the difference between `==` and `===`?",
-          "Why does `null == undefined` return true?",
-          "Why does `NaN === NaN` return false?",
-          "What is the result of `'0' == false`?",
-          "Which operator should you prefer: `==` or `===`, and why?",
-        ],
-      },
-
-      {
-        type: "quiz",
-        question: "Which of the following comparisons return true?",
-        options: [
-          "`0 == false`",
-          "`0 === false`",
-          "`null === undefined`",
-          "`NaN == NaN`",
-        ],
-        correctAnswerIndex: 0,
-        explanation:
-          "`0 == false` returns `true` due to type coercion. The rest return `false`.",
-      },
-      {
-        type: "navigation",
-        previous: {
-          title: "Type Casting in JavaScript",
-          href: "/languages/js/type-casting-in-javascript",
-        },
-        next: {
-          title: "Arithmetic Operators in JavaScript",
-          href: "/languages/js/arithmetic-operators-in-javascript",
-        },
-      },
-    ],
-  },
-  {
-    slug: "arithmetic-operators-in-javascript",
-    title: "Arithmetic Operators in JavaScript",
-    content: [
-      {
-        type: "paragraph",
-        text: "Arithmetic operators are used to perform mathematical operations on numbers. JavaScript supports a variety of arithmetic operations such as addition, subtraction, multiplication, division, modulus, and more. These operators are essential in almost every programming scenario — from simple calculations to complex logic.",
-      },
-
-      {
-        type: "heading",
-        level: 2,
-        text: "List of Arithmetic Operators",
-      },
-
-      {
-        type: "subHeading",
-        level: 3,
-        text: "`+` (Addition)",
-      },
-      {
-        type: "paragraph",
-        text: "Adds two numeric values or concatenates strings if one of the operands is a string.",
-      },
-      {
-        type: "code",
-        language: "javascript",
-        code: `5 + 3;           // 8
-"Hello" + " World"; // "Hello World"
-"5" + 5;           // "55" (string + number → string)`,
-      },
-
-      {
-        type: "subHeading",
-        level: 3,
-        text: "`-` (Subtraction)",
-      },
-      {
-        type: "paragraph",
-        text: "Subtracts the right-hand operand from the left-hand operand.",
-      },
-      {
-        type: "code",
-        language: "javascript",
-        code: `10 - 4;       // 6
-"10" - 4;     // 6 (coerces "10" to number)
-"ten" - 1;    // NaN`,
-      },
-
-      {
-        type: "subHeading",
-        level: 3,
-        text: "`*` (Multiplication)",
-      },
-      {
-        type: "paragraph",
-        text: "Multiplies two operands. If one is not a number, JavaScript attempts type coercion.",
-      },
-      {
-        type: "code",
-        language: "javascript",
-        code: `6 * 3;        // 18
-"6" * 2;     // 12
-"six" * 2;   // NaN`,
-      },
-
-      {
-        type: "subHeading",
-        level: 3,
-        text: "`/` (Division)",
-      },
-      {
-        type: "paragraph",
-        text: "Divides the left operand by the right operand. Returns `Infinity` or `NaN` if division is invalid.",
-      },
-      {
-        type: "code",
-        language: "javascript",
-        code: `10 / 2;       // 5
-5 / 0;         // Infinity
-0 / 0;         // NaN`,
-      },
-
-      {
-        type: "subHeading",
-        level: 3,
-        text: "`%` (Modulus)",
-      },
-      {
-        type: "paragraph",
-        text: "Returns the remainder after dividing the left operand by the right.",
-      },
-      {
-        type: "code",
-        language: "javascript",
-        code: `7 % 4;         // 3
-10 % 2;       // 0`,
-      },
-
-      {
-        type: "subHeading",
-        level: 3,
-        text: "`**` (Exponentiation)",
-      },
-      {
-        type: "paragraph",
-        text: "Raises the left operand to the power of the right operand (ES6+).",
-      },
-      {
-        type: "code",
-        language: "javascript",
-        code: `2 ** 3;        // 8
-4 ** 0.5;      // 2 (square root)`,
-      },
-
-      {
-        type: "subHeading",
-        level: 3,
-        text: "Increment (`++`)",
-      },
-      {
-        type: "paragraph",
-        text: "Increments a variable's value by 1. Can be used as prefix (`++x`) or postfix (`x++`).",
-      },
-      {
-        type: "code",
-        language: "javascript",
-        code: `let a = 5;
-console.log(++a); // 6 (prefix: increments first)
-console.log(a++); // 6 (postfix: returns first, then increments)
-console.log(a);   // 7`,
-      },
-
-      {
-        type: "subHeading",
-        level: 3,
-        text: "Decrement (`--`)",
-      },
-      {
-        type: "paragraph",
-        text: "Decreases a variable's value by 1. Can also be used in prefix or postfix form.",
-      },
-      {
-        type: "code",
-        language: "javascript",
-        code: `let b = 10;
-console.log(--b); // 9
-console.log(b--); // 9
-console.log(b);   // 8`,
-      },
-
-      {
-        type: "heading",
-        level: 2,
-        text: "Best Practices",
-      },
-      {
-        type: "list",
-        style: "unordered",
-        items: [
-          "Use parentheses `()` to ensure the desired order of operations.",
-          "Avoid using arithmetic on non-numeric strings — it may lead to `NaN`.",
-          "Be cautious when mixing types — JavaScript performs implicit type coercion.",
-          "Avoid division by zero; it doesn’t throw an error, but returns `Infinity` or `NaN`.",
-          "Prefer `Math.pow(a, b)` over `a ** b` if supporting older JavaScript environments.",
-        ],
-      },
-
-      {
-        type: "heading",
-        level: 2,
-        text: "Interview Questions",
-      },
-      {
-        type: "list",
-        style: "ordered",
-        items: [
-          "What is the difference between `++a` and `a++`?",
-          "What does `NaN` mean in JavaScript and when does it occur?",
-          "Explain the behavior of `5 + '2'` and `'5' - 2`.",
-          "How does JavaScript handle division by zero?",
-          "What’s the output of `typeof NaN`?",
-        ],
-      },
-
-      {
-        type: "quiz",
-        question: "What will `4 + '2' - 1` return?",
-        options: ["5", "41", "NaN", "Cannot determine"],
-        correctAnswerIndex: 1,
-        explanation:
-          "`4 + '2'` results in `'42'` (string). `'42' - 1` coerces `'42'` to number → `42 - 1 = 41`.",
-      },
-
-      {
-        type: "navigation",
-        previous: {
-          title: "Comparison Operators in JavaScript",
-          href: "/languages/js/comparison-operators-in-javascript",
-        },
-        next: {
-          title: "Logical Operators in JavaScript",
-          href: "/languages/js/logical-operators-in-javascript",
-        },
-      },
-    ],
-  },
-  {
-    slug: "logical-operators-in-javascript",
-    title: "Logical Operators in JavaScript",
-    content: [
-      {
-        type: "paragraph",
-        text: "Logical operators in JavaScript are used to combine multiple boolean expressions or values and return a boolean result. These operators are often used in control flow, conditional statements, and boolean expressions.",
-      },
-
-      {
-        type: "heading",
-        level: 2,
-        text: "Logical Operators Overview",
-      },
-
-      {
-        type: "list",
-        style: "unordered",
-        items: [
-          "`&&` (Logical AND): Returns `true` if both operands are true.",
-          "`||` (Logical OR): Returns `true` if at least one operand is true.",
-          "`!` (Logical NOT): Reverses the boolean value of the operand.",
-        ],
-      },
-
-      {
-        type: "subHeading",
-        level: 3,
-        text: "`&&` (Logical AND)",
-      },
-      {
-        type: "paragraph",
-        text: "The AND operator evaluates to `true` only if **both** operands are truthy. If the first operand is falsy, it returns that value without evaluating the second.",
-      },
-      {
-        type: "code",
-        language: "javascript",
-        code: `true && true;       // true
-true && false;      // false
-5 > 2 && 2 < 4;     // true
-false && "Hello";   // false (short-circuits)
-"JS" && 0;          // 0`,
-      },
-
-      {
-        type: "subHeading",
-        level: 3,
-        text: "`||` (Logical OR)",
-      },
-      {
-        type: "paragraph",
-        text: "The OR operator evaluates to `true` if **any** operand is truthy. If the first operand is truthy, it returns that value (short-circuiting).",
-      },
-      {
-        type: "code",
-        language: "javascript",
-        code: `false || true;     // true
-false || false;    // false
-0 || "fallback";   // "fallback"
-"JS" || "Code";    // "JS"
-"" || 123;         // 123`,
-      },
-
-      {
-        type: "subHeading",
-        level: 3,
-        text: "`!` (Logical NOT)",
-      },
-      {
-        type: "paragraph",
-        text: "The NOT operator inverts the truthiness of its operand. It returns `true` if the operand is falsy, and `false` if truthy.",
-      },
-      {
-        type: "code",
-        language: "javascript",
-        code: `!true;       // false
-!false;      // true
-!0;          // true
-!"text";     // false`,
-      },
-
-      {
-        type: "heading",
-        level: 2,
-        text: "Real-world Examples",
-      },
-      {
-        type: "code",
-        language: "javascript",
-        code: `// Using || for default value
-let username = userInput || "Guest";
-  
-// Using && for conditional execution
-isLoggedIn && showDashboard();
- 
-// Toggling a boolean
-let isDark = true;
-isDark = !isDark;  // false`,
-      },
-
-      {
-        type: "heading",
-        level: 2,
-        text: "Truthy and Falsy Values",
-      },
-      {
-        type: "list",
-        style: "unordered",
-        items: [
-          "**Truthy**: All values except falsy ones are truthy. Examples: `'hello'`, `1`, `[]`, `{}`",
-          '**Falsy**: `false`, `0`, `""`, `null`, `undefined`, `NaN`',
-        ],
-      },
-
-      {
-        type: "heading",
-        level: 2,
-        text: "Best Practices",
-      },
-      {
-        type: "list",
-        style: "unordered",
-        items: [
-          "Use `||` to set default values when variables might be undefined or falsy.",
-          "Use `&&` to conditionally execute expressions.",
-          "Avoid double negatives like `!!false` unless explicitly checking truthiness.",
-        ],
-      },
-
-      {
-        type: "heading",
-        level: 2,
-        text: "Interview Questions",
-      },
-      {
-        type: "list",
-        style: "ordered",
-        items: [
-          "What is the difference between `&&` and `||`?",
-          "What does short-circuiting mean in logical operators?",
-          "Explain the output of `false || true && false`.",
-          "What are truthy and falsy values in JavaScript?",
-          "How can you use logical operators for default values?",
-        ],
-      },
-
-      {
-        type: "quiz",
-        question: "What is the result of: `false || true && false`?",
-        options: ["true", "false", "`undefined`", "`null`"],
-        correctAnswerIndex: 1,
-        explanation:
-          "`&&` has higher precedence than `||`, so `true && false → false`, making the full expression `false || false → false`.",
-      },
-      {
-        type: "quiz",
-        question: "Which value is considered falsy in JavaScript?",
-        options: ["[]", "`null`", "`'false'`", "`{}`"],
-        correctAnswerIndex: 1,
-        explanation:
-          "`null` is a falsy value. Others like `[]`, `'false'`, and `{}` are truthy.",
-      },
-      {
-        type: "quiz",
-        question: 'What will be the output of `"" || 42`?',
-        options: ['""', "42", "NaN", "undefined"],
-        correctAnswerIndex: 1,
-        explanation:
-          '`""` is falsy, so OR returns `42`, the first truthy value.',
-      },
-      {
-        type: "navigation",
-        previous: {
-          title: "Arithmetic Operators in JavaScript",
-          href: "/languages/js/arithmetic-operators-in-javascript",
-        },
-        next: {
-          title: "Bitwise Operators in JavaScript",
-          href: "/languages/js/bitwise-operators-in-javascript",
-        },
-      },
-    ],
-  },
-  {
-    slug: "bitwise-operators-in-javascript",
-    title: "Bitwise Operators in JavaScript",
-    content: [
-      {
-        type: "paragraph",
-        text: "Bitwise operators work on the binary representations of numbers. They are mostly used for tasks that require direct manipulation of bits, such as cryptography, low-level graphics operations, or performance-sensitive logic.",
-      },
-      {
-        type: "heading",
-        level: 2,
-        text: "Bitwise Operators List",
-      },
-
-      {
-        type: "subHeading",
-        level: 3,
-        text: "`&` (Bitwise AND)",
-      },
-      {
-        type: "paragraph",
-        text: "Performs AND operation on each pair of corresponding bits. Result bit is 1 only if both bits are 1.",
-      },
-      {
-        type: "code",
-        language: "javascript",
-        code: `5 & 3; // 1 → (0101 & 0011 = 0001)
-  8 & 7; // 0 → (1000 & 0111 = 0000)`,
-      },
-
-      {
-        type: "subHeading",
-        level: 3,
-        text: "`|` (Bitwise OR)",
-      },
-      {
-        type: "paragraph",
-        text: "Performs OR operation on each pair of bits. Result bit is 1 if either bit is 1.",
-      },
-      {
-        type: "code",
-        language: "javascript",
-        code: `5 | 3; // 7 → (0101 | 0011 = 0111)
-  2 | 4; // 6 → (0010 | 0100 = 0110)`,
-      },
-
-      {
-        type: "subHeading",
-        level: 3,
-        text: "`^` (Bitwise XOR)",
-      },
-      {
-        type: "paragraph",
-        text: "Performs XOR (exclusive OR). Result bit is 1 if the bits are different.",
-      },
-      {
-        type: "code",
-        language: "javascript",
-        code: `5 ^ 3; // 6 → (0101 ^ 0011 = 0110)
-  9 ^ 5; // 12 → (1001 ^ 0101 = 1100)`,
-      },
-
-      {
-        type: "subHeading",
-        level: 3,
-        text: "`~` (Bitwise NOT)",
-      },
-      {
-        type: "paragraph",
-        text: "Inverts each bit (0 becomes 1, and 1 becomes 0). In JavaScript, this returns the negative of the number minus one.",
-      },
-      {
-        type: "code",
-        language: "javascript",
-        code: `~5; // -6 → (~0101 = 1010, which is -6 in two's complement)
-  ~0;  // -1`,
-      },
-
-      {
-        type: "subHeading",
-        level: 3,
-        text: "`<<` (Left Shift)",
-      },
-      {
-        type: "paragraph",
-        text: "Shifts bits to the left, inserting 0s from the right. Equivalent to multiplying by powers of 2.",
-      },
-      {
-        type: "code",
-        language: "javascript",
-        code: `5 << 1; // 10 → (0101 << 1 = 1010)
-  3 << 2; // 12 → (0011 << 2 = 1100)`,
-      },
-
-      {
-        type: "subHeading",
-        level: 3,
-        text: "`>>` (Signed Right Shift)",
-      },
-      {
-        type: "paragraph",
-        text: "Shifts bits to the right, preserving the sign bit (MSB). Equivalent to dividing by powers of 2 (for positive numbers).",
-      },
-      {
-        type: "code",
-        language: "javascript",
-        code: `5 >> 1;  // 2 → (0101 >> 1 = 0010)
-  -8 >> 2; // -2 → keeps sign bit`,
-      },
-
-      {
-        type: "subHeading",
-        level: 3,
-        text: "`>>>` (Unsigned Right Shift)",
-      },
-      {
-        type: "paragraph",
-        text: "Shifts bits to the right, filling in 0 from the left. Converts the number to an unsigned 32-bit integer first.",
-      },
-      {
-        type: "code",
-        language: "javascript",
-        code: `-5 >>> 1; // 2147483645 → because negative numbers become large positive unsigned integers`,
-      },
-
-      {
-        type: "heading",
-        level: 2,
-        text: "Use Cases",
-      },
-      {
-        type: "list",
-        style: "unordered",
-        items: [
-          "Low-level optimizations or embedded systems.",
-          "Masking and toggling bits using `&`, `|`, `^`.",
-          "Efficient math using left/right shifts (e.g., `x << 3` for `x * 8`).",
-          "Using flags and permissions in system design.",
-        ],
-      },
-
-      {
-        type: "heading",
-        level: 2,
-        text: "Interview Questions",
-      },
-      {
-        type: "list",
-        style: "ordered",
-        items: [
-          "What is the difference between `>>` and `>>>`?",
-          "What does `~x` do in JavaScript?",
-          "How do you use bitwise operators to toggle a bit?",
-          "What is a real-world use case for bitwise operations?",
-          "How does JavaScript handle bitwise operations internally?",
-        ],
-      },
-
-      {
-        type: "quiz",
-        question: "What is the result of `~10` in JavaScript?",
-        options: ["-11", "10", "-10", "9"],
-        correctAnswerIndex: 0,
-        explanation:
-          "`~10` results in `-11` because it flips the bits of 10 and applies two's complement rule.",
-      },
-
-      {
-        type: "navigation",
-        previous: {
-          title: "Logical Operators in JavaScript",
-          href: "/languages/js/logical-operators-in-javascript",
-        },
-        next: {
-          title: "Ternary Operator in JavaScript",
-          href: "/languages/js/ternary-operator-in-javascript",
-        },
-      },
-    ],
-  },
-  {
-    slug: "ternary-operator-in-javascript",
-    title: "Ternary Operator in JavaScript",
-    content: [
-      {
-        type: "paragraph",
-        text: "The ternary operator in JavaScript provides a concise way to perform conditional logic. It's often used as a shorthand for simple `if-else` statements and is especially useful in single-line assignments or JSX expressions.",
-      },
-      {
-        type: "subHeading",
-        level: 3,
-        text: "Syntax",
-      },
-      {
-        type: "code",
-        language: "javascript",
-        code: `condition ? expressionIfTrue : expressionIfFalse;`,
-      },
-      {
-        type: "subHeading",
-        level: 3,
-        text: "Basic Example",
-      },
-      {
-        type: "code",
-        language: "javascript",
-        code: `let age = 20;
-  let status = age >= 18 ? "Adult" : "Minor";
-  console.log(status); // "Adult"`,
-      },
-      {
-        type: "subHeading",
-        level: 3,
-        text: "Using Ternary in JSX (React)",
-      },
-      {
-        type: "code",
-        language: "javascript",
-        code: `const isLoggedIn = true;
-  return (
-    <div>
-      {isLoggedIn ? <p>Welcome back!</p> : <p>Please log in.</p>}
-    </div>
-  );`,
-      },
-      {
-        type: "subHeading",
-        level: 3,
-        text: "Nested Ternary Operators (Use with Caution)",
-      },
-      {
-        type: "code",
-        language: "javascript",
-        code: `let score = 75;
-  let grade = score >= 90 ? "A" : 
-               score >= 80 ? "B" : 
-               score >= 70 ? "C" : "D";
-  console.log(grade); // "C"`,
-      },
-      {
-        type: "heading",
-        level: 2,
-        text: "Use Cases",
-      },
-      {
-        type: "list",
-        style: "unordered",
-        items: [
-          "Assign values based on conditions (e.g., status, category).",
-          "Render conditional UI in React and other frameworks.",
-          "Compact alternative to `if-else` when the logic is simple.",
-        ],
-      },
-      {
-        type: "heading",
-        level: 2,
-        text: "Best Practices",
-      },
-      {
-        type: "list",
-        style: "unordered",
-        items: [
-          "Use ternary for short, clear conditional assignments.",
-          "Avoid deeply nested ternary operators — they reduce readability.",
-          "Consider readability and maintainability over brevity.",
-          "Use parentheses to clarify complex ternary chains.",
-        ],
-      },
-      {
-        type: "heading",
-        level: 2,
-        text: "Interview Questions",
-      },
-      {
-        type: "list",
-        style: "ordered",
-        items: [
-          "What is the ternary operator and when should you use it?",
-          "How does the ternary operator improve code conciseness?",
-          "When should you avoid using nested ternary operators?",
-          "How is a ternary operator different from `if-else`?",
-        ],
-      },
-      {
-        type: "quiz",
-        question:
-          "What will the following code output? `10 > 5 ? 'Yes' : 'No'`",
-        options: ["'Yes'", "'No'", "`true`", "`false`"],
-        correctAnswerIndex: 0,
-        explanation:
-          "Since 10 > 5 is true, the ternary operator returns 'Yes'.",
-      },
-      {
-        type: "quiz",
-        question: "What is the result of: `null ? 'A' : 'B'`?",
-        options: ["'A'", "'B'", "`null`", "`undefined`"],
-        correctAnswerIndex: 1,
-        explanation:
-          "`null` is falsy, so the ternary evaluates the second expression: `'B'`.",
-      },
-      {
-        type: "navigation",
-        previous: {
-          title: "Bitwise Operators in JavaScript",
-          href: "/languages/js/bitwise-operators-in-javascript",
-        },
-        next: {
-          title: "if/else in JavaScript",
-          href: "/languages/js/if-else",
+          title: "Control Flow in JavaScript",
+          href: "/languages/js/control-flow-in-javascript",
         },
       },
     ],

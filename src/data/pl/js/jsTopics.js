@@ -34,13 +34,13 @@ export const jsTopics = [
       },
       {
         name: "Data Types",
-        slug: "data-types",
-        path: "/languages/js/data-types",
+        slug: "data-types-in-javascript",
+        path: "/languages/js/data-types-in-javascript",
       },
       {
         name: "Operators in JavaScript",
-        slug: "operators",
-        path: "/languages/js/operators",
+        slug: "operators-in-javascript",
+        path: "/languages/js/operators-in-javascript",
       },
       {
         name: "Control Flow: if, else, switch",
